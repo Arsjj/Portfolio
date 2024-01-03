@@ -16,12 +16,50 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+  background-color: rgba(27, 27, 27, 7);
+  /* background-color: whitesmoke */
+
+  /* background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)); */
 }
+
+
+.hr {
+  max-width: 1020px;
+  width: 90%;
+  color: aqua;
+  background-color: aqua;
+  border-bottom: 8px solid #f2a007;
+  border-radius: 35%;
+  margin-top: 40px;
+}
+
+.hr1 {
+  width: 70%;
+  max-width: 720px;
+  color: aqua;
+  background-color: aqua;
+  border-bottom: 8px solid #27a7d9;
+  border-radius: 35%;
+}
+
+
+@layer components {
+  .space {
+    @apply py-[2px] pl-24;
+  }
+}
+
+
+
+
