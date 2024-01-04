@@ -7,7 +7,7 @@ import { data } from "./Data";
 
 export default function Works() {
   return (
-    <div id="projects" className="grid w-full justify-items-center pb-28">
+    <div id="projects" className="relative overflow-hidden grid w-full justify-items-center pb-28">
       <motion.div
         initial={{ opacity: 0, x: 70 }}
         whileInView={{ opacity: 1, x: 0 }}
