@@ -22,7 +22,7 @@ function About() {
                   <td className="space">17.09.1991</td>
                 </tr>
                 <tr>
-                  <td className="text-white">Addres</td>
+                  <td className="text-white">Address</td>
                   <td className="space">Yeravan, Armenia</td>
                 </tr>
                 <tr>
