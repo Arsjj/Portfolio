@@ -1,5 +1,5 @@
 import React from "react";
-import photo from "./a7.webp";
+import photo from "./a7.jpg";
 import Image from "next/image";
 
 export default function MainSection() {
