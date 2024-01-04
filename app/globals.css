@@ -29,7 +29,7 @@ body {
 }
 
 .hr {
-  max-width: 1020px;
+  max-width: 1200px;
   width: 90%;
   color: aqua;
   background-color: aqua;
@@ -40,7 +40,7 @@ body {
 
 .hr1 {
   width: 70%;
-  max-width: 720px;
+  max-width: 820px;
   color: aqua;
   background-color: aqua;
   border-bottom: 8px solid #27a7d9;
