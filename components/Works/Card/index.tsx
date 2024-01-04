@@ -22,9 +22,9 @@ export default function CardItem({
     <div className="w-80 cursor-pointer hover:scale-[1.07] duration-250">
       <div className="relative w-full grid rounded-2xl overflow-hidden">
         <div className="absolute z-10 top-1 flex-col items-start">
-          <h4 className="text-white bg-black/50 rounded-r-lg p-2 px-3 font-medium">
+          <p className="text-white bg-black/50 rounded-r-lg p-2 px-3 font-medium">
             {name}
-          </h4>
+          </p>
         </div>
         <div className="relative w-full h-[200px] rounded-lg">
           <Image

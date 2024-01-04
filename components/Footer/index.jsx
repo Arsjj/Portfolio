@@ -17,6 +17,7 @@ function Footer() {
             href="http://github.com/Arsjj"
             target="_blank"
             className="fill-aqua hover:fill-aqua/70"
+            aria-label="githab link"
           >
             <GithubOutlined className="fill-amber-400" />
           </Link>
@@ -24,6 +25,7 @@ function Footer() {
             href="http://www.linkedin.com/in/arsen-abrahamyan-23269a248/"
             target="_blank"
             className="fill-aqua hover:fill-aqua/70"
+            aria-label="linkedin link"
           >
             <LinkedinOutlined className="linkedin" />
           </Link>
