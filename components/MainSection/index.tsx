@@ -18,7 +18,7 @@ export default function MainSection() {
             <div className="pt-2 text-base">
               <p className="w-fit pb-2">
                 I fell in &#34;love&#34; with web programming and I have at least learnt
-                something, I think…
+                something, I think… 🤷‍♂️
               </p>
               <p>
                 Whenever possible, I apply my passion for developing products
