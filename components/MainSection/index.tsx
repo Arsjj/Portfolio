@@ -6,11 +6,11 @@ export default function MainSection() {
   return (
     <div
       id="home"
-      className="relative flex flex-col items-center bg-no-repeat bg-top max-md:bg-left bg-[url('https://preview.redd.it/eow74ye8vn351.png?auto=webp&s=1ec49989297febc5b8a06a70e8a3c1bedb436a31')] h-[950px] max-lg:h-fit"
+      className="relative flex flex-col items-center bg-no-repeat bg-top max-md:pb-20 max-md:bg-left bg-[url('https://preview.redd.it/eow74ye8vn351.png?auto=webp&s=1ec49989297febc5b8a06a70e8a3c1bedb436a31')] h-[1000px] max-md:h-fit"
     > 
     <div className="absolute w-full h-full bg-black/50"></div>
-      <div className="relative pt-40 mb-10 flex  flex-col-reverse max-md:items-center gap-10 max-lg:gap-10 max-w-[1000px] max-md:px-0">
-        <div className="relative py-5 max-lg:px-10 md:rounded-2xl text-lg max-md:text-center">
+      <div className="relative pt-56 px-10 mb-3 flex  flex-col-reverse max-md:items-center gap-10 max-lg:gap-10 max-w-[1200px]">
+        <div className="relative py-5 md:rounded-2xl text-lg max-md:text-center">
           <div className="relative z-0 text-white italic">
             <p className="text-2xl mb-5">Hi, my name is Arsen &#41;</p>
             <p className="text-orange text-xl pb-7 border-b-1 border-white/50">
