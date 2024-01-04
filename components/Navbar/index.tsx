@@ -1,20 +1,14 @@
 import React from "react";
-import {
-  Navbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-  Link,
-  Button,
-} from "@nextui-org/react";
+import { Navbar, NavbarContent, NavbarItem, Link } from "@nextui-org/react";
 
 export default function Navigation() {
   return (
     <Navbar
       shouldHideOnScroll
       className="h-14 bg-background/0 backdrop-blur-none data-[menu-open=true]:backdrop-blur-none backdrop-saturate-150 "
+      classNames={{wrapper: "pl-10 max-w-[1084px]"}}
     >
-      <NavbarContent className="hidden sm:flex mx-auto gap-6" justify="center">
+      <NavbarContent className="flex gap-6 PX-0" justify="center">
         <NavbarItem>
           <Link href="#home" className="text-orange text-lg">
             Home

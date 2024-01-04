@@ -23,16 +23,21 @@ html {
 body {
   color: rgb(var(--foreground-rgb));
   background-color: rgba(27, 27, 27, 7);
-  /* background-color: whitesmoke */
-
-  /* background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb)); */
 }
 
+.anim {
+  animation-name: na;
+  animation-duration: 1500ms;
+}
+
+@keyframes na {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
 .hr {
   max-width: 1020px;
@@ -53,13 +58,14 @@ body {
   border-radius: 35%;
 }
 
+.shadow {
+  -webkit-box-shadow: 0px 0px 100px 93px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 0px 0px 100px 93px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px 0px 100px 93px rgba(34, 60, 80, 0.2);
+}
 
 @layer components {
   .space {
-    @apply py-[2px] pl-24;
+    @apply py-[2px] pl-24 max-sm:pl-5;
   }
 }
-
-
-
-

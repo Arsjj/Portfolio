@@ -1,15 +1,7 @@
-import {
-  Card,
-  CardHeader,
-  CardFooter,
-  Button,
-  CardBody,
-} from "@nextui-org/react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import mk from "../Data/images/2023-01-28 (40).png";
-
-import React from "react";
+import { Button } from "@nextui-org/react";
 
 type Props = {
   name: string;
@@ -28,15 +20,9 @@ export default function CardItem({
 }: Props) {
   return (
     <div className="w-80 cursor-pointer hover:scale-[1.07] duration-250">
-      <div
-        // isFooterBlurred
-        className="relative w-full grid rounded-2xl overflow-hidden"
-      >
+      <div className="relative w-full grid rounded-2xl overflow-hidden">
         <div className="absolute z-10 top-1 flex-col items-start">
-          {/* <p className="text-tiny text-white/60 uppercase font-bold">
-            Your day your way
-          </p> */}
-          <h4 className="text-white/90 p-2 font-medium text-xl">{name}</h4>
+          <h4 className="text-white bg-black/50 rounded-r-lg p-2 px-3 font-medium">{name}</h4>
         </div>
         <div className="relative w-full h-[200px] rounded-lg">
           <Image fill alt={name} className="z-0 object-cover" src={src} />
