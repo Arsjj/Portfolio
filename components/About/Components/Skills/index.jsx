@@ -6,7 +6,6 @@ import reactImage from "./images/React-icon.svg.png";
 import tsImage from "./images/Typescript_logo_2020.svg.png";
 
 
-
 function Skills() {
   return (
     <section className="flex flex-wrap gap-2 justify-center text-orange">

@@ -15,6 +15,10 @@ body {
   animation-duration: 1500ms;
 }
 
+.bg {
+  background-image: url("image.webp");
+}
+
 @keyframes na {
   from {
     opacity: 0;

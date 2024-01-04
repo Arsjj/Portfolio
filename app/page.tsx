@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { NextUIProvider } from "@nextui-org/react";
 import Navigation from "@/components/Navbar";
 import MainSection from "@/components/MainSection";

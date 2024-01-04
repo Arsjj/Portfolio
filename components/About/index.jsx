@@ -1,6 +1,3 @@
-// 'use client'
-
-// import { motion } from "framer-motion";
 import Skills from "./Components/Skills/index.jsx";
 
 function About() {
@@ -9,12 +6,6 @@ function About() {
       id="about"
       className="w-full py-28"
     >
-      {/* <motion.div
-        initial={{ opacity: 0, x: 100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.4 }}
-        viewport={{ once: true }}
-      > */}
         <div className="w-full flex flex-col items-center gap-16 text-orange">
           <div>
             <h2 className="text-2xl font-semibold text-center mb-4">
@@ -57,7 +48,6 @@ function About() {
               <Skills />
           </div>
         </div>
-      {/* </motion.div> */}
     </div>
   );
 }
