@@ -8,7 +8,7 @@ function About() {
     >
         <div className="w-full flex flex-col items-center gap-16 text-orange">
           <div>
-            <h2 className="text-2xl font-semibold text-center mb-4">
+            <h2 className="text-2xl font-semibold text-center mb-6">
               Personal Details
             </h2>
             <table className="text-[18px]">
@@ -44,7 +44,7 @@ function About() {
             </table>
           </div>
           <div className="flex flex-col items-center">
-            <h2 className="text-2xl font-semibold mb-5">Skills</h2>
+            <h2 className="text-2xl font-semibold mb-6">Skills</h2>
               <Skills />
           </div>
         </div>

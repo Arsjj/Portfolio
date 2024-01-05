@@ -49,6 +49,6 @@ body {
 
 @layer components {
   .space {
-    @apply py-[2px] pl-24 max-sm:pl-5;
+    @apply py-[2px] pl-40 max-sm:pl-5;
   }
 }
