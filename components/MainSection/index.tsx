@@ -6,9 +6,18 @@ export default function MainSection() {
   return (
     <div
       id="home"
-      className="relative flex flex-col items-center bg-no-repeat bg-top max-md:bg-left bg-[url('https://preview.redd.it/eow74ye8vn351.png?auto=webp&s=1ec49989297febc5b8a06a70e8a3c1bedb436a31')] h-[1000px] max-md:h-fit"
+      className="relative flex flex-col items-center bg-no-repeat bg-top max-md:bg-[length:100%_100%] bg-cover max-md:bg-left l('https://preview.redd.it/eow74ye8vn351.png?auto=webp&s=1ec49989297febc5b8a06a70e8a3c1bedb436a31')] h-[1000px] max-md:h-fit"
     >
-      <div className="absolute w-full h-full bg-black/45"></div>
+      <div className="absolute w-full max-w-[1920px] h-full">
+        <Image
+          priority
+          fill
+          alt="sfd"
+          className="object-cover"
+          src="https://preview.redd.it/eow74ye8vn351.png?auto=webp&s=1ec49989297febc5b8a06a70e8a3c1bedb436a31"
+        />
+        <div className="absolute w-full h-full bg-black/45"></div>
+      </div>
       <div className="relative pt-56 px-10 mb-16 flex flex-col gap-10 max-w-[1200px] max-md:items-center">
         <div className="relative z-0">
           <Image
