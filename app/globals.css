@@ -11,9 +11,9 @@ body {
   background-color: rgba(27, 27, 27, 7);
 }
 
-/* .bg {
+.bg-image {
   background-image: url("image.webp");
-} */
+}
 
 .animate-opacity {
   animation-name: na;
