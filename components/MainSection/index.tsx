@@ -6,10 +6,10 @@ export default function MainSection() {
   return (
     <div
       id="home"
-      className="relative flex flex-col items-center bg-no-repeat bg-top bg-image h-[1000px] max-md:h-fit"
+      className="relative flex flex-col items-center bg-no-repeat bg-top bg-image max-md:bg-left h-[1000px] max-md:h-fit"
     >
       <div className="absolute w-full h-full bg-black/40"></div>
-      <div className="relative pt-56 px-10 mb-16 flex flex-col gap-10 max-w-[1200px] max-md:items-center">
+      <div className="relative pt-56 px-10 mb-[4.5rem] flex flex-col gap-12 max-w-[1200px] max-md:items-center">
         <div className="relative z-0">
           <Image
             src={photo}
@@ -39,8 +39,8 @@ export default function MainSection() {
           </div>
         </div>
       </div>
-      <div className="relative w-[90%] w-max-[1300px] border-b-8 border-orange rounded-[35%] z-1 animate-opacity max-md:hidden"></div>
-      <div className="relative w-[70%] w-max-[820px] border-[#27a7d9] border-b-8 rounded-[45%] z-1 animate-opacity max-md:hidden"></div>
+      <div className="relative w-[90%] max-w-[1350px] border-b-8 border-orange rounded-[35%] z-1 animate-opacity max-md:hidden"></div>
+      <div className="relative w-[70%] max-w-[820px] border-[#27a7d9] border-b-8 rounded-[45%] z-1 animate-opacity max-md:hidden"></div>
     </div>
   );
 }
