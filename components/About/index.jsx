@@ -43,8 +43,8 @@ function About() {
               </tbody>
             </table>
           </div>
-          <div className="flex flex-col items-center">
-            <h2 className="text-2xl font-semibold mb-6">Skills</h2>
+          <div>
+            <h2 className="text-2xl text-center font-semibold mb-6">Skills</h2>
               <Skills />
           </div>
         </div>

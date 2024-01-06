@@ -8,7 +8,7 @@ import tsImage from "./images/Typescript_logo_2020.svg.png";
 
 function Skills() {
   return (
-    <section className="flex flex-wrap gap-2 justify-center text-orange">
+    <section className="flex flex-wrap gap-2 px-2 justify-center">
       <Skill name="Html" src={htmlImage} width={65} height={70} />
       <Skill
         name="Css"

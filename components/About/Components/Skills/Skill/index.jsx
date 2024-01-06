@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-function Skill({ name, src, width, height }) {
+function Skill({ name, src }) {
   return (
     <div className="flex flex-col w-24 h-[104px] gap-1 items-center justify-between mb-4">
       <div className="relative w-20 h-20 aspect-square">
@@ -12,7 +12,7 @@ function Skill({ name, src, width, height }) {
           sizes="(max-width: 768px) 70px, (min-width: 768px) 100px"
         />
       </div>
-      <span className="text-[18px] italic orange">{name}</span>
+      <span className="text-[18px] italic">{name}</span>
     </div>
   );
 }

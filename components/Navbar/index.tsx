@@ -6,7 +6,6 @@ export default function Navigation() {
     <Navbar
       shouldHideOnScroll
       className="h-14 bg-background/0 backdrop-blur-none data-[menu-open=true]:backdrop-blur-none backdrop-saturate-150 "
-      // classNames={{wrapper: "md:pl-10 max-w-[1084px]"}}
     >
       <NavbarContent className="flex mx-auto gap-6 PX-0" justify="center">
         <NavbarItem>
