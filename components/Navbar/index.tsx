@@ -7,7 +7,7 @@ export default function Navigation() {
       shouldHideOnScroll
       className="h-14 bg-background/0 backdrop-blur-none data-[menu-open=true]:backdrop-blur-none backdrop-saturate-150 "
     >
-      <NavbarContent className="flex mx-auto gap-6 PX-0" justify="center">
+      <NavbarContent className=" flex mx-auto gap-6 PX-0" justify="center">
         <NavbarItem>
           <Link href="#home" className="text-orange text-lg">
             Home
