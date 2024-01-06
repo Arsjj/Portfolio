@@ -39,7 +39,7 @@ export default function MainSection() {
           </div>
         </div>
       </div>
-      <div className="relative w-[90%] w-max-[1350px] border-b-8 border-orange rounded-[35%] z-1 animate-opacity max-md:hidden"></div>
+      <div className="relative w-[90%] w-max-[1300px] border-b-8 border-orange rounded-[35%] z-1 animate-opacity max-md:hidden"></div>
       <div className="relative w-[70%] w-max-[820px] border-[#27a7d9] border-b-8 rounded-[45%] z-1 animate-opacity max-md:hidden"></div>
     </div>
   );
