@@ -33,7 +33,7 @@ export default function CardItem({ name, description, src, link }: Props) {
             className="z-0 object-cover"
             src={src}
             priority
-            sizes="(max-width: 768px) 50px, (min-width: 768px) 300px"
+            sizes="(max-width: 768px) 250px, (min-width: 768px) 300px"
           />
         </div>
         <div className="relative flex w-full items-center h-14 p-2 bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
