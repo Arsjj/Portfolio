@@ -12,7 +12,7 @@ function Footer() {
           All rights reserved
           <HeartFilled />
         </div>
-        <div className="absolute right-0 top-0 h-full flex items-center text-[23px] gap-3 px-4">
+        <div className="absolute max-xsm:relative max-xsm:my-auto right-0 top-0 h-full flex items-center text-[23px] gap-3 px-4">
           <Link
             href="http://github.com/Arsjj"
             target="_blank"

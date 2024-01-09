@@ -4,10 +4,10 @@ import { Navbar, NavbarContent, NavbarItem, Link } from "@nextui-org/react";
 export default function Navigation() {
   return (
     <Navbar
-      shouldHideOnScroll
-      className="h-14 bg-background/0 backdrop-blur-none data-[menu-open=true]:backdrop-blur-none backdrop-saturate-150 "
+      shouldHideOnScroll 
+      className="h-14 bg-background/0 max-sm:bg-[#1B1B1D] backdrop-blur-none data-[menu-open=true]:backdrop-blur-none backdrop-saturate-150"
     >
-      <NavbarContent className=" flex mx-auto gap-6 PX-0" justify="center">
+      <NavbarContent className="flex mx-auto gap-6 PX-0" justify="center">
         <NavbarItem>
           <Link href="#home" className="text-orange text-lg">
             Home

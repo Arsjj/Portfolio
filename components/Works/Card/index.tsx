@@ -17,7 +17,7 @@ export default function CardItem({ name, description, src, link }: Props) {
 
   return (
     <div
-      className="w-80 cursor-pointer hover:scale-[1.07] duration-250"
+      className="w-80 max-md:w-96 max-sm:w-[21rem] max-xsm:w-[90%] cursor-pointer hover:scale-[1.07] duration-250"
       onClick={() => openTab(link)}
     >
       <div className="relative w-full grid rounded-2xl overflow-hidden">
@@ -32,7 +32,7 @@ export default function CardItem({ name, description, src, link }: Props) {
             alt={name}
             className="z-0 object-cover"
             src={src}
-            priority
+            // priority
             sizes="(max-width: 768px) 250px, (min-width: 768px) 300px"
           />
         </div>

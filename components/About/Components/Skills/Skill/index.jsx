@@ -2,8 +2,8 @@ import Image from "next/image";
 
 function Skill({ name, src }) {
   return (
-    <div className="flex flex-col w-24 h-[104px] gap-1 items-center justify-between mb-4">
-      <div className="relative w-20 h-20 aspect-square">
+    <div className="flex flex-col w-24 h-[104px] max-sm:w-20 gap-1 items-center justify-between mb-4">
+      <div className="relative w-20 h-20 max-sm:w-20 max-sm:h-16 aspect-square">
         <Image
           fill
           src={src}

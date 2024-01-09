@@ -7,7 +7,7 @@ function About() {
       className="w-full py-28"
     >
         <div className="w-full flex flex-col items-center gap-16 text-orange">
-          <div>
+          <div className="px-2">
             <h2 className="text-2xl font-semibold text-center mb-6">
               Personal Details
             </h2>
