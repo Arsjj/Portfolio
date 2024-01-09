@@ -6,7 +6,7 @@ export default function MainSection() {
   return (
     <div
       id="home"
-      className="relative flex flex-col items-center bg-no-repeat bg-top bg-image max-md:bg-left h-[1000px] max-md:h-fit"
+      className="relative flex flex-col items-center bg-no-repeat bg-top bg-image h-[1000px] max-md:h-fit"
     >
       <div className="absolute w-full h-full bg-black/40"></div>
       <div className="relative pt-56 px-10 mb-[4.5rem] flex flex-col gap-10 max-w-[1200px] max-md:items-center max-sm:pt-52 max-sm:px-7">
