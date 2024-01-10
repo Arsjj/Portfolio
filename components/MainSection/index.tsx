@@ -15,6 +15,7 @@ export default function MainSection() {
             src={photo}
             alt="Arsen"
             width={200}
+            priority
             className="rounded-full max-md:w-56 md:min-w-56"
           />
         </div>
