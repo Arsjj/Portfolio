@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@nextui-org/react";
@@ -11,14 +11,46 @@ type Props = {
 };
 
 export default function CardItem({ name, description, src, link }: Props) {
+  const ref = useRef()
   const openTab = (link: string) => {
     window.open(`${link}`, "_blank");
   };
+
+  const container = document.querySelector(".container"),
+    card = document.querySelector(".card"),
+    title = document.querySelector(".title"),
+    santa = document.querySelector(".santa"),
+    tree = document.querySelector(".tree");
+
+  // Card Rotate On Mouse Move
+  function mouseMove(rotate) {
+    let x = (innerWidth / 2 - rotate.pageX) / 15,
+      y = (innerHeight / 2 - rotate.pageY) / 15;
+    // ref.current.style.transform = "rotateY(" + x + "deg) rotateX(" + y + "deg)";
+  };
+
+  // Card effect on Mouse Over the card
+  // container.addEventListener("mouseover", () => {
+  //   title.style.transform = "translate3d(0, 0, 160px)";
+  //   santa.style.transform = "translate3d(0, 0, 220px)";
+  //   tree.style.transform = "translate3d(0, 0, 120px)";
+  //   card.style.transition = "all 0.1s ease";
+  // });
+
+  // // Card back to Normal when Mouse Out
+  // container.addEventListener("mouseout", () => {
+  //   card.style.transform = "rotateY(0deg) rotateX(0deg)";
+  //   card.style.transition = "all 0.5s ease";
+  //   title.style.transform = "translate3d(0, 0, 0)";
+  //   santa.style.transform = "translate3d(0, 0, 0)";
+  //   tree.style.transform = "translate3d(0, 0, 0)";
+  // });
 
   return (
     <div
       className="w-80 max-md:w-96 max-sm:w-[21rem] max-xsm:w-[90%] cursor-pointer hover:scale-[1.07] duration-250"
       onClick={() => openTab(link)}
+      onMouseMove={mouseMove}
     >
       <div className="relative w-full grid rounded-2xl overflow-hidden">
         <div className="absolute z-10 top-1 flex-col items-start">

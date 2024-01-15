@@ -8,7 +8,7 @@ function Footer() {
     <footer>
       <div className="w-full h-[3px] bg-[url('https://images5.alphacoders.com/448/thumbbig-448975.webp')]"></div>
       <div className="relative w-full max-w-[1920px] flex justify-center mx-auto">
-        <div className="flex items-center gap-3 p-[16px] text-orange fill-red-600">
+        <div className="flex items-center gap-3 p-[16px] text-orange/90 fill-red-600/90">
           All rights reserved
           <HeartFilled />
         </div>
@@ -16,18 +16,18 @@ function Footer() {
           <Link
             href="http://github.com/Arsjj"
             target="_blank"
-            className="fill-aqua hover:fill-aqua/70"
+            className="fill-aqua/90 hover:fill-aqua/70"
             aria-label="githab link"
           >
-            <GithubOutlined className="fill-amber-400" />
+            <GithubOutlined />
           </Link>
           <Link
             href="http://www.linkedin.com/in/arsen-abrahamyan-23269a248/"
             target="_blank"
-            className="fill-aqua hover:fill-aqua/70"
+            className="fill-aqua/90 hover:fill-aqua/70"
             aria-label="linkedin link"
           >
-            <LinkedinOutlined className="linkedin" />
+            <LinkedinOutlined/>
           </Link>
         </div>
       </div>
