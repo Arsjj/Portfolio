@@ -6,7 +6,7 @@ export default function MainSection() {
   return (
     <div
       id="home"
-      className="relative flex flex-col items-center bg-no-repeat bg-top bg-image h-[1000px] max-md:h-fit"
+      className="relative flex flex-col items-center bg-no-repeat bg-top max-md:bg-left bg-image h-[1000px] max-md:h-fit"
     >
       <div className="absolute max-w-[1920px] w-full h-full bg-black/40"></div>
       <div className="relative pt-56 px-10 mb-[4.5rem] flex flex-col gap-10 max-w-[1200px] max-md:items-center max-sm:pt-52 max-sm:px-7">
@@ -19,7 +19,8 @@ export default function MainSection() {
             className="rounded-full max-md:w-56 md:min-w-56"
           />
         </div>
-        <div className="relative my-5 text-lg md:rounded-2xl max-md:text-center">
+
+        <div className="text relative my-5 text-lg md:rounded-2xl max-md:text-center">
           <div className="relative z-0 text-white italic">
             <p className="text-2xl mb-5">Hi, my name is Arsen &#41;</p>
             <p className="text-orange text-xl pb-7 border-b-1 border-white/50">

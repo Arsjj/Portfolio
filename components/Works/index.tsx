@@ -20,7 +20,7 @@ export default function Works() {
         <p className="text-2xl text-orange text-center font-semibold">
           Projects
         </p>
-        <div className="flex flex-wrap pt-10 md:px-10 gap-5 mx-auto justify-center w-full max-w-screen-[1800px]">
+        <div className="flex flex-wrap pt-10 md:px-10 gap-7 mx-auto justify-center w-full max-w-screen-[1800px]">
           {data.map((item) => (
             <CardItem
               key={item.id}

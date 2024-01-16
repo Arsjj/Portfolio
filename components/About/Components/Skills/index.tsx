@@ -1,4 +1,4 @@
-import Skill from "./Skill/index.jsx";
+import Skill from "./Skill";
 import htmlImage from "./images/images.png";
 import sassImage from "./images/sass-1-logo.png";
 import jsImage from "./images/logo-javascript-logo.png";
