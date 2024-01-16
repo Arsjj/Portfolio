@@ -4,13 +4,13 @@ import { motion } from "framer-motion";
 function About() {
   return (
     <div id="about" className="w-full py-28">
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
-      >
-        <div className="w-full flex flex-col items-center gap-16 text-orange">
+      <div className="w-full flex flex-col items-center gap-16 text-orange">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
           <div className="px-2">
             <h2 className="text-2xl font-semibold text-center mb-6">
               Personal Details
@@ -47,12 +47,19 @@ function About() {
               </tbody>
             </table>
           </div>
-          <div>
+        </motion.div>
+        <div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
             <h2 className="text-2xl text-center font-semibold mb-6">Skills</h2>
             <Skills />
-          </div>
+          </motion.div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 }

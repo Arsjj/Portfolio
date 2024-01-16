@@ -2,8 +2,8 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import CardItem from "./Card";
 import { data } from "./Data";
+import Card from "./Card2";
 
 export default function Works() {
   return (
@@ -22,7 +22,7 @@ export default function Works() {
         </p>
         <div className="flex flex-wrap pt-10 md:px-10 gap-7 mx-auto justify-center w-full max-w-screen-[1800px]">
           {data.map((item) => (
-            <CardItem
+            <Card
               key={item.id}
               name={item.name}
               description={item.description}
