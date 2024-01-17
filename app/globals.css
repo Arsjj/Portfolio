@@ -62,7 +62,7 @@ body {
   transform: translate3d(0px, 0px, 50px);
 }
 
-.content-box .card-title:hover {
+.card-title {
   transform: translate3d(0px, 0px, 60px);
 }
 
