@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { data } from "./Data";
-import Card from "./Card2";
+import Card from "./Card";
 
 export default function Works() {
   return (
