@@ -28,7 +28,7 @@ export default function Card({ name, description, src, link }: Props) {
               alt="sd"
               className="z-0 object-cover rounded-t-2xl"
               src={src}
-              sizes="(max-width: 768px) 300px, (min-width: 768px) 350px"
+              sizes="(max-width: 768px) 250px, (min-width: 768px) 300px"
             />
           </div>
           <div className="relative flex w-full rounded-b-2xl items-center h-14 p-2 bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
