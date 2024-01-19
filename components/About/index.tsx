@@ -1,15 +1,25 @@
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Skills from "./Components/Skills";
-import { motion } from "framer-motion";
 
 function About() {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["0 1", "1.33 1"],
+  });
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.1, 1]);
+
   return (
     <div id="about" className="w-full py-28">
       <div className="w-full flex flex-col items-center gap-16 text-orange">
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
+          ref={ref}
+          style={{
+            scale: scaleProgress,
+            opacity: opacityProgress,
+          }}
         >
           <div className="px-2">
             <h2 className="text-2xl font-semibold text-center mb-6">
@@ -49,15 +59,7 @@ function About() {
           </div>
         </motion.div>
         <div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-2xl text-center font-semibold mb-6">Skills</h2>
-            <Skills />
-          </motion.div>
+          <Skills />
         </div>
       </div>
     </div>
