@@ -24,20 +24,20 @@ function Skills() {
         opacity: opacityProgress,
       }}
     >
-      <h2 className="text-2xl text-center font-semibold mb-6">Skills</h2>
+        <h2 className="text-2xl text-center font-semibold mb-6">Skills</h2>
 
-      <section className="flex flex-wrap gap-1 px-4 justify-center">
-        <Skill name="Html" src={htmlImage} />
-        <Skill name="Css" src="https://cdn.cdnlogo.com/logos/c/18/css.svg" />
-        <Skill name="Sass" src={sassImage} />
-        <Skill name="JavaScript" src={jsImage} />
-        <Skill name="React" src={reactImage} />
-        <Skill
-          name="Next"
-          src="https://seeklogo.com/images/N/next-js-icon-logo-EE302D5DBD-seeklogo.com.png"
-        />
-        <Skill name="TypeScript" src={tsImage} />
-      </section>
+        <section className="flex flex-wrap gap-1 px-4 justify-center pb-2">
+          <Skill name="Html" src={htmlImage} />
+          <Skill name="Css" src="https://cdn.cdnlogo.com/logos/c/18/css.svg" />
+          <Skill name="Sass" src={sassImage} />
+          <Skill name="JavaScript" src={jsImage} />
+          <Skill name="React" src={reactImage} />
+          <Skill
+            name="Next"
+            src="https://seeklogo.com/images/N/next-js-icon-logo-EE302D5DBD-seeklogo.com.png"
+          />
+          <Skill name="TypeScript" src={tsImage} />
+        </section>
     </motion.div>
   );
 }

@@ -12,7 +12,7 @@ function About() {
   const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.1, 1]);
 
   return (
-    <div id="about" className="w-full py-28">
+    <div id="about" className="w-full py-32">
       <div className="w-full flex flex-col items-center gap-16 text-orange">
         <motion.div
           ref={ref}
@@ -58,9 +58,7 @@ function About() {
             </table>
           </div>
         </motion.div>
-        <div>
           <Skills />
-        </div>
       </div>
     </div>
   );
