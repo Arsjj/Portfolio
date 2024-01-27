@@ -16,7 +16,7 @@ export default function MainSection() {
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
       >
-        <div className="relative pt-56 px-10 mb-[4.5rem] flex flex-col gap-10 max-w-[1200px] max-md:items-center max-sm:pt-52 max-sm:px-7">
+        <div className="relative mt-56 px-10 mb-[4.5rem] flex flex-col gap-10 max-w-[1200px] max-md:items-center max-sm:pt-52 max-sm:px-7">
           <div className="relative z-0">
             <Image
               src={photo}

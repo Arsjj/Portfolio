@@ -26,7 +26,7 @@ function Skills() {
     >
         <h2 className="text-2xl text-center font-semibold mb-6">Skills</h2>
 
-        <section className="flex flex-wrap gap-1 px-4 justify-center pb-2">
+        <section className="flex flex-wrap gap-1 px-4 justify-center pb-2 max-sm:gap-3">
           <Skill name="Html" src={htmlImage} />
           <Skill name="Css" src="https://cdn.cdnlogo.com/logos/c/18/css.svg" />
           <Skill name="Sass" src={sassImage} />
