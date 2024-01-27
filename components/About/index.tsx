@@ -13,7 +13,7 @@ function About() {
 
   return (
     <div id="about" className="w-full py-32">
-      <div className="w-full flex flex-col items-center gap-16 text-orange">
+      <div className="relative z-1 w-full flex flex-col items-center gap-16 text-orange">
         <motion.div
           ref={ref}
           style={{
