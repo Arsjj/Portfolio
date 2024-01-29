@@ -8,7 +8,7 @@ export default function MainSection() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["0px", "700px"],
+    offset: ["100px", "700px"],
   });
   const { scrollYProgress: scrollYProgressText } = useScroll({
     target: ref,
@@ -76,8 +76,6 @@ export default function MainSection() {
           <About />
         </div>
       </div>
-      {/* <div className="relative w-[90%] max-w-[1350px] border-b-8 border-orange/80 rounded-[35%] z-1 animate-opacity max-md:hidden"></div> */}
-      {/* <div className="relative w-[70%] max-w-[820px] border-[#27a7d9] border-b-8 rounded-[45%] z-1 animate-opacity max-md:hidden"></div> */}
     </div>
   );
 }

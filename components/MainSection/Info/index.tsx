@@ -5,13 +5,11 @@ import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function Info() {
-  const bgRef = useRef<HTMLDivElement>(null);
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["0px", "900px"],
   });
-  const scaleProgress = useTransform(scrollYProgress, [0, 1], [1, 1.6]);
   const opacityProgress = useTransform(scrollYProgress, [0, 1], [1, 0]);
   return (
     <motion.div
