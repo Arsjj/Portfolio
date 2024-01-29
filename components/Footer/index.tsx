@@ -17,7 +17,7 @@ function Footer() {
           <div className=" fill-transparent text-xs stroke-slate-800">
           </div>
         </div>
-        <div className="absolute max-xsm:relative max-xsm:my-auto right-0 top-0 h-full flex items-center text-[22px] gap-3 px-4">
+        <div className="absolute max-xsm:relative w-fit max-xsm:mb-3 max-xsm:mx-auto right-0 top-0 h-full flex items-center text-[22px] gap-3 px-4">
           <Link
             href="http://github.com/Arsjj"
             target="_blank"
@@ -33,8 +33,6 @@ function Footer() {
             aria-label="linkedin link"
           >
             <LinkedinOutlined />
-            {/* <div className="w-8 "> */}
-            {/* </div> */}
           </Link>
         </div>
       </div>
