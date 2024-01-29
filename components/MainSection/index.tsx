@@ -24,12 +24,15 @@ export default function MainSection() {
       id="home"
       className="relative perspective overflow-hidden flex flex-col items-center max-md:h-fit"
     >
+      <div className="md:hidden absolute z-10 max-w-[1920px] h-[1000px] bg-no-repeat bg-cover bg-left bg-image w-full bg-black/80">
+        <div className="absolute w-full h-full bg-black/50"></div>
+      </div>
       <motion.div
         style={{
           scale: scaleProgress,
           opacity: opacityProgress,
         }}
-        className="absolute z-10 max-w-[1920px] h-[900px] bg-no-repeat bg-cover  bg-top bg-image w-full bg-black/70"
+        className="max-md:hidden absolute z-10 max-w-[1920px] h-[900px] bg-no-repeat bg-cover  bg-top bg-image w-full bg-black/70"
       >
         <div className="absolute w-full h-full bg-black/40"></div>
       </motion.div>
@@ -38,7 +41,7 @@ export default function MainSection() {
         style={{
           opacity: opacityProgressText,
         }}
-        className="relative z-10 md:mt-64 px-10 md:mb-[4.5rem] flex flex-col gap-10 max-w-[1200px] max-md:items-center max-sm:pt-40 max-sm:px-7"
+        className="relative z-10 md:mt-56 px-10 md:mb-[4.5rem] flex flex-col gap-10 max-w-[1200px] max-md:items-center max-md:mb-28 max-sm:pt-40 max-sm:px-7"
       >
         <div className="relative z-0">
           <Image
@@ -71,10 +74,8 @@ export default function MainSection() {
           </div>
         </div>
       </motion.div>
-      <div className="w-full relative -z-10">
-        <div className="w-full relative -z-50 shadow-">
-          <About />
-        </div>
+      <div className="max-md:hidden">
+        <About />
       </div>
     </div>
   );

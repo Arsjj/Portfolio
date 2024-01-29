@@ -12,6 +12,9 @@ export default function Home() {
     <NextUIProvider>
       <Navigation />
       <MainSection />
+      <div className="md:hidden">
+        <About />
+      </div>
       <Works />
       <Footer />
     </NextUIProvider>
