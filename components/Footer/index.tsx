@@ -14,6 +14,8 @@ function Footer() {
             <Copyright />
             All rights reserved
           </div>
+          <div className=" fill-transparent text-xs stroke-slate-800">
+          </div>
         </div>
         <div className="absolute max-xsm:relative max-xsm:my-auto right-0 top-0 h-full flex items-center text-[22px] gap-3 px-4">
           <Link
@@ -31,6 +33,8 @@ function Footer() {
             aria-label="linkedin link"
           >
             <LinkedinOutlined />
+            {/* <div className="w-8 "> */}
+            {/* </div> */}
           </Link>
         </div>
       </div>

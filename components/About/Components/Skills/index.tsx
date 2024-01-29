@@ -24,7 +24,7 @@ function Skills() {
         opacity: opacityProgress,
       }}
     >
-        <h2 className="text-2xl text-center font-semibold mb-6">Skills</h2>
+        <h2 className="text-2xl text-center font-semibold mb-6 text-orange">Skills</h2>
 
         <section className="flex flex-wrap gap-1 px-4 justify-center pb-2">
           <Skill name="Html" src={htmlImage} />

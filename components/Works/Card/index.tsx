@@ -17,7 +17,7 @@ export default function Card({ name, description, src, link }: Props) {
 
   return (
     <div className="parent rounded-lg" onClick={() => openTab(link)}>
-      <div className="card rounded-2xl w-80 max-md:w-96 max-sm:w-[21rem] max-xsm:w-[90%] cursor-pointer ">
+      <div className="card rounded-2xl w-80 max-md:w-96 max-sm:w-[21rem] max-xsm:w-full cursor-pointer ">
         <div className="relative content-box rounded-2xl">
           <span className="absolute left-2 top-3 card-title text-white bg-black/50 rounded-r-lg p-2 px-3 font-medium">
             {name}
@@ -28,7 +28,7 @@ export default function Card({ name, description, src, link }: Props) {
               alt="sd"
               className="z-0 object-cover rounded-t-2xl"
               src={src}
-              sizes="(max-width: 768px) 250px, (min-width: 768px) 300px"
+              sizes="(max-width: 768px) 300px, (min-width: 768px) 300px"
             />
           </div>
           <div className="relative flex w-full rounded-b-2xl items-center h-14 p-2 bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">

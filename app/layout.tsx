@@ -26,7 +26,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <head>
+        <link
+          href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+          rel="stylesheet"
+        />
+      </head>
+      <body className={inter.className}>
+        {children}
+        <script
+          type="module"
+          src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+      </body>
     </html>
   );
 }

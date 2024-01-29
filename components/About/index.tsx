@@ -12,8 +12,8 @@ function About() {
   const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.1, 1]);
 
   return (
-    <div id="about" className="w-full py-32">
-      <div className="relative z-1 w-full flex flex-col items-center gap-16 text-orange">
+    <div id="about" className="w-full pt-20 py-32 max-md:py-32">
+      <div className="relative z-1 w-full flex flex-col items-center gap-16 text-white">
         <motion.div
           ref={ref}
           style={{
@@ -21,26 +21,38 @@ function About() {
             opacity: opacityProgress,
           }}
         >
-          <div className="px-2">
-            <h2 className="text-2xl font-semibold text-center mb-6">
+          <div className="px-1">
+            <div className="text-2xl font-semibold text-center mb-6 text-orange">
               Personal Details
-            </h2>
+            </div>
             <table className="text-[18px]">
               <tbody>
                 <tr>
-                  <td className="text-white">Name</td>
+                  <td className="flex text-white">
+                    <i className="bx bx-user mr-2 text-orange p-2 shadow-icon rounded-lg" />
+                    <div>Name</div>
+                  </td>
                   <td className="space">Arsen Abrahamyan</td>
                 </tr>
                 <tr>
-                  <td className="text-white">Date of birth</td>
+                  <td className="flex text-white">
+                    <i className="bx bx-calendar mr-2 text-orange p-2 shadow-icon rounded-lg" />
+                    <div>Date of birth</div>
+                  </td>
                   <td className="space">17.09.1991</td>
                 </tr>
                 <tr>
-                  <td className="text-white">Address</td>
+                  <td className="flex text-white">
+                    <i className="bx bx-home mr-2 text-orange p-2 shadow-icon rounded-lg" />
+                    <div>Address</div>
+                  </td>
                   <td className="space">Yeravan, Armenia</td>
                 </tr>
                 <tr>
-                  <td className="text-white">Email</td>
+                  <td className="flex text-white">
+                    <i className="bx bx-mail-send mr-2 text-orange p-2 shadow-icon rounded-lg" />
+                    <div>Email</div>
+                  </td>
                   <td className="space">
                     <a
                       className="text-[#61dafb]"
@@ -51,14 +63,17 @@ function About() {
                   </td>
                 </tr>
                 <tr>
-                  <td className="text-white">Phone number</td>
+                  <td className="flex text-white">
+                    <i className="bx bxs-phone-call mr-2 text-orange p-2 shadow-icon rounded-lg" />
+                    <div>Phone number</div>
+                  </td>
                   <td className="space">+37493331992</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </motion.div>
-          <Skills />
+        <Skills />
       </div>
     </div>
   );
