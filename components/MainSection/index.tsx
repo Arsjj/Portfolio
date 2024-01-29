@@ -41,7 +41,7 @@ export default function MainSection() {
         style={{
           opacity: opacityProgressText,
         }}
-        className="relative z-10 md:mt-56 px-10 md:mb-[4.5rem] flex flex-col gap-10 max-w-[1200px] max-md:items-center max-md:mb-28 max-sm:pt-40 max-sm:px-7"
+        className="max-md:hidden relative z-10 md:mt-56 px-10 md:mb-[4.5rem] flex flex-col gap-10 max-w-[1200px] max-md:items-center max-md:mb-28 max-sm:pt-40 max-sm:px-7"
       >
         <div className="relative z-0">
           <Image
@@ -74,6 +74,38 @@ export default function MainSection() {
           </div>
         </div>
       </motion.div>
+      <div className="md:hidden relative z-10 md:mt-56 px-10 md:mb-[4.5rem] flex flex-col gap-10 max-w-[1200px] max-md:items-center max-md:mb-28 max-sm:pt-40 max-sm:px-7">
+        <div className="relative z-0">
+          <Image
+            src={photo}
+            alt="Arsen"
+            width={200}
+            priority
+            className="rounded-full max-md:w-48 md:min-w-48"
+          />
+        </div>
+
+        <div className="relative text-lg md:rounded-xl max-md:text-center">
+          <div className="relative z-0 text-white/90 italic">
+            <p className="text-2xl mb-5">Hi, my name is Arsen &#41;</p>
+            <p className="text-orange text-xl pb-7 border-b-1 border-white/50">
+              Welcome to my page!
+            </p>
+            <div className="mt-7 text-lg shadow-text">
+              <p className="w-fit mb-2">
+                I fell in &#34;love&#34; with web programming and I have at
+                least learnt something, I think… 🤷‍♂️
+              </p>
+              <p>
+                Whenever possible, I apply my passion for developing products
+                with modern JS libraries and frameworks like React.js and
+                Next.js, experiment with Css technologies, explore new features
+                and so on...
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="max-md:hidden">
         <About />
       </div>
