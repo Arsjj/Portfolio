@@ -38,6 +38,10 @@ export default function MainSection() {
       </motion.div>
 
       <motion.div
+        initial={{ opacity: 0, x: 20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
         style={{
           opacity: opacityProgressText,
         }}
