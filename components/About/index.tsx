@@ -12,7 +12,7 @@ function About() {
   const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.1, 1]);
 
   return (
-    <div id="about" className="w-full pt-20 py-32 max-md:pt-32 max-md:pb-28">
+    <div id="about" className="w-full py-32 max-md:pt-32 max-md:pb-28">
       <div className="relative z-1 w-full flex flex-col items-center gap-16 text-white">
         <motion.div
           ref={ref}

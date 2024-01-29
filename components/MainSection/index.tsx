@@ -22,26 +22,19 @@ export default function MainSection() {
     <div
       ref={ref}
       id="home"
-      className="relative perspective overflow-hidden flex flex-col items-center max-md:h-fit"
+      className="relative perspective overflow-hidden flex flex-col h-[840px] items-center bg-no-repeat bg-cover bg-left bg-image max-md:h-fit"
     >
-      <div className="md:hidden absolute z-10 max-w-[1920px] h-[1000px] bg-no-repeat bg-cover bg-left bg-image w-full bg-black/80">
-        <div className="absolute w-full h-full bg-black/50"></div>
-      </div>
-      <motion.div
-        style={{
-          scale: scaleProgress,
-          opacity: opacityProgress,
-        }}
-        className="max-md:hidden absolute z-10 max-w-[1920px] h-[900px] bg-no-repeat bg-cover  bg-top bg-image w-full bg-black/70"
-      >
-        <div className="absolute w-full h-full bg-black/40"></div>
-      </motion.div>
+      <div className="absolute w-full h-full bg-black/50"></div>
 
       <motion.div
+        initial={{ opacity: 0, x: 20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
         style={{
           opacity: opacityProgressText,
         }}
-        className="max-md:hidden relative z-10 md:mt-56 px-10 md:mb-[4.5rem] flex flex-col gap-10 max-w-[1200px] max-md:items-center max-md:mb-28 max-sm:pt-40 max-sm:px-7"
+        className="max-md:hidden relative z-10 md:mt-52 px-10 md:mb-[4.5rem] flex flex-col gap-10 max-w-[1200px] max-md:items-center max-md:mb-32 max-sm:pt-40 max-sm:px-7"
       >
         <div className="relative z-0">
           <Image
@@ -74,7 +67,13 @@ export default function MainSection() {
           </div>
         </div>
       </motion.div>
-      <div className="md:hidden relative z-10 md:mt-56 px-10 md:mb-[4.5rem] flex flex-col gap-10 max-w-[1200px] max-md:items-center max-md:mb-28 max-sm:pt-40 max-sm:px-7">
+      <motion.div
+        initial={{ opacity: 0, x: 20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="md:hidden relative z-10 md:mt-56 px-10 md:mb-[4.5rem] flex flex-col gap-10 max-w-[1200px] max-md:items-center max-md:mb-28 max-sm:pt-40 max-sm:px-7"
+      >
         <div className="relative z-0">
           <Image
             src={photo}
@@ -105,10 +104,7 @@ export default function MainSection() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="max-md:hidden">
-        <About />
-      </div>
+      </motion.div>
     </div>
   );
 }
