@@ -22,7 +22,7 @@ export default function MainSection() {
     <div
       ref={ref}
       id="home"
-      className="relative perspective overflow-hidden flex flex-col h-[840px] items-center bg-center bg-no-repeat  max-md:bg-left max-md:h-fit"
+      className="relative perspective overflow-hidden flex flex-col h-[840px] items-center bg-center bg-no-repeat  max-md:bg-left bg-image max-md:h-fit"
     >
       <div className="absolute w-full h-full max-w-[1920px] bg-black/50"></div>
 
