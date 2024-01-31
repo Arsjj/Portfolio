@@ -1,6 +1,12 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Skills from "./Components/Skills";
+import IconContainer from "./Components/Skills/IconContainer";
+import User from "@/icons/User/Index";
+import Address from "@/icons/Address";
+import Calendar from "@/icons/Calendar";
+import Email from "@/icons/Email";
+import Phone from "@/icons/Phone";
 
 function About() {
   const ref = useRef<HTMLDivElement>(null);
@@ -29,28 +35,29 @@ function About() {
               <tbody>
                 <tr>
                   <td className="flex">
-                    <i className="bx bx-user bx-burst-hover mr-3 text-orange p-2 shadow-icon rounded-lg" />
+                    <IconContainer children={<User />} />
                     <div>Name</div>
                   </td>
                   <td className="space">Arsen Abrahamyan</td>
                 </tr>
                 <tr>
                   <td className="flex">
-                    <i className="bx bx-calendar bx-burst-hover mr-3 text-orange p-2 shadow-icon rounded-lg" />
+                    <IconContainer children={<Calendar />} />
                     <div>Date of birth</div>
                   </td>
                   <td className="space">17.09.1991</td>
                 </tr>
                 <tr>
                   <td className="flex">
-                    <i className="bx bx-home bx-burst-hover mr-3 text-orange p-2 shadow-icon rounded-lg" />
+                    <IconContainer children={<Address />} />
+
                     <div>Address</div>
                   </td>
                   <td className="space">Yeravan, Armenia</td>
                 </tr>
                 <tr>
                   <td className="flex">
-                    <i className="bx bx-mail-send bx-burst-hover mr-3 text-orange p-2 shadow-icon rounded-lg" />
+                    <IconContainer children={<Email />} />
                     <div>Email</div>
                   </td>
                   <td className="space">
@@ -64,7 +71,7 @@ function About() {
                 </tr>
                 <tr>
                   <td className="flex">
-                    <i className="bx bxs-phone-call bx-burst-hover  mr-3 text-orange p-2 shadow-icon rounded-lg" />
+                    <IconContainer children={<Phone />} />
                     <div>Phone number</div>
                   </td>
                   <td className="space">+37493331992</td>
