@@ -7,13 +7,15 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function MainSection() {
   const ref = useRef<HTMLDivElement>(null);
-  const width = (document.documentElement.clientWidth > 640)
+  let width 
+    if(document) {width = document.documentElement.clientWidth > 640? true: false}
   console.log(width)
 
   const { scrollYProgress: scrollYProgress } = useScroll({
     target: ref,
     offset: ["300px", "800px"],
   });
+
   const opacityProgress = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   return (
