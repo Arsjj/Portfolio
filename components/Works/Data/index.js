@@ -5,7 +5,7 @@ export const data = [
   {
     id: 1,
     name: "Netflix",
-    img: "https://hips.hearstapps.com/digitalspyuk.cdnds.net/15/13/movies-tron-legacy-olivia-wilde.jpg?resize=980:*",
+    img: "https://movies-umber-six.vercel.app/",
     description: "Something like Netflix with TMDB database",
     technologies: "React/ Sass",
     link: "https://two-ebon.vercel.app/",
