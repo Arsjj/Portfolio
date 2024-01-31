@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function MainSection() {
   const ref = useRef<HTMLDivElement>(null);
-  const width = (window.innerWidth > 640)
+  const width = (document.documentElement.clientWidth > 640)
   console.log(width)
 
   const { scrollYProgress: scrollYProgress } = useScroll({
