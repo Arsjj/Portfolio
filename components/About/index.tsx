@@ -35,21 +35,27 @@ function About() {
               <tbody>
                 <tr>
                   <td className="flex">
-                    <IconContainer children={<User />} />
+                    <IconContainer>
+                      <User />
+                    </IconContainer>
                     <div>Name</div>
                   </td>
                   <td className="space">Arsen Abrahamyan</td>
                 </tr>
                 <tr>
                   <td className="flex">
-                    <IconContainer children={<Calendar />} />
+                    <IconContainer>
+                      <Calendar />
+                    </IconContainer>
                     <div>Date of birth</div>
                   </td>
                   <td className="space">17.09.1991</td>
                 </tr>
                 <tr>
                   <td className="flex">
-                    <IconContainer children={<Address />} />
+                    <IconContainer>
+                      <Address />
+                    </IconContainer>
 
                     <div>Address</div>
                   </td>
@@ -57,7 +63,9 @@ function About() {
                 </tr>
                 <tr>
                   <td className="flex">
-                    <IconContainer children={<Email />} />
+                    <IconContainer>
+                      <Email />
+                    </IconContainer>
                     <div>Email</div>
                   </td>
                   <td className="space">
@@ -71,7 +79,9 @@ function About() {
                 </tr>
                 <tr>
                   <td className="flex">
-                    <IconContainer children={<Phone />} />
+                    <IconContainer>
+                      <Phone />
+                    </IconContainer>
                     <div>Phone number</div>
                   </td>
                   <td className="space">+37493331992</td>

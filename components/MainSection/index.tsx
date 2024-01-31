@@ -11,7 +11,6 @@ export default function MainSection() {
   if (typeof document !== "undefined") {
     width = document.documentElement.clientWidth > 640 ? true : false;
   }
-  console.log(width);
 
   const { scrollYProgress: scrollYProgress } = useScroll({
     target: ref,
