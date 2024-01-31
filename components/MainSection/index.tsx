@@ -24,7 +24,7 @@ export default function MainSection() {
       id="home"
       className="relative perspective overflow-hidden flex flex-col h-[840px] items-center bg-no-repeat bg-cover bg-left bg-image max-md:h-fit"
     >
-      <div className="absolute w-full h-full bg-black/50"></div>
+      <div className="absolute w-full h-full bg-black/30"></div>
 
       <motion.div
         initial={{ opacity: 0, x: 20 }}

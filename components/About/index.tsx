@@ -12,7 +12,7 @@ function About() {
   const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.1, 1]);
 
   return (
-    <div id="about" className="w-full py-32 max-md:pt-32 max-md:pb-28">
+    <div id="about" className="w-full py-32 max-md:pt-32 max-md:pb-28 shadow-icon">
       <div className="relative z-1 w-full flex flex-col items-center gap-16 text-white">
         <motion.div
           ref={ref}
@@ -29,28 +29,28 @@ function About() {
               <tbody>
                 <tr>
                   <td className="flex text-white">
-                    <i className="bx bx-user mr-2 text-orange p-2 shadow-icon rounded-lg" />
+                    <i className="bx bx-user bx-burst-hover mr-2 text-orange p-2 shadow-icon rounded-lg" />
                     <div>Name</div>
                   </td>
                   <td className="space">Arsen Abrahamyan</td>
                 </tr>
                 <tr>
                   <td className="flex text-white">
-                    <i className="bx bx-calendar mr-2 text-orange p-2 shadow-icon rounded-lg" />
+                    <i className="bx bx-calendar bx-burst-hover mr-2 text-orange p-2 shadow-icon rounded-lg" />
                     <div>Date of birth</div>
                   </td>
                   <td className="space">17.09.1991</td>
                 </tr>
                 <tr>
                   <td className="flex text-white">
-                    <i className="bx bx-home mr-2 text-orange p-2 shadow-icon rounded-lg" />
+                    <i className="bx bx-home bx-burst-hover mr-2 text-orange p-2 shadow-icon rounded-lg" />
                     <div>Address</div>
                   </td>
                   <td className="space">Yeravan, Armenia</td>
                 </tr>
                 <tr>
                   <td className="flex text-white">
-                    <i className="bx bx-mail-send mr-2 text-orange p-2 shadow-icon rounded-lg" />
+                    <i className="bx bx-mail-send bx-burst-hover mr-2 text-orange p-2 shadow-icon rounded-lg" />
                     <div>Email</div>
                   </td>
                   <td className="space">
@@ -64,7 +64,7 @@ function About() {
                 </tr>
                 <tr>
                   <td className="flex text-white">
-                    <i className="bx bxs-phone-call mr-2 text-orange p-2 shadow-icon rounded-lg" />
+                    <i className="bx bxs-phone-call bx-burst-hover  mr-2 text-orange p-2 shadow-icon rounded-lg" />
                     <div>Phone number</div>
                   </td>
                   <td className="space">+37493331992</td>
