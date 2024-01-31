@@ -33,7 +33,7 @@ export default function MainSection() {
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
         {...(width ? { style: { ...{ opacity: opacityProgress } } } : {})}
-        className="relative z-10 md:mt-52 px-10 md:mb-[4.5rem] flex flex-col gap-10 max-w-[1200px] max-md:items-center max-md:mb-32 max-md:pt-40 max-sm:px-7"
+        className="relative z-10 md:mt-52 px-10 md:mb-[4.5rem] flex flex-col gap-10 max-w-[1200px] max-md:items-center max-md:mb-32 max-md:pt-40 max-md:px-7 max-sm:px-4"
       >
         <div className="relative z-0">
           <Image

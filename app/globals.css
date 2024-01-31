@@ -36,7 +36,7 @@ body {
 
 @layer components {
   .space {
-    @apply py-[2px] pl-40 max-sm:pl-[10vw] max-xsm:pl-3;
+    @apply py-[2px] pl-40 max-sm:pl-[10vw];
   }
 }
 

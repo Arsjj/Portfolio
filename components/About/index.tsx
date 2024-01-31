@@ -31,7 +31,7 @@ function About() {
             <div className="text-2xl font-semibold text-center mb-6 text-orange">
               Personal Details
             </div>
-            <table className="text-[18px]">
+            <table className="text-[18px] max-sm:text-base">
               <tbody>
                 <tr>
                   <td className="flex">
