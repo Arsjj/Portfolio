@@ -21,35 +21,35 @@ function About() {
             opacity: opacityProgress,
           }}
         >
-          <div className="px-1">
+          <div className="px-1 text-white">
             <div className="text-2xl font-semibold text-center mb-6 text-orange">
               Personal Details
             </div>
             <table className="text-[18px]">
               <tbody>
                 <tr>
-                  <td className="flex text-white">
+                  <td className="flex">
                     <i className="bx bx-user bx-burst-hover mr-3 text-orange p-2 shadow-icon rounded-lg" />
                     <div>Name</div>
                   </td>
                   <td className="space">Arsen Abrahamyan</td>
                 </tr>
                 <tr>
-                  <td className="flex text-white">
+                  <td className="flex">
                     <i className="bx bx-calendar bx-burst-hover mr-3 text-orange p-2 shadow-icon rounded-lg" />
                     <div>Date of birth</div>
                   </td>
                   <td className="space">17.09.1991</td>
                 </tr>
                 <tr>
-                  <td className="flex text-white">
+                  <td className="flex">
                     <i className="bx bx-home bx-burst-hover mr-3 text-orange p-2 shadow-icon rounded-lg" />
                     <div>Address</div>
                   </td>
                   <td className="space">Yeravan, Armenia</td>
                 </tr>
                 <tr>
-                  <td className="flex text-white">
+                  <td className="flex">
                     <i className="bx bx-mail-send bx-burst-hover mr-3 text-orange p-2 shadow-icon rounded-lg" />
                     <div>Email</div>
                   </td>
@@ -63,7 +63,7 @@ function About() {
                   </td>
                 </tr>
                 <tr>
-                  <td className="flex text-white">
+                  <td className="flex">
                     <i className="bx bxs-phone-call bx-burst-hover  mr-3 text-orange p-2 shadow-icon rounded-lg" />
                     <div>Phone number</div>
                   </td>

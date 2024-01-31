@@ -15,7 +15,6 @@ export default function Works() {
         initial={{ opacity: 0, x: 70 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
-        // viewport={{ once: true }}
       >
         <p className="text-2xl text-orange text-center font-semibold">
           Projects
