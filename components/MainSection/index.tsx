@@ -7,9 +7,9 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function MainSection() {
   const ref = useRef<HTMLDivElement>(null);
-  let width 
-    if(document) {width = document.documentElement.clientWidth > 640? true: false}
-  console.log(width)
+  // let width 
+  //   if(document) {width = document.documentElement.clientWidth > 640? true: false}
+  // console.log(width)
 
   const { scrollYProgress: scrollYProgress } = useScroll({
     target: ref,
@@ -31,7 +31,7 @@ export default function MainSection() {
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
-        {... (width? {style: {...{opacity: opacityProgress}}}: {})}
+        // {... (width? {style: {...{opacity: opacityProgress}}}: {})}
         className="relative z-10 md:mt-52 px-10 md:mb-[4.5rem] flex flex-col gap-10 max-w-[1200px] max-md:items-center max-md:mb-32 max-sm:pt-40 max-sm:px-7"
       >
         <div className="relative z-0">
