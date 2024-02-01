@@ -1,4 +1,4 @@
-import img3 from "./images/2023-02-18 (8).png";
+import img3 from "./images/Screenshot210401.png";
 import img4 from "./images/2023-02-05 (5).png";
 
 export const data = [
@@ -18,14 +18,23 @@ export const data = [
     technologies: "Raect/ CSS",
     link: "https://eclectic-lolly-88cb4f.netlify.app/",
   },
+  // {
+  //   id: 3,
+  //   name: "Aim Game",
+  //   img: img3,
+  //   description: "How many circles do you can click?",
+  //   technologies: "HTML/ CSS/ JS",
+  //   link: "https://aim-training-97ab0b.netlify.app/",
+  // },
   {
     id: 3,
-    name: "Aim Game",
+    name: "quiz",
     img: img3,
-    description: "How many circles do you can click?",
-    technologies: "HTML/ CSS/ JS",
-    link: "https://aim-training-97ab0b.netlify.app/",
+    description: "Quiz app with connected to Opentdb api",
+    technologies: "React/ Axios/ NextUI",
+    link: "https://quiz-project-seven.vercel.app/"
   },
+
   {
     id: 4,
     name: "Meals online order",
