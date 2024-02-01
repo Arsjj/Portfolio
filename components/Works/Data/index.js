@@ -12,11 +12,11 @@ export const data = [
   },
   {
     id: 2,
-    name: "Image Sliders",
-    img: "https://images.unsplash.com/photo-1642201855395-1c8b44e6e42b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1780&q=80",
-    description: "Samples of image sliders",
-    technologies: "Raect/ CSS",
-    link: "https://eclectic-lolly-88cb4f.netlify.app/",
+    name: "Meals online order",
+    img: img4,
+    description: "Page of online food ordering system",
+    technologies: "React/ Redux",
+    link: "https://meals-28d0c2.netlify.app/",
   },
   // {
   //   id: 3,
@@ -28,19 +28,19 @@ export const data = [
   // },
   {
     id: 3,
-    name: "quiz",
+    name: "Quiz",
     img: img3,
-    description: "Quiz app with connected to Opentdb api",
+    description: "Quiz app connected to Opentdb api",
     technologies: "React/ Axios/ NextUI",
     link: "https://quiz-project-seven.vercel.app/"
   },
-
   {
     id: 4,
-    name: "Meals online order",
-    img: img4,
-    description: "Page of online food ordering system",
-    technologies: "React/ Redux",
-    link: "https://meals-28d0c2.netlify.app/",
+    name: "Image Sliders",
+    img: "https://images.unsplash.com/photo-1642201855395-1c8b44e6e42b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1780&q=80",
+    description: "Samples of image sliders",
+    technologies: "Raect/ CSS",
+    link: "https://eclectic-lolly-88cb4f.netlify.app/",
   },
+
 ];
