@@ -34,7 +34,7 @@ function About() {
             <table className="text-[18px] max-sm:text-base">
               <tbody>
                 <tr>
-                  <td className="flex">
+                  <td className="flex items-center">
                     <IconContainer>
                       <User />
                     </IconContainer>
@@ -43,7 +43,7 @@ function About() {
                   <td className="space">Arsen Abrahamyan</td>
                 </tr>
                 <tr>
-                  <td className="flex">
+                  <td className="flex items-center">
                     <IconContainer>
                       <Calendar />
                     </IconContainer>
@@ -52,7 +52,7 @@ function About() {
                   <td className="space">17.09.1991</td>
                 </tr>
                 <tr>
-                  <td className="flex">
+                  <td className="flex items-center">
                     <IconContainer>
                       <Address />
                     </IconContainer>
@@ -62,7 +62,7 @@ function About() {
                   <td className="space">Yeravan, Armenia</td>
                 </tr>
                 <tr>
-                  <td className="flex">
+                  <td className="flex items-center">
                     <IconContainer>
                       <Email />
                     </IconContainer>
@@ -78,7 +78,7 @@ function About() {
                   </td>
                 </tr>
                 <tr>
-                  <td className="flex">
+                  <td className="flex items-center">
                     <IconContainer>
                       <Phone />
                     </IconContainer>
