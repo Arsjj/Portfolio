@@ -1,4 +1,4 @@
-import img3 from "./images/Screenshot001824.webp";
+import img3 from "./images/screenshot001824.webp";
 import img4 from "./images/2023-02-05 (5).webp";
 import netflixImage from "./images/2023-01-28 (28).webp";
 import oasisImage from "./images/screenshot231632.webp";
