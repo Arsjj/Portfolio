@@ -16,15 +16,19 @@ export default function Navigation() {
         setScrollY(window.scrollY);
       };
 
-      window.addEventListener("scroll", handleScroll);
-      if (scrollY > 900) {
-        setbg(true);
-      } else {
-        setbg(false);
+      if (typeof window !== "undefined") {
+        window.addEventListener("scroll", handleScroll);
+        if (scrollY > 900) {
+          setbg(true);
+        } else {
+          setbg(false);
+        }
       }
 
       return () => {
-        window.removeEventListener("scroll", handleScroll);
+        if (typeof window !== "undefined") {
+          window.removeEventListener("scroll", handleScroll);
+        }
       };
     }
   }, [scrollY, width]);
