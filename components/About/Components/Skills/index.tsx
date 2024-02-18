@@ -30,7 +30,7 @@ function Skills() {
       </h2>
 
       <section className="flex flex-wrap gap-1 max-lg:px-32 max-md:px-14 max-sm:px-4 justify-center pb-2">
-        <Skill name="Html" src={htmlImage} />
+        <Skill name="Html" src={htmlImage}/>
         <Skill name="Css" src="https://cdn.cdnlogo.com/logos/c/18/css.svg" />
         <Skill
           name="Tailwind"
