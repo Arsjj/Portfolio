@@ -14,17 +14,11 @@ export default function Works() {
       <motion.div
         initial={{ opacity: 0, x: 70 }}
         whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.3 }}
+        transition={{ duration: 0.5 }}
       >
         <p className="text-2xl text-orange text-center font-semibold">
           Projects
         </p>
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0, x: 70 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5 }}
-      >
         <div className="flex flex-wrap pt-10 md:px-10 gap-7 mx-auto justify-center w-full max-w-screen-[1800px]">
           {data.map((item) => (
             <Card

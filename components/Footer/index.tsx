@@ -15,7 +15,7 @@ function Footer() {
             All rights reserved
           </div>
           <div className="flex mx-auto w-fit gap-2 px-1">
-            Made with Next / NextUI / Framer Motion
+            Made with Next / Tailwind / Framer Motion
           </div>
           <div className=" fill-transparent text-xs stroke-slate-800">
           </div>
