@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useState } from "react";
 import { Navbar, NavbarContent, NavbarItem, Link } from "@nextui-org/react";
 
