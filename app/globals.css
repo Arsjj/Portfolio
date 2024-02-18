@@ -50,8 +50,6 @@ body {
 }
 
 .parent {
-  min-width: 300px;
-  width: fit-content;
   perspective: 1000px;
 }
 
@@ -91,14 +89,4 @@ body {
 
 .content-box .card-content:hover {
   transform: translate3d(0px, 0px, 60px);
-}
-
-.gr {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(auto-fit, 326px);
-
-  @media (max-width: 1008px) {
-    grid-template-columns: repeat(auto-fit, 426px);
-  }
 }

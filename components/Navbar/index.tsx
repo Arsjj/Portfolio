@@ -5,7 +5,7 @@ export default function Navigation() {
   return (
     <Navbar
       shouldHideOnScroll 
-      className="h-14 bg-background/0 max-sm:bg-[#1B1B1D] backdrop-blur-none data-[menu-open=true]:backdrop-blur-none backdrop-saturate-150"
+      className="h-14 bg-background/0 max-lg:bg-[#1B1B1D] backdrop-blur-none data-[menu-open=true]:backdrop-blur-none backdrop-saturate-150"
     >
       <NavbarContent className="flex mx-auto gap-6 PX-0" justify="center">
         <NavbarItem>

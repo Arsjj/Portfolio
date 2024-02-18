@@ -23,7 +23,7 @@ export default function Card({
   };
 
   return (
-    <div className="parent rounded-lg" onClick={() => openTab(link)}>
+    <div className="parent max-sm:w-full flex justify-center rounded-lg" onClick={() => openTab(link)}>
       <div className="relative card rounded-2xl h-full w-80 max-xl:w-[360px] max-lg:w-80 max-md:w-96 max-sm:w-[21rem] max-xsm:w-full cursor-pointer ">
         <div className="relative flex flex-col h-full content-box rounded-2xl">
           <span className="absolute left-2 top-3 card-title text-white bg-black/50 rounded-r-lg p-2 px-3 font-medium">
