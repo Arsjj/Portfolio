@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
 import { Navbar, NavbarContent, NavbarItem, Link } from "@nextui-org/react";
 
@@ -12,19 +12,16 @@ export default function Navigation() {
 
   useEffect(() => {
     if (width) {
-      const handleScroll = () => {
-        setScrollY(window.scrollY);
-      };
-
       if (typeof window !== "undefined") {
+        const handleScroll = () => {
+          setScrollY(window.scrollY);
+        };
         window.addEventListener("scroll", handleScroll);
-      }
 
-      return () => {
-        if (typeof window !== "undefined") {
+        return () => {
           window.removeEventListener("scroll", handleScroll);
-        }
-      };
+        };
+      }
     }
   }, [width, scrollY]);
 
