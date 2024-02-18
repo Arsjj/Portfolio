@@ -8,17 +8,24 @@ type Props = {
   description: string;
   src: any;
   link: string;
+  technologies: string[];
 };
 
-export default function Card({ name, description, src, link }: Props) {
+export default function Card({
+  name,
+  description,
+  src,
+  link,
+  technologies,
+}: Props) {
   const openTab = (link: string) => {
     window.open(`${link}`, "_blank");
   };
 
   return (
     <div className="parent rounded-lg" onClick={() => openTab(link)}>
-      <div className="card rounded-2xl w-80 max-md:w-96 max-sm:w-[21rem] max-xsm:w-full cursor-pointer ">
-        <div className="relative content-box rounded-2xl">
+      <div className="relative card rounded-2xl h-full w-[340px] max-lg:w-96 max-sm:w-[21rem] max-xsm:w-full cursor-pointer ">
+        <div className="relative flex flex-col h-full content-box rounded-2xl">
           <span className="absolute left-2 top-3 card-title text-white bg-black/50 rounded-r-lg p-2 px-3 font-medium">
             {name}
           </span>
@@ -28,16 +35,27 @@ export default function Card({ name, description, src, link }: Props) {
               alt="sd"
               className="z-0 object-cover rounded-t-2xl"
               src={src}
-              sizes="(max-width: 640px) 270px, (min-width: 640px) 350px"
+              sizes="(max-width: 640px) 350px, (min-width: 640px) 700px"
             />
           </div>
-          <div className="relative flex w-full rounded-b-2xl items-center h-14 p-2 bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
-            <div className="flex flex-grow gap-2 items-center">
-              <div className="flex flex-col">
+          <div className="relative flex flex-1 w-full gap-[7px] rounded-b-2xl items-start p-2 bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
+            <div className="flex flex-grow h-full gap-2 items-center">
+              <div className="flex flex-col justify-between h-full">
                 <p className="text-tiny text-white/80">{description}</p>
+                <p className="text-tiny mt-2 text-white/80">
+                  {technologies.map((item) => (
+                    <span key={item} className="mr-[5px]">
+                      #{item}
+                    </span>
+                  ))}
+                </p>
               </div>
             </div>
-            <Link target="_blank" href={link}>
+            <Link
+              target="_blank"
+              href={link}
+              className="flex items-center h-full"
+            >
               <Button radius="full" size="sm">
                 Open
               </Button>

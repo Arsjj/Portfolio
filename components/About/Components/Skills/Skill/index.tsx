@@ -8,7 +8,7 @@ function Skill({ name, src }: { name: string; src: any }) {
           fill
           src={src}
           alt={name}
-          className="object-contain"
+          className="object-contain rounded-2xl"
           sizes="(max-width: 768px) 70px, (min-width: 768px) 100px"
         />
       </div>
