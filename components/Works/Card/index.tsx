@@ -40,9 +40,9 @@ export default function Card({
           </div>
           <div className="relative flex flex-1 w-full gap-[7px] rounded-b-2xl items-start p-2 bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
             <div className="flex flex-grow h-full gap-2 items-center">
-              <div className="flex flex-col justify-between h-full">
-                <p className="text-tiny text-white/80">{description}</p>
-                <p className="text-tiny mt-2 text-white/80">
+              <div className="flex flex-col h-full">
+                <p className="text-sm text-white/80">{description}</p>
+                <p className="text-[11px] mt-2 text-white/80">
                   {technologies.map((item) => (
                     <span key={item} className="mr-[5px]">
                       #{item}
