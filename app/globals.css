@@ -9,7 +9,12 @@ html {
 
 body {
   background-color: rgb(27, 27, 27);
-  background: linear-gradient( to bottom, rgb(30, 30, 30) 0%, transparent 5% ), linear-gradient( to bottom right, hsla(0, 0%, 25%, 0) 0%, hsla(0, 0%, 25%, 0) 60% );  
+  background: linear-gradient(to bottom, rgb(30, 30, 30) 0%, transparent 5%),
+    linear-gradient(
+      to bottom right,
+      hsla(0, 0%, 25%, 0) 0%,
+      hsla(0, 0%, 25%, 0) 60%
+    );
 }
 
 .bg-image {
@@ -17,7 +22,11 @@ body {
 }
 
 .bg-linear {
-  background: linear-gradient( to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50% );
+  background: linear-gradient(
+    to bottom right,
+    hsl(0, 0%, 25%) 0%,
+    hsla(0, 0%, 25%, 0) 50%
+  );
 }
 
 .animate-opacity {
@@ -82,4 +91,14 @@ body {
 
 .content-box .card-content:hover {
   transform: translate3d(0px, 0px, 60px);
+}
+
+.gr {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, 326px);
+
+  @media (max-width: 1008px) {
+    grid-template-columns: repeat(auto-fit, 426px);
+  }
 }
