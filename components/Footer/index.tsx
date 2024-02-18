@@ -9,12 +9,12 @@ function Footer() {
       <div className="w-full h-[3px] bg-[url('https://images5.alphacoders.com/448/thumbbig-448975.webp')]"></div>
       <div className="relative w-full max-w-[1920px] mx-auto">
         <div className="gap-3 p-3 text-white/70 text-xs fill-white/80">
-          <div className="flex mx-auto w-fit gap-2 px-1">
+          <div className="flex sm:mx-auto max-xsm:mx-auto w-fit gap-2 px-1">
             Copyright
             <Copyright />
             All rights reserved
           </div>
-          <div className="flex mx-auto w-fit gap-2 px-1">
+          <div className="flex sm:mx-auto max-xsm:mx-auto w-fit gap-2 px-1">
             Made with Next / Tailwind / Framer Motion
           </div>
           <div className=" fill-transparent text-xs stroke-slate-800">
