@@ -1,14 +1,14 @@
-"use client";
 import React, { useEffect, useState } from "react";
 import { Navbar, NavbarContent, NavbarItem, Link } from "@nextui-org/react";
 
 export default function Navigation() {
-  const [scrollY, setScrollY] = useState(window.scrollY);
+  const [scrollY, setScrollY] = useState(0);
 
   let width = false;
   if (typeof document !== "undefined") {
     width = document.documentElement.clientWidth > 640 ? true : false;
   }
+
 
   useEffect(() => {
     if (width) {
