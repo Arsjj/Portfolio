@@ -14,6 +14,9 @@ import react from './techs/react.png'
 import next from './techs//nextjs.png'
 import typescript from './techs/typescript.png'
 import git from './techs/git.png'
+import sass from "./techs/sass.png"
+import typescript_logo from "./techs/typescript_logo.png"
+import redux from './techs/redux.png'
 
 export {
   logo,
@@ -29,5 +32,8 @@ export {
   react,
   next,
   typescript,
-  git
+  git,
+  sass,
+  typescript_logo,
+  redux,
 };

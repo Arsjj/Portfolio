@@ -11,6 +11,7 @@ import Hero from "@/components/Hero";
 import Contact from "@/components/Contact";
 import { StarsCanvas } from "@/components/canvas";
 import About1 from "@/components/About1";
+import Works1 from "@/components/Works1";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       {/* <MainSection /> */}
       {/* <About /> */}
       <About1 />
+      <Works1 />
       <Works />
       <div className="relative z-0">
         <Contact />

@@ -1,4 +1,4 @@
-import { css, git, html, javascript, next, react, tailwind, typescript } from "@/assets";
+import { css, git, html, javascript, next, react, redux, sass, tailwind, typescript, typescript_logo } from "@/assets";
 
 export const navLinks = [
   {
@@ -44,12 +44,16 @@ const technologies = [
     icon: css,
   },
   {
+    name: "SCSS",
+    icon: sass,
+  },
+  {
     name: "JavaScript",
     icon: javascript,
   },
   {
     name: "TypeScript",
-    icon: typescript,
+    icon: typescript_logo,
   },
   {
     name: "React JS",
@@ -59,10 +63,10 @@ const technologies = [
     name: "Next JS",
     icon: next,
   },
-  // {
-  //   name: "Redux Toolkit",
-  //   icon: redux,
-  // },
+  {
+    name: "Redux Toolkit",
+    icon: redux,
+  },
   {
     name: "Tailwind CSS",
     icon: tailwind,
