@@ -1,29 +1,4 @@
-import {
-  mobile,
-  backend,
-  creator,
-  web,
-  javascript,
-  typescript,
-  html,
-  css,
-  reactjs,
-  redux,
-  tailwind,
-  nodejs,
-  mongodb,
-  git,
-  figma,
-  docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
-  carrent,
-  jobit,
-  tripguide,
-  threejs,
-} from "../assets";
+import { css, git, html, javascript, next, react, tailwind, typescript } from "@/assets";
 
 export const navLinks = [
   {
@@ -40,24 +15,24 @@ export const navLinks = [
   },
 ];
 
-const services = [
-  {
-    title: "Web Developer",
-    icon: web,
-  },
-  {
-    title: "React Native Developer",
-    icon: mobile,
-  },
-  {
-    title: "Backend Developer",
-    icon: backend,
-  },
-  {
-    title: "Content Creator",
-    icon: creator,
-  },
-];
+// const services = [
+//   {
+//     title: "Web Developer",
+//     icon: web,
+//   },
+//   {
+//     title: "React Native Developer",
+//     icon: mobile,
+//   },
+//   {
+//     title: "Backend Developer",
+//     icon: backend,
+//   },
+//   {
+//     title: "Content Creator",
+//     icon: creator,
+//   },
+// ];
 
 const technologies = [
   {
@@ -78,47 +53,35 @@ const technologies = [
   },
   {
     name: "React JS",
-    icon: reactjs,
+    icon: react,
   },
   {
-    name: "Redux Toolkit",
-    icon: redux,
+    name: "Next JS",
+    icon: next,
   },
+  // {
+  //   name: "Redux Toolkit",
+  //   icon: redux,
+  // },
   {
     name: "Tailwind CSS",
     icon: tailwind,
   },
   {
-    name: "Node JS",
-    icon: nodejs,
-  },
-  {
-    name: "MongoDB",
-    icon: mongodb,
-  },
-  {
-    name: "Three JS",
-    icon: threejs,
-  },
-  {
     name: "git",
     icon: git,
   },
-  {
-    name: "figma",
-    icon: figma,
-  },
-  {
-    name: "docker",
-    icon: docker,
-  },
+  // {
+  //   name: "figma",
+  //   icon: figma,
+  // },
 ];
 
 const experiences = [
   {
     title: "React.js Developer",
     company_name: "Starbucks",
-    icon: starbucks,
+    icon: "",
     iconBg: "#383E56",
     date: "March 2020 - April 2021",
     points: [
@@ -131,7 +94,7 @@ const experiences = [
   {
     title: "React Native Developer",
     company_name: "Tesla",
-    icon: tesla,
+    icon: "",
     iconBg: "#E6DEDD",
     date: "Jan 2021 - Feb 2022",
     points: [
@@ -144,7 +107,7 @@ const experiences = [
   {
     title: "Web Developer",
     company_name: "Shopify",
-    icon: shopify,
+    icon: "",
     iconBg: "#383E56",
     date: "Jan 2022 - Jan 2023",
     points: [
@@ -157,7 +120,7 @@ const experiences = [
   {
     title: "Full stack Developer",
     company_name: "Meta",
-    icon: meta,
+    icon: "",
     iconBg: "#E6DEDD",
     date: "Jan 2023 - Present",
     points: [
@@ -215,7 +178,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
+    image: "",
     source_code_link: "https://github.com/",
   },
   {
@@ -236,7 +199,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
+    image: "",
     source_code_link: "https://github.com/",
   },
   {
@@ -257,9 +220,9 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
+    image: "",
     source_code_link: "https://github.com/",
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { technologies, experiences, testimonials, projects };
