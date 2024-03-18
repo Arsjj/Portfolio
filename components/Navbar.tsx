@@ -5,6 +5,7 @@ import { styles } from "./styles";
 import { navLinks } from "../constants";
 import { logo, menu, close } from "../assets";
 import Image from "next/image";
+import User from "@/icons/User/Index";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
@@ -41,7 +42,10 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <Image src={logo} alt='logo' className='w-9 h-9 object-contain' />
+          {/* <Image src={logo} alt='logo' className='w-9 h-9 object-contain' /> */}
+          <div className="text-[#D4AF37] text-xl">
+            <User />
+          </div>
           <p className='text-white text-[18px] font-bold cursor-pointer flex '>
             Portfolio
           </p>

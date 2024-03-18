@@ -2,11 +2,15 @@ import { css, git, html, javascript, next, react, redux, sass, tailwind, typescr
 
 export const navLinks = [
   {
+    id: "home",
+    title: "Home",
+  },
+  {
     id: "about",
     title: "About",
   },
   {
-    id: "work",
+    id: "projects",
     title: "Work",
   },
   {
@@ -36,11 +40,11 @@ export const navLinks = [
 
 const technologies = [
   {
-    name: "HTML 5",
+    name: "HTML",
     icon: html,
   },
   {
-    name: "CSS 3",
+    name: "CSS",
     icon: css,
   },
   {
@@ -72,7 +76,7 @@ const technologies = [
     icon: tailwind,
   },
   {
-    name: "git",
+    name: "Git",
     icon: git,
   },
   // {

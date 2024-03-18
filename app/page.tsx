@@ -15,7 +15,7 @@ import Works1 from "@/components/Works1";
 
 export default function Home() {
   return (
-    <NextUIProvider>
+    <>
       <Navbar />
       {/* <Navigation /> */}
       <div className="bg-hero-pattern bg-image bg-cover bg-no-repeat bg-center">
@@ -25,12 +25,12 @@ export default function Home() {
       {/* <About /> */}
       <About1 />
       <Works1 />
-      <Works />
+      {/* <Works /> */}
       <div className="relative z-0">
         <Contact />
         <StarsCanvas />
       </div>
       <Footer />
-    </NextUIProvider>
+    </>
   );
 }

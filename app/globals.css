@@ -26,15 +26,17 @@ body {
 
 .animate-opacity {
   animation-name: na;
-  animation-duration: 1500ms;
+  animation-duration: 700ms;
 }
 
 @keyframes na {
   from {
     opacity: 0;
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -45,8 +47,6 @@ body {
 }
 
 .parent {
-  min-width: 300px;
-  width: fit-content;
   perspective: 1000px;
 }
 

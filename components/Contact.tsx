@@ -1,6 +1,9 @@
+"use client"
+
 import React, { ChangeEventHandler, FormEventHandler, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from 'react-toastify';
 
 import { styles } from "./styles";
 import { EarthCanvas } from "./canvas";
@@ -9,13 +12,12 @@ import { slideIn } from "../utils/motion";
 
 const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null);
+  const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
     name: "",
     email: "",
     message: "",
   });
-
-  const [loading, setLoading] = useState(false);
 
   const handleChange: ChangeEventHandler<
     HTMLInputElement | HTMLTextAreaElement
@@ -29,33 +31,41 @@ const Contact = () => {
     });
   };
 
+  const service = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
+  const templete = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+  const key = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+
+  console.log(service, templete, key)
+
   const handleSubmit: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
     setLoading(true);
 
-    const {
-      VITE_APP_EMAILJS_SERVICE_ID,
-      VITE_APP_EMAILJS_TEMPLATE_ID,
-      VITE_APP_EMAILJS_PUBLIC_KEY,
-    } = process.env;
+
+    if (!form.name || !form.email || !form.message) {
+      toast("Please enter")
+      alert("This isn't working");
+      setLoading(false);
+      return
+    }
 
     if (
-      VITE_APP_EMAILJS_SERVICE_ID &&
-      VITE_APP_EMAILJS_TEMPLATE_ID &&
-      VITE_APP_EMAILJS_PUBLIC_KEY
+      service &&
+      templete &&
+      key
     ) {
       emailjs
         .send(
-          VITE_APP_EMAILJS_SERVICE_ID,
-          VITE_APP_EMAILJS_TEMPLATE_ID,
+          service,
+          templete,
           {
             from_name: form.name,
-            to_name: "MNM Metal",
+            to_name: "Arsen",
             from_email: form.email,
-            to_email: "info@mnm-metal.com",
+            to_email: "arsjj7@gmail.com",
             message: form.message,
           },
-          VITE_APP_EMAILJS_PUBLIC_KEY
+          key
         )
         .then(
           () => {
@@ -76,13 +86,13 @@ const Contact = () => {
           }
         );
     }
-
     setLoading(false);
   };
 
 
   return (
     <div
+      id="contact"
       className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}
     >
       <motion.div
@@ -90,7 +100,7 @@ const Contact = () => {
         className="flex-[0.75] bg-black/30 backdrop-blur-sm p-8 rounded-2xl min-w-[512px]"
       >
         <p className={styles.sectionSubText}>Get in touch</p>
-        <h3 className={styles.sectionHeadText}>Contact.</h3>
+        <h3 className={styles.sectionHeadText}>Contact Me</h3>
 
         <form
           ref={formRef}
@@ -105,7 +115,6 @@ const Contact = () => {
               name="name"
               value={form.name}
               onChange={handleChange}
-              placeholder="What's your good name?"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary/30 text-white rounded-lg outline-none border-none font-medium"
             />
           </label>
@@ -117,7 +126,6 @@ const Contact = () => {
               name="email"
               value={form.email}
               onChange={handleChange}
-              placeholder="What's your web address?"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary/30 text-white rounded-lg outline-none border-none font-medium"
             />
           </label>
@@ -129,7 +137,6 @@ const Contact = () => {
               name="message"
               value={form.message}
               onChange={handleChange}
-              placeholder="What you want to say?"
               className="bg-tertiary py-4 px-6 placeholder:text-secondary/30 text-white rounded-lg outline-none border-none font-medium"
             />
           </label>
