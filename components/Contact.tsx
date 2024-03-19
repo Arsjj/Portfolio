@@ -43,7 +43,7 @@ const Contact = () => {
 
 
     if (!form.name || !form.email || !form.message) {
-      alert("This isn't working");
+      alert("This trick isn't working");
       setLoading(false);
       return
     }
