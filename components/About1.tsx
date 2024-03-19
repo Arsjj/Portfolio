@@ -10,7 +10,7 @@ import { styles } from "./styles";
 
 
 const ServiceCard = ({ index, name, icon }: { index: number, name: string, icon: any }) => (
-  <Tilt className="sm:w-[140px] w-full duration-100"
+  <Tilt className="sm:w-[140px] max-sm:w-[100px] w-full duration-100"
     options={{
       max: 45,
       scale: 1,
@@ -21,15 +21,15 @@ const ServiceCard = ({ index, name, icon }: { index: number, name: string, icon:
       // variants={fadeIn("right", "spring", index * 0.5, 0.75)}
       className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
     >
-      <div className="bg-tertiary rounded-[20px] py-5  min-h-[170px] flex justify-evenly items-center flex-col">
+      <div className="bg-tertiary rounded-[20px] py-5  min-h-[170px] max-sm:min-h-[130px] flex justify-evenly items-center flex-col">
         <Image
           src={icon || ""}
           width={100}
           height={100}
           alt={name}
-          className="w-14 h-14 object-cover"
+          className="w-14 h-14 max-sm:w-10 max-sm:h-10 object-cover"
         />
-        <h3 className="text-white font-bold text-center">
+        <h3 className="text-white font-bold text-center max-sm:text-xs max-sm:font-semibold">
           {name}
         </h3>
       </div>
@@ -64,7 +64,7 @@ const About = () => {
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className="mt-8 text-white text-xl">Technologies I have worked with</motion.p>
+        className="mt-8 text-white sm:text-xl">Technologies I have worked with</motion.p>
       <motion.div className="w-full max-w-5xl mt-10 flex flex-wrap justify-center gap-10"
         // variants={fadeIn("right", "spring")}
         // variants={fadeIn("", "", 0.1, 1)}

@@ -5,10 +5,10 @@ import { Copyright } from "@/icons/Copyright";
 
 function Footer() {
   return (
-    <footer className="bg-black p-3 border-t border-t-white/20">
+    <footer className="bg-black py-2 border-t border-t-white/20">
       <div className="relative w-full max-w-7xl mx-auto">
         <div className="gap-3 p-3 text-white/70 text-xs fill-white/80">
-          <div className="flex mx-auto w-fit gap-2 px-1">
+          <div className="flex w-fit gap-2 px-1">
             Copyright
             <Copyright />
             All rights reserved

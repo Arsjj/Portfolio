@@ -6,6 +6,8 @@ import { navLinks } from "../constants";
 import { logo, menu, close } from "../assets";
 import Image from "next/image";
 import User from "@/icons/User/Index";
+import { motion } from "framer-motion";
+
 
 const Navbar = () => {
   const [active, setActive] = useState("");
@@ -43,7 +45,7 @@ const Navbar = () => {
           }}
         >
           {/* <Image src={logo} alt='logo' className='w-9 h-9 object-contain' /> */}
-          <div className="text-[#D4AF37] text-xl">
+          <div className="text-[#D4AF37] text-lg relative -top-[1px]">
             <User />
           </div>
           <p className='text-white text-[18px] font-bold cursor-pointer flex '>
@@ -64,19 +66,23 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <div className='sm:hidden flex flex-1 justify-end items-center'>
+        <div className='sm:hidden flex flex-1 justify-end items-center'
+        >
           <Image
             src={toggle ? close : menu}
             alt='menu'
-            className='w-[28px] h-[28px] object-contain'
+            className='animate-opacity duration-250 w-[28px] h-[28px] object-contain relative z-20 cursor-pointer'
             onClick={() => setToggle(!toggle)}
           />
 
-          <div
-            className={`${!toggle ? "hidden" : "flex"
-              } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className={`${!toggle ? "translate-x-[110%]" : "flex"
+              } duration-500 p-6 black-gradient absolute -top-2 right-0 mx-4 my-2 min-w-[140px] w-full z-10 rounded-xl`}
           >
-            <ul className='list-none flex justify-end items-start flex-1 flex-col gap-4'>
+            <ul className='list-none flex justify-end items-center flex-1 flex-col gap-4 py-10'>
               {navLinks.map((nav) => (
                 <li
                   key={nav.id}
@@ -91,7 +97,7 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
         </div>
       </div>
     </nav>
