@@ -2,14 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color-scheme: dark;
+}
+
 html {
   scroll-behavior: smooth;
-  background-color:  rgb(8 9 15) !important;
+  background-color:  black !important;
 }
 
 body {
   background-color:  rgb(8 9 15) !important;
-   
 }
 
 .bg-image {
@@ -80,15 +87,6 @@ body {
   transform: translate3d(0px, 0px, 60px);
 }
 
-
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-  color-scheme: dark;
-}
 
 .hash-span {
   margin-top: -100px;

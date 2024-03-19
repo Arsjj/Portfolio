@@ -3,12 +3,12 @@
 import React, { ChangeEventHandler, FormEventHandler, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import { ToastContainer, toast } from 'react-toastify';
 
 import { styles } from "../styles";
 import { EarthCanvas } from "../canvas";
 import { SectionWrapper } from "../../hoc";
 import { slideIn } from "../../utils/motion";
+import { toast } from "react-hot-toast";
 
 const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null);
@@ -41,7 +41,7 @@ const Contact = () => {
 
 
     if (!form.name || !form.email || !form.message) {
-      alert("This trick isn't working");
+      toast.error("This trick isn't working")
       setLoading(false);
       return
     }
@@ -67,7 +67,7 @@ const Contact = () => {
         .then(
           () => {
             setLoading(false);
-            alert("Thank you. We will get back to you as soon as possible.");
+            toast.success("Thank you. We will get back to you as soon as possible.");
 
             setForm({
               name: "",
@@ -78,8 +78,7 @@ const Contact = () => {
           (error) => {
             setLoading(false);
             console.error(error);
-
-            alert("Ahh, something went wrong. Please try again.");
+            toast.error("Ahh, something went wrong. Please try again.");
           }
         );
     }
@@ -141,10 +140,11 @@ const Contact = () => {
           <button
             type="submit"
             style={{ border: "1px solid #ffffff14" }}
-            className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold"
+            className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold active:bg-white/10"
           >
             {loading ? "Sending..." : "Send"}
           </button>
+
         </form>
       </motion.div>
 

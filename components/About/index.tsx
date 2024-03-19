@@ -66,7 +66,7 @@ const About = () => {
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-8 text-white sm:text-xl">Technologies I have worked with</motion.p>
-      <motion.div className="w-full max-w-5xl mt-10 flex flex-wrap justify-center gap-10 max-sm:gap-5 max-xsm:gap-4"
+      <motion.div className="w-full max-w-5xl mx-auto mt-10 flex flex-wrap justify-center gap-10 max-sm:gap-5 max-xsm:gap-4"
         // variants={fadeIn("right", "spring")}
         // variants={fadeIn("", "", 0.1, 1)}
         initial={{ opacity: 0, x: -70 }}

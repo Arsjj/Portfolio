@@ -1,10 +1,11 @@
-import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Contact from "@/components/Contact";
 import About from "@/components/About";
+import Contact from "@/components/Contact";
 import Works from "@/components/Works";
+import Footer from "@/components/Footer";
 import { StarsCanvas } from "@/components/canvas";
+import { Toaster } from "react-hot-toast";
 
 export default function Home() {
   return (
@@ -15,6 +16,10 @@ export default function Home() {
       </div>
       <About />
       <Works />
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+      />
       <div className="relative z-0">
         <Contact />
         <StarsCanvas />

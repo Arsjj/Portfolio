@@ -60,7 +60,7 @@ export default function Card({
               href={link}
               className="flex mt-2 w-full justify-end items-end"
             >
-              <button className="p-2 z-0 text-xs rounded-lg relative items-center justify-center box-border   bg-transparent text-white border border-transparent border-b-white">
+              <button className="p-2 z-0 text-xs rounded-lg relative items-center justify-center box-border bg-transparent text-white border border-transparent border-b-white duration-100 hover:text-white/80">
                 Discover more
               </button>
             </Link>
