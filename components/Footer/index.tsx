@@ -21,7 +21,7 @@ function Footer() {
           <Link
             href="http://github.com/Arsjj"
             target="_blank"
-            className="fill-secondary hover:fill-secondary/70"
+            className="fill-white/80 hover:fill-white/70"
             aria-label="githab link"
           >
             <GithubOutlined />
@@ -29,7 +29,7 @@ function Footer() {
           <Link
             href="http://www.linkedin.com/in/arsen-abrahamyan-23269a248/"
             target="_blank"
-            className="fill-secondary hover:fill-secondary/70"
+            className="fill-white/80 hover:fill-white/70"
             aria-label="linkedin link"
           >
             <LinkedinOutlined />

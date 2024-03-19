@@ -1,3 +1,5 @@
+"use client"
+
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { useState } from "react";
 import { useScroll } from "framer-motion";

@@ -1,26 +1,23 @@
-"use client";
+"use client"
 
 import React from "react";
-import { motion } from "framer-motion";
-import { data } from "./Data";
 import Card from "./Card";
 
-export default function Works() {
+import { motion } from "framer-motion";
+import { data } from "./Data";
+import { SectionWrapper } from "../../hoc";
+import { fadeIn, textVariant } from "../../utils/motion";
+import { styles } from ".././styles";
+
+const Works = () => {
   return (
-    <div
-      id="projects"
-      className="relative overflow-hidden grid w-full justify-items-center pb-28"
-    >
-      <motion.div
-        initial={{ opacity: 0, x: 70 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <p className="text-2xl text-orange text-center font-semibold">
-          Projects
-        </p>
-        <div className="flex flex-wrap pt-10 md:px-10 gap-7 mx-auto justify-center w-full max-w-screen-[1800px]">
-          {data.map((item) => (
+    <>
+      <motion.div id="projects" variants={textVariant()}>
+        <h2 className={`${styles.sectionHeadText}`} >Projects</h2>
+      </motion.div>
+      <div className="mt-10 flex flex-wrap gap-10 justify-center max-sm:w-full">
+        {data.map((item, index) => (
+          <motion.div key={item.id} variants={fadeIn("up", "spring", index * 0.5, 0.75)} className="max-sm:w-full">
             <Card
               key={item.id}
               name={item.name}
@@ -30,9 +27,11 @@ export default function Works() {
               technologies={item.technologies}
               tags={item.tags}
             />
-          ))}
-        </div>
-      </motion.div>
-    </div>
+          </motion.div>
+        ))}
+      </div>
+    </>
   );
-}
+};
+
+export default SectionWrapper(Works, "");
