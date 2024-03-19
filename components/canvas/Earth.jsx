@@ -22,9 +22,9 @@ const Earth = () => {
   });
 
   const [color, normal, aoMap] = useLoader(TextureLoader, [
-    "./earth/color.jpg",
-    "./earth/normal.png",
-    "./earth/occlusion.jpg",
+    "./earth/color.webp",
+    "./earth/normal.webp",
+    "./earth/occlusion.webp",
   ]);
 
   return (
