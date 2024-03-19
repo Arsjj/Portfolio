@@ -32,7 +32,7 @@ const Hero = () => {
           alt="pic" width={400}
           height={400}
           className="w-96 max-sm:w-80 max-xsm:w-4/5 saturate-[0.8]"
-          sizes="(max-width: 640px) 350px, (min-width: 640px) 700px"
+          // sizes="(max-width: 640px) 350px, (min-width: 640px) 700px"
         />
       </div>
 
