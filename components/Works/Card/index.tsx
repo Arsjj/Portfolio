@@ -24,7 +24,7 @@ export default function Card({
   };
 
   return (
-    <div className="parent max-sm:w-full h-full min-h-[340px] flex justify-center rounded-lg" onClick={() => openTab(link)}>
+    <div className="parent group max-sm:w-full h-full min-h-[340px] flex justify-center rounded-lg" onClick={() => openTab(link)}>
       <div className="relative p-4 bg-black card rounded-2xl h-full w-[350px] max-sm:w-full max-xl:w-[360px] max-lg:w-80 max-md:w-96 cursor-pointer ">
         <div className="relative flex flex-col h-full content-box rounded-2xl">
           <span className="absolute left-2 top-3 card-title text-white bg-black/50 rounded-r-lg p-2 px-3 font-medium">
@@ -42,7 +42,7 @@ export default function Card({
           <div className="relative flex flex-col flex-1 w-full gap-[7px] rounded-b-2xl py-2 bg-black/40 bottom-0 z-10 border-default-600 dark:border-default-100">
             <div className="flex flex-1 flex-grow h-full gap-2 items-center">
               <div className="flex flex-col justify-between h-full">
-                <p className="mt-2 text-secondary">{description}</p>
+                <p className="mt-2 text-secondary group-hover:text-white duration-700">{description}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {tags?.map((tag: any) => (
                     <p
