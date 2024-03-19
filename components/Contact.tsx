@@ -43,7 +43,6 @@ const Contact = () => {
 
 
     if (!form.name || !form.email || !form.message) {
-      toast("Please enter")
       alert("This isn't working");
       setLoading(false);
       return

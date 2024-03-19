@@ -1,7 +1,4 @@
-import { motion } from "framer-motion";
 import { styles } from "./styles";
-import photo from "../components/MainSection/photo/a7.jpg";
-import photo1 from "../assets/IMG.png";
 
 import Image from "next/image";
 

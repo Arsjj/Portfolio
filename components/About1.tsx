@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import Image from "next/image";
 import { Tilt } from "react-tilt";
@@ -10,7 +11,7 @@ import { styles } from "./styles";
 
 
 const ServiceCard = ({ index, name, icon }: { index: number, name: string, icon: any }) => (
-  <Tilt className="sm:w-[140px] max-sm:w-[100px] w-full duration-100"
+  <Tilt className="sm:w-[140px] max-sm:w-[100px] max-xsm-[80px] w-full duration-100"
     options={{
       max: 45,
       scale: 1,
@@ -21,13 +22,13 @@ const ServiceCard = ({ index, name, icon }: { index: number, name: string, icon:
       // variants={fadeIn("right", "spring", index * 0.5, 0.75)}
       className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
     >
-      <div className="bg-tertiary rounded-[20px] py-5  min-h-[170px] max-sm:min-h-[130px] flex justify-evenly items-center flex-col">
+      <div className="bg-tertiary rounded-[20px] py-5  min-h-[170px] max-sm:min-h-[130px] max-xsm-[min-h-100px] flex justify-evenly items-center flex-col">
         <Image
           src={icon || ""}
           width={100}
           height={100}
           alt={name}
-          className="w-14 h-14 max-sm:w-10 max-sm:h-10 object-cover"
+          className="w-14 h-14 max-sm:w-10 max-sm:h-10 max-xsm:w-9 max-xsm-h-9 object-cover"
         />
         <h3 className="text-white font-bold text-center max-sm:text-xs max-sm:font-semibold">
           {name}
@@ -65,7 +66,7 @@ const About = () => {
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-8 text-white sm:text-xl">Technologies I have worked with</motion.p>
-      <motion.div className="w-full max-w-5xl mt-10 flex flex-wrap justify-center gap-10"
+      <motion.div className="w-full max-w-5xl mt-10 flex flex-wrap justify-center gap-10 max-sm:gap-5 max-xsm:gap-4"
         // variants={fadeIn("right", "spring")}
         // variants={fadeIn("", "", 0.1, 1)}
         initial={{ opacity: 0, x: -70 }}

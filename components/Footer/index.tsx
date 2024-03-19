@@ -17,7 +17,7 @@ function Footer() {
             Made with Next / Tailwind / Framer Motion
           </div> */}
         </div>
-        <div className="absolute max-xsm:relative w-fit max-xsm:mb-3 max-xsm:mx-auto right-0 top-0 h-full flex items-center text-[22px] gap-3 px-4">
+        <div className="absolute w-fit right-0 top-0 h-full flex items-center text-[22px] gap-3 px-4">
           <Link
             href="http://github.com/Arsjj"
             target="_blank"

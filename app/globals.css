@@ -4,20 +4,16 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: rgba(27, 27, 27, 7) !important;
   background-color:  rgb(8 9 15) !important;
 }
 
 body {
-  background-color: rgb(27, 27, 27);
-  background: linear-gradient( to bottom, rgb(30, 30, 30) 0%, transparent 5% ), linear-gradient( to bottom right, hsla(0, 0%, 25%, 0) 0%, hsla(0, 0%, 25%, 0) 60% );  
   background-color:  rgb(8 9 15) !important;
    
 }
 
 .bg-image {
-  /* background-image: url("../public/image.webp"); */
-  background-image: url("../assets/herobg1.png");
+  background-image: url("../assets/herobg1.webp");
 }
 
 .bg-linear {
