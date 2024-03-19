@@ -19,7 +19,6 @@ const Hero = () => {
             Hi, I am <span className='text-[#D4AF37]'>Arsen Abrahamyan</span>
           </h1>
           <div>
-
             <p className={`${styles.heroSubText} mt-2 text-white-100`}>
               I develop web applications and user interfaces
             </p>
@@ -28,7 +27,13 @@ const Hero = () => {
         </div>
       </div>
       <div className="animate-opacity absolute top-[400px] max-sm:relative max-sm:top-0  w-full flex justify-center">
-        <Image src={stackoverflow} alt="pic" width={400} height={400} className="w-96 max-sm:w-80 max-xsm:w-4/5 saturate-[0.8]"/>
+        <Image
+          src={stackoverflow}
+          alt="pic" width={400}
+          height={400}
+          className="w-96 max-sm:w-80 max-xsm:w-4/5 saturate-[0.8]"
+          sizes="(max-width: 640px) 350px, (min-width: 640px) 700px"
+        />
       </div>
 
 
