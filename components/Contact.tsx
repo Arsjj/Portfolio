@@ -35,8 +35,6 @@ const Contact = () => {
   const templete = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
   const key = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
 
-  console.log(service, templete, key)
-
   const handleSubmit: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
     setLoading(true);
