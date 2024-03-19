@@ -6,9 +6,9 @@ import Image from "next/image";
 import User from "@/icons/User/Index";
 
 import { motion } from "framer-motion";
-import { navLinks } from "../constants";
-import { menu, close } from "../assets";
-import { styles } from "./styles";
+import { navLinks } from "../../constants";
+import { menu, close } from "../../assets";
+import { styles } from "../styles";
 
 
 const Navbar = () => {

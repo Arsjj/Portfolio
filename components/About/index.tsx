@@ -4,10 +4,10 @@ import React from "react";
 import Image from "next/image";
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
-import { SectionWrapper } from "../hoc";
-import { fadeIn, textVariant } from "../utils/motion";
+import { SectionWrapper } from "../../hoc";
+import { fadeIn, textVariant } from "../../utils/motion";
 import { technologies } from "@/constants";
-import { styles } from "./styles";
+import { styles } from "../styles";
 
 
 const ServiceCard = ({ index, name, icon }: { index: number, name: string, icon: any }) => (

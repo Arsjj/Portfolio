@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from 'react-toastify';
 
-import { styles } from "./styles";
-import { EarthCanvas } from "./canvas";
-import { SectionWrapper } from "../hoc";
-import { slideIn } from "../utils/motion";
+import { styles } from "../styles";
+import { EarthCanvas } from "../canvas";
+import { SectionWrapper } from "../../hoc";
+import { slideIn } from "../../utils/motion";
 
 const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null);
