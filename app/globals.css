@@ -16,14 +16,6 @@ body {
   background-image: url("../assets/herobg1.webp");
 }
 
-.bg-linear {
-  background: linear-gradient(
-    to bottom right,
-    hsl(0, 0%, 25%) 0%,
-    hsla(0, 0%, 25%, 0) 50%
-  );
-}
-
 .animate-opacity {
   animation-name: na;
   animation-duration: 700ms;
@@ -95,7 +87,6 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  scroll-behavior: smooth;
   color-scheme: dark;
 }
 

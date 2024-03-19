@@ -1,3 +1,4 @@
+import { stackoverflow } from "@/assets";
 import { styles } from "./styles";
 
 import Image from "next/image";
@@ -27,7 +28,7 @@ const Hero = () => {
         </div>
       </div>
       <div className="animate-opacity absolute top-[400px] max-sm:relative max-sm:top-0  w-full flex justify-center">
-        <Image src="https://www.jsmastery.pro/_next/image?url=%2Fassets%2Fcourses%2Fimages%2Fstackoverflow-clone-2.png&w=640&q=100" alt="pic" width={400} height={400} className="w-96 max-sm:w-80 max-xsm:w-4/5 saturate-[0.8]"/>
+        <Image src={stackoverflow} alt="pic" width={400} height={400} className="w-96 max-sm:w-80 max-xsm:w-4/5 saturate-[0.8]"/>
       </div>
 
 

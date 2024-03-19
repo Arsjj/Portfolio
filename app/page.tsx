@@ -1,12 +1,10 @@
-// "use client";
-
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Contact from "@/components/Contact";
-import { StarsCanvas } from "@/components/canvas";
 import About1 from "@/components/About1";
 import Works from "@/components/Works";
+import { StarsCanvas } from "@/components/canvas";
 
 export default function Home() {
   return (
