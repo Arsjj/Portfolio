@@ -28,6 +28,7 @@ export default function Works() {
               link={item.link}
               src={item.img}
               technologies={item.technologies}
+              tags={item.tags}
             />
           ))}
         </div>
