@@ -135,7 +135,7 @@ const Contact = () => {
               name="message"
               value={form.message}
               onChange={handleChange}
-              className="bg-tertiary py-4 px-6 border border-secondary/20 focus:border-white/70 duration-200 text-white rounded-lg outline-none font-medium"
+              className="bg-tertiary py-4 px-6 border border-[#ffffff14] focus:border-white/70 duration-200 text-white rounded-lg outline-none font-medium"
             />
           </label>
 
