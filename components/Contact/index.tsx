@@ -40,8 +40,14 @@ const Contact = () => {
     setLoading(true);
 
 
-    if (!form.name || !form.email || !form.message) {
+    if (!form.name && !form.email && !form.message) {
       toast.error("This trick isn't working")
+      setLoading(false);
+      return
+    }
+
+    if (!form.name || !form.email || !form.message) {
+      toast.error("Sorry there are unfilled fields")
       setLoading(false);
       return
     }
