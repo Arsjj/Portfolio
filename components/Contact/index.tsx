@@ -106,34 +106,31 @@ const Contact = () => {
           <label className="flex flex-col">
             <span className="text-white font-medium mb-4">Your Name</span>
             <input
-              style={{ border: "1px solid #ffffff14" }}
               type="text"
               name="name"
               value={form.name}
               onChange={handleChange}
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary/30 text-white rounded-lg outline-none border-none font-medium"
+              className="bg-tertiary py-4 px-6 border border-secondary/20 focus:border-white/70 duration-200 placeholder:text-secondary/30 text-white rounded-lg outline-none font-medium"
             />
           </label>
           <label className="flex flex-col">
             <span className="text-white font-medium mb-4">Your email</span>
             <input
-              style={{ border: "1px solid #ffffff14" }}
               type="email"
               name="email"
               value={form.email}
               onChange={handleChange}
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary/30 text-white rounded-lg outline-none border-none font-medium"
+              className="bg-tertiary py-4 px-6 border border-secondary/20 focus:border-white/70 duration-200 placeholder:text-secondary/30 text-white rounded-lg outline-none font-medium"
             />
           </label>
           <label className="flex flex-col">
             <span className="text-white font-medium mb-4">Your Message</span>
             <textarea
-              style={{ border: "1px solid #ffffff14" }}
               rows={7}
               name="message"
               value={form.message}
               onChange={handleChange}
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary/30 text-white rounded-lg outline-none border-none font-medium"
+              className="bg-tertiary py-4 px-6 border border-secondary/20 focus:border-white/70 duration-200 placeholder:text-secondary/30 text-white rounded-lg outline-none font-medium"
             />
           </label>
 

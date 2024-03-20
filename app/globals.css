@@ -23,6 +23,10 @@ body {
   background-image: url("../assets/herobg1.webp");
 }
 
+.shadow-input {
+  box-shadow: 0 0.2px 0px 0 white;
+}
+
 .animate-opacity {
   animation-name: na;
   animation-duration: 700ms;
