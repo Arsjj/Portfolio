@@ -74,7 +74,6 @@ const Contact = () => {
           () => {
             setLoading(false);
             toast.success("Thank you. We will get back to you as soon as possible.");
-
             setForm({
               name: "",
               email: "",
@@ -116,7 +115,7 @@ const Contact = () => {
               name="name"
               value={form.name}
               onChange={handleChange}
-              className="bg-tertiary py-4 px-6 border border-secondary/20 focus:border-white/70 duration-200 placeholder:text-secondary/30 text-white rounded-lg outline-none font-medium"
+              className="bg-tertiary py-4 px-6 border border-[#ffffff14] focus:border-white/70 duration-200 placeholder:text-[#ffffff14] text-white rounded-lg outline-none font-medium"
             />
           </label>
           <label className="flex flex-col">
@@ -126,7 +125,7 @@ const Contact = () => {
               name="email"
               value={form.email}
               onChange={handleChange}
-              className="bg-tertiary py-4 px-6 border border-secondary/20 focus:border-white/70 duration-200 placeholder:text-secondary/30 text-white rounded-lg outline-none font-medium"
+              className="bg-tertiary py-4 px-6 border border-[#ffffff14] focus:border-white/70 duration-200 placeholder:text-secondary/30 text-white rounded-lg outline-none font-medium"
             />
           </label>
           <label className="flex flex-col">
