@@ -1,5 +1,5 @@
 import { stackoverflow } from "@/assets";
-import { styles } from "../styles";
+import { styles } from "../../utils/styles";
 
 import Image from "next/image";
 

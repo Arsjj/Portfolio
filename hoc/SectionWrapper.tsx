@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-import { styles } from "@/components/styles";
+import { styles } from "@/utils/styles";
 import { staggerContainer } from "../utils/motion";
 import { ComponentType, FC } from "react";
 

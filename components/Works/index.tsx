@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { data } from "./Data";
 import { SectionWrapper } from "../../hoc";
 import { fadeIn, textVariant } from "../../utils/motion";
-import { styles } from ".././styles";
+import { styles } from "../../utils/styles";
 
 const Works = () => {
   return (
