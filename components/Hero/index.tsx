@@ -2,6 +2,7 @@ import { stackoverflow } from "@/assets";
 import { styles } from "../../utils/styles";
 
 import Image from "next/image";
+import Animation from "./Animation";
 
 const Hero = () => {
   return (
@@ -27,13 +28,14 @@ const Hero = () => {
         </div>
       </div>
       <div className="animate-opacity absolute top-[400px] max-sm:relative max-sm:top-0  w-full flex justify-center">
-        <Image
+        {/* <Image
           src={stackoverflow}
           alt="pic" width={400}
           height={400}
           className="w-96 max-sm:w-80 max-xsm:w-4/5 saturate-[0.8]"
-          // sizes="(max-width: 640px) 350px, (min-width: 640px) 700px"
-        />
+        // sizes="(max-width: 640px) 350px, (min-width: 640px) 700px"
+        /> */}
+        <Animation />
       </div>
 
 
@@ -59,3 +61,7 @@ const Hero = () => {
 };
 
 export default Hero;
+
+
+
+
