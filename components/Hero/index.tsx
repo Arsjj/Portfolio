@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <section id="home" className={`relative w-full h-[800px] max-sm:h[500px] mx-auto`}>
       <div
-        className={`absolute max-sm:relative max-sm:top-0 max-sm:pt-40 max-sm:mb-10 z-10 inset-0 top-40 max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
+        className={`relative max-sm:relative max-sm:top-0 max-sm:pt-40 md:mb-16 z-10 inset-0 top-40 max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
       >
         <div className='flex flex-col justify-center items-center mt-5 max-xsm:hidden'>
           <div className='w-5 h-5 rounded-full bg-[#D4AF37]' />
@@ -27,7 +27,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="animate-opacity absolute top-[400px] max-sm:relative max-sm:top-0  w-full flex justify-center">
+      <div className="animate-opacity relative max-xsm:scale-[0.7] max-sm:scale-[0.8] max-sm:relative max-sm:top-0  w-full flex justify-center">
         {/* <Image
           src={stackoverflow}
           alt="pic" width={400}

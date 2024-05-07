@@ -1,6 +1,6 @@
 const Animation = () => {
   return (
-    <div className="svg-frame z-50 relative">
+    <div className="svg-frame">
       <svg className="svg" style={{'--i' : 0} as React.CSSProperties}>
         <g id="big-outter">
           <g id="squares">
