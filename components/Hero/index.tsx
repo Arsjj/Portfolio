@@ -6,9 +6,9 @@ import Animation from "./Animation";
 
 const Hero = () => {
   return (
-    <section id="home" className={`relative w-full h-[800px] max-sm:h[500px] mx-auto`}>
+    <section id="home" className={`relative w-full h-[850px] max-sm:h[500px] mx-auto`}>
       <div
-        className={`relative max-sm:relative max-sm:top-0 max-sm:pt-40 md:mb-16 z-10 inset-0 top-40 max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
+        className={`relative max-sm:relative max-sm:top-0 max-sm:pt-40  md:mb-20 max-md:mb-10 z-10 inset-0 top-40 max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
       >
         <div className='flex flex-col justify-center items-center mt-5 max-xsm:hidden'>
           <div className='w-5 h-5 rounded-full bg-[#D4AF37]' />

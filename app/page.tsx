@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <div className="bg-hero-pattern bg-image bg-cover bg-no-repeat bg-center">
+      <div className="bg-hero-pattern bg-image bg-cover bg-no-repeat bg-center max-sm:overflow-hidden">
         <Hero />
       </div>
       <About />
