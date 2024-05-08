@@ -6,7 +6,7 @@ import Animation from "./Animation";
 
 const Hero = () => {
   return (
-    <section id="home" className={`relative w-full h-[850px] max-sm:h[500px] mx-auto`}>
+    <section id="home" className={`relative w-full h-[850px] max-sm:h-[800px] mx-auto`}>
       <div
         className={`relative max-sm:relative max-sm:top-0 max-sm:pt-40  md:mb-20 max-md:mb-10 z-10 inset-0 top-40 max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
       >
@@ -27,7 +27,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="animate-opacity relative max-xsm:scale-[0.7] max-sm:scale-[0.8] max-sm:relative max-sm:top-0  w-full flex justify-center">
+      <div className="max-xsm:scale-[0.7] sm:animate-opacity relative  max-sm:scale-[0.8] transition-all duration-500 max-sm:relative max-sm:top-0  w-full flex justify-center">
         {/* <Image
           src={stackoverflow}
           alt="pic" width={400}

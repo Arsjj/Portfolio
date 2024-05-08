@@ -182,14 +182,15 @@ body {
 }
 
 @keyframes change-view {
-  0% 
-  70% {
+  0%,
+  50% {
     transform: rotate(-0deg) skew(0deg) translateX(calc(0 * var(--i)))
       translateY(calc(-0px * var(--i)));
   }
+  70%,
   100% {
-    /* transform: rotate(-80deg) skew(30deg) translateX(calc(45px * var(--i)))
-      translateY(calc(-35px * var(--i))); */
+    transform: rotate(-80deg) skew(30deg) translateX(calc(45px * var(--i)))
+      translateY(calc(-35px * var(--i)));
   }
 }
 
