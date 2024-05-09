@@ -8,6 +8,7 @@ import { SectionWrapper } from "../../hoc";
 import { fadeIn, textVariant } from "../../utils/motion";
 import { technologies } from "@/constants";
 import { styles } from "../../utils/styles";
+import Animation from "../Hero/Animation";
 
 
 const ServiceCard = ({ index, name, icon }: { index: number, name: string, icon: any }) => (
@@ -43,8 +44,8 @@ const ServiceCard = ({ index, name, icon }: { index: number, name: string, icon:
 const About = () => {
 
   return (
-    <>
-      <motion.div variants={textVariant()}>
+    <div className="relative">
+      {/* <motion.div variants={textVariant()}>
         <h2
           className={styles.sectionHeadText}
         >
@@ -61,27 +62,40 @@ const About = () => {
         with hands-on experience in modern frontend technologies such as React and Next JS.
         Aiming to take on new challenges, learn more and use my coding skills for developing
         new features and contribute to successful projects.
-      </motion.p>
+      </motion.p> */}
+      <div className="absolute -z-50 w-full h-full flex justify-center items-center pt-20">
+
+      </div>
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className="mt-8 text-white sm:text-xl">Technologies I have worked with</motion.p>
-      <motion.div className="w-full max-w-5xl mx-auto mt-10 flex flex-wrap justify-center gap-10 max-sm:gap-5 max-xsm:gap-4"
-        // variants={fadeIn("right", "spring")}
-        // variants={fadeIn("", "", 0.1, 1)}
-        initial={{ opacity: 0, x: -70 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
+        className={styles.sectionHeadText}
 
-      >
-        {technologies.map((service, index) => (
-          <ServiceCard key={service.name} index={index} {...service} />
-        ))}
-      </motion.div>
+      // className="mt-8 text-white sm:text-xl"
+      >Technologies I have worked with</motion.p>
+      <div className="flex items-center">
+
+        <motion.div className="w-full max-w-5xl mx-auto mt-10 flex flex-wrap justify-center gap-10 max-sm:gap-5 max-xsm:gap-4"
+          // variants={fadeIn("right", "spring")}
+          // variants={fadeIn("", "", 0.1, 1)}
+          initial={{ opacity: 0, x: -70 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+
+        >
+          {technologies.map((service, index) => (
+            <ServiceCard key={service.name} index={index} {...service} />
+          ))}
+        </motion.div>
+        <Animation />
+      </div>
+      <div className="flex mx-auto w-fit">
+
+      </div>
 
 
-    </>
+    </div>
   );
 };
 
