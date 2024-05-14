@@ -24,7 +24,6 @@ const Works = () => {
               description={item.description}
               link={item.link}
               src={item.img}
-              technologies={item.technologies}
               tags={item.tags}
             />
           </motion.div>

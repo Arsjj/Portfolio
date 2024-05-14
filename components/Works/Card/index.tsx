@@ -7,7 +7,6 @@ type Props = {
   description: string;
   src: any;
   link: string;
-  technologies: string[];
   tags: any
 };
 
@@ -16,7 +15,6 @@ export default function Card({
   description,
   src,
   link,
-  technologies,
   tags
 }: Props) {
   const openTab = (link: string) => {

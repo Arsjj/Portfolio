@@ -10,7 +10,6 @@ export const data = [
     name: "Netflix",
     img: netflixImage,
     description: "Movies application like Netflix with TMDB database",
-    technologies: ["React", "SCSS"],
     link: "https://movies-umber-six.vercel.app/",
     tags: [
       {
@@ -32,7 +31,6 @@ export const data = [
     name: "Oasis",
     img: oasisImage,
     description: "A small boutique hotel desktop application",
-    technologies: ["Raect", "Styled Components", "React Query"],
     link: "https://oasis-11.netlify.app",
     tags: [
       {
@@ -54,7 +52,6 @@ export const data = [
     name: "Quiz",
     img: img3,
     description: "Quiz app connected to Opentdb api",
-    technologies: ["React", "Axios", "NextUI"],
     link: "https://quiz-project-seven.vercel.app/",
     tags: [
       {
@@ -76,7 +73,6 @@ export const data = [
     name: "Meals online order",
     img: img4,
     description: "Page of online food ordering system",
-    technologies: ["React", "Redux"],
     link: "https://meals-28d0c2.netlify.app/",
     tags: [
       {
