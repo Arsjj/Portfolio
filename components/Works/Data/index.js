@@ -27,14 +27,6 @@ export const data = [
       },
     ],
   },
-  // {
-    //   id: 3,
-  //   name: "Aim Game",
-  //   img: img3,
-  //   description: "How many circles do you can click?",
-  //   technologies: "HTML/ CSS/ JS",
-  //   link: "https://aim-training-97ab0b.netlify.app/",
-  // },
   {
     id: 4,
     name: "Oasis",
@@ -57,28 +49,28 @@ export const data = [
       },
     ],
   },
-  // {
-  //   id: 3,
-  //   name: "Quiz",
-  //   img: img3,
-  //   description: "Quiz app connected to Opentdb api",
-  //   technologies: ["React", "Axios", "NextUI"],
-  //   link: "https://quiz-project-seven.vercel.app/",
-  //   tags: [
-  //     {
-  //       name: "react",
-  //       color: "blue-text-gradient",
-  //     },
-  //     {
-  //       name: "axios",
-  //       color: "green-text-gradient",
-  //     },
-  //     {
-  //       name: "next ui",
-  //       color: "pink-text-gradient",
-  //     },
-  //   ],
-  // },
+  {
+    id: 3,
+    name: "Quiz",
+    img: img3,
+    description: "Quiz app connected to Opentdb api",
+    technologies: ["React", "Axios", "NextUI"],
+    link: "https://quiz-project-seven.vercel.app/",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "axios",
+        color: "green-text-gradient",
+      },
+      {
+        name: "next ui",
+        color: "pink-text-gradient",
+      },
+    ],
+  },
   {
     id: 2,
     name: "Meals online order",
@@ -101,12 +93,29 @@ export const data = [
       },
     ],
   },
+  {
+    id: 5,
+    name: "Image Sliders",
+    img: "https://images.unsplash.com/photo-1642201855395-1c8b44e6e42b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1780&q=80",
+    description: "Samples of image sliders",
+    link: "https://eclectic-lolly-88cb4f.netlify.app/",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "css",
+        color: "green-text-gradient",
+      },
+    ],
+  },
   // {
-    //   id: 4,
-  //   name: "Image Sliders",
-  //   img: "https://images.unsplash.com/photo-1642201855395-1c8b44e6e42b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1780&q=80",
-  //   description: "Samples of image sliders",
-  //   technologies: "Raect/ CSS",
-  //   link: "https://eclectic-lolly-88cb4f.netlify.app/",
+  //   id: 6,
+  //   name: "Aim Game",
+  //   img: img3,
+  //   description: "How many circles do you can click?",
+  //   technologies: ["HTML", "CSS", "JS"],
+  //   link: "https://aim-training-97ab0b.netlify.app/",
   // },
 ];

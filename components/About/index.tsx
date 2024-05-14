@@ -28,7 +28,7 @@ const ServiceCard = ({ index, name, icon }: { index: number, name: string, icon:
           width={100}
           height={100}
           alt={name}
-          className="w-14 h-14 max-sm:w-10 max-sm:h-10 max-xsm:w-9 max-xsm-h-9 object-cover"
+          className="w-14 h-14 max-sm:w-10 max-sm:h-10 max-xsm:w-9 max-xsm-h-9 object-cover overflow-visible"
         />
         <h3 className="text-white font-bold text-center max-sm:text-xs max-sm:font-semibold">
           {name}
@@ -65,7 +65,7 @@ const About = () => {
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className="mt-8 text-white sm:text-xl">Technologies I have worked with</motion.p>
+        className="mt-8 font-semibold text-white sm:text-xl">Technologies I have worked with</motion.p>
       <motion.div className="w-full max-w-5xl mx-auto mt-10 flex flex-wrap justify-center gap-10 max-sm:gap-5 max-xsm:gap-4"
         // variants={fadeIn("right", "spring")}
         // variants={fadeIn("", "", 0.1, 1)}
