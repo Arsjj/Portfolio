@@ -1,5 +1,6 @@
-import img3 from "./images/screenshot001824.webp";
-import img4 from "./images/2023-02-05 (5).webp";
+import sliderImage from "./images/2023-01-28 (16).webp"
+import quizImage from "./images/screenshot001824.webp";
+import mealsImage from "./images/2023-02-05 (5).webp";
 import netflixImage from "./images/2023-01-28 (40).webp";
 import oasisImage from "./images/screenshot231632.webp";
 
@@ -50,7 +51,7 @@ export const data = [
   {
     id: 3,
     name: "Quiz",
-    img: img3,
+    img: quizImage,
     description: "Quiz app connected to Opentdb api",
     link: "https://quiz-project-seven.vercel.app/",
     tags: [
@@ -71,7 +72,7 @@ export const data = [
   {
     id: 2,
     name: "Meals online order",
-    img: img4,
+    img: mealsImage,
     description: "Page of online food ordering system",
     link: "https://meals-28d0c2.netlify.app/",
     tags: [
@@ -92,7 +93,7 @@ export const data = [
   {
     id: 5,
     name: "Image Sliders",
-    img: "https://images.unsplash.com/photo-1642201855395-1c8b44e6e42b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1780&q=80",
+    img: sliderImage,
     description: "Samples of image sliders",
     link: "https://eclectic-lolly-88cb4f.netlify.app/",
     tags: [
