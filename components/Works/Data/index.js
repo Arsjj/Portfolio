@@ -8,10 +8,10 @@ import oasisImage from "./images/screenshot231632.webp";
 export const data = [
   {
     id: 1,
-    name: "Netflix",
+    name: "Movies",
     img: netflixImage,
     description: "Movies application like Netflix with TMDB database",
-    link: "https://movies-three-blush.vercel.app/",
+    link: "https://movies-theta-lac.vercel.app//",
     tags: [
       {
         name: "react",
