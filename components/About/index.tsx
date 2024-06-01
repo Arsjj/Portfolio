@@ -28,7 +28,7 @@ const ServiceCard = ({ index, name, icon }: { index: number, name: string, icon:
           width={100}
           height={100}
           alt={name}
-          className="w-14 h-14 max-sm:w-10 max-sm:h-10 max-xsm:w-9 max-xsm-h-9 object-cover overflow-visible"
+          className="w-14 h-14 max-sm:w-10 max-sm:h-10 max-xsm:w-9 max-xsm-h-9 object-contain"
         />
         <h3 className="text-white font-bold text-center max-sm:text-xs max-sm:font-semibold">
           {name}

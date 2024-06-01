@@ -11,7 +11,7 @@ export const data = [
     name: "Netflix",
     img: netflixImage,
     description: "Movies application like Netflix with TMDB database",
-    link: "https://movies-umber-six.vercel.app/",
+    link: "https://movies-three-blush.vercel.app/",
     tags: [
       {
         name: "react",
