@@ -4,7 +4,7 @@ import React from "react";
 import Card from "./Card";
 
 import { motion } from "framer-motion";
-import { data } from "./Data";
+import { data } from "@/constants";
 import { SectionWrapper } from "../../hoc";
 import { fadeIn, textVariant } from "../../utils/motion";
 import { styles } from "../../utils/styles";

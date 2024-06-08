@@ -12,6 +12,16 @@ import git from './techs/git.webp'
 import sass from "./techs/sass.webp"
 import typescript from "./techs/typescript.webp"
 import redux from './techs/redux.webp'
+import nodejs from "./techs/nodejs.png"
+import storybook from "./techs/storybook.webp"
+import mongodb from "./techs/mongodb.png"
+import express from "./techs/express.png"
+
+import sliders from "./projects/sliders.webp"
+import oasisdark from "./projects/oasis-dark.webp"
+import movies from "./projects/movies-1.webp"
+import meals from "./projects/meals.webp"
+import quiz from "./projects/quiz.webp"
 
 export {
   menu,
@@ -26,5 +36,14 @@ export {
   sass,
   typescript,
   redux,
-  stackoverflow
+  stackoverflow,
+  nodejs,
+  express,
+  mongodb,
+  movies,
+  oasisdark,
+  meals,
+  quiz,
+  sliders,
+  storybook
 };

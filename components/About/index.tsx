@@ -56,13 +56,14 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        I&apos;m a frontend developer with a drive to create responsive and user-friendly web 
-        applications and user interfaces. Proficient in JavaScript and Typescript, 
+        I&apos;m a frontend developer with a drive to create responsive and user-friendly web
+        applications and user interfaces. Proficient in JavaScript and Typescript,
         with hands-on experience in modern frontend technologies such as React and Next JS.
+        Additionally, skilled in backend development using Node.js, enabling the creation of robust server-side applications and APIs.
+        <br/>
         Aiming to take on new challenges, learn more and use my coding skills for developing
         new features and contribute to successful projects.
       </motion.p>
-
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-8 font-semibold text-white sm:text-xl">Technologies I have worked with</motion.p>
