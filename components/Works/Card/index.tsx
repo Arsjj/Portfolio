@@ -39,7 +39,7 @@ export default function Card({
           </div>
           <div className="relative flex flex-col flex-1 w-full gap-[7px] rounded-b-2xl py-2 bg-black/40 bottom-0 z-10 border-default-600 dark:border-default-100">
             <div className="flex flex-1 flex-grow h-full gap-2 items-center">
-              <div className="flex flex-col justify-between h-full">
+              <div className="flex flex-col h-full">
                 <p className="mt-2 text-secondary group-hover:text-white duration-700">{description}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {tags?.map((tag: any) => (

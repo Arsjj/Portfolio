@@ -18,6 +18,7 @@ import {
   quiz,
   oasisdark,
   sliders,
+  aiCouch,
 } from "@/assets";
 
 export const navLinks = [
@@ -101,22 +102,35 @@ const technologies = [
 
 const data = [
   {
-    id: 1,
-    name: "Movies",
-    img: movies,
-    description: "Movies application like Netflix with TMDB database",
-    link: "https://movies-theta-lac.vercel.app//",
+    id: 2,
+    name: "AI Interview Coach",
+    img: aiCouch,
+    description:
+      "AI-powered interview preparation platform",
+    link: "https://ai-interview-coach-sigma-tan.vercel.app/",
     tags: [
       {
-        name: "react",
+        name: "nextjs",
         color: "blue-text-gradient",
       },
       {
-        name: "restapi",
+        name: "typescript",
         color: "green-text-gradient",
       },
       {
-        name: "scss",
+        name: "ai",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "postgresql",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "drizzle",
+        color: "green-text-gradient",
+      },
+      {
+        name: "tailwind",
         color: "pink-text-gradient",
       },
     ],
@@ -125,8 +139,8 @@ const data = [
     id: 4,
     name: "Oasis",
     img: oasisdark,
-    description: "A small boutique hotel desktop application",
-    link: "https://oasis-11.netlify.app",
+    description: "A small boutique hotel application",
+    link: "https://oasis-ten-inky.vercel.app",
     tags: [
       {
         name: "react",
@@ -143,72 +157,26 @@ const data = [
     ],
   },
   {
-    id: 3,
-    name: "Quiz",
-    img: quiz,
-    description: "Quiz app connected to Opentdb api",
-    link: "https://quiz-project-seven.vercel.app/",
+    id: 1,
+    name: "Movies",
+    img: movies,
+    description: "Movies application with TMDB database",
+    link: "https://movies-theta-lac.vercel.app//",
     tags: [
       {
         name: "react",
         color: "blue-text-gradient",
       },
       {
-        name: "axios",
+        name: "restapi",
         color: "green-text-gradient",
       },
       {
-        name: "next ui",
+        name: "scss",
         color: "pink-text-gradient",
       },
     ],
   },
-  {
-    id: 2,
-    name: "Meals online order",
-    img: meals,
-    description: "Page of online food ordering system",
-    link: "https://meals-28d0c2.netlify.app/",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "redux",
-        color: "green-text-gradient",
-      },
-      {
-        name: "firebase",
-        color: "pink-text-gradient",
-      },
-    ],
-  },
-  {
-    id: 5,
-    name: "Image Sliders",
-    img: sliders,
-    description: "Samples of image sliders",
-    link: "https://eclectic-lolly-88cb4f.netlify.app/",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "css",
-        color: "green-text-gradient",
-      },
-    ],
-  },
-  // {
-  //   id: 6,
-  //   name: "Aim Game",
-  //   img: img3,
-  //   description: "How many circles do you can click?",
-  //   technologies: ["HTML", "CSS", "JS"],
-  //   link: "https://aim-training-97ab0b.netlify.app/",
-  // },
 ];
 
 export { technologies, data };

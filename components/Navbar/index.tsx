@@ -60,14 +60,16 @@ const Navbar = () => {
             <li
               key={nav.id}
               className={`${active === nav.title ? "text-white" : "text-secondary"
-                } hover:text-white text-[18px] font-medium cursor-pointer`}
+                } hover:text-white text-[18px] font-medium`}
               onClick={() => setActive(nav.title)}
             >
-              <a href={`#${nav.id}`}>{nav.title}</a>
+              <a href={`#${nav.id}`} className='block h-full'>
+                {nav.title}
+              </a>
             </li>
           ))}
         </ul>
-
+        
         <div className='sm:hidden flex flex-1 justify-end items-center'
         >
           <Image
