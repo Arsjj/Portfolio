@@ -26,7 +26,7 @@ const Animation = () => {
     }
 
 
-    function playSound() {
+    async function playSound() {
         let sound1 = "https://assets.mixkit.co/sfx/preview/mixkit-sci-fi-interface-zoom-890.mp3";
         let sound2 = "https://assets.mixkit.co/sfx/preview/mixkit-game-quick-warning-notification-268.mp3";
         let sound3 = "https://assets.mixkit.co/sfx/preview/mixkit-tech-click-1140.mp3";
@@ -34,12 +34,14 @@ const Animation = () => {
         let sound5 = "https://assets.mixkit.co/sfx/preview/mixkit-fast-sci-fi-bleep-903.mp3";
         let sound6 = "https://assets.mixkit.co/sfx/preview/mixkit-high-tech-bleep-2521.mp3";
         let sound7 = "https://assets.mixkit.co/sfx/preview/mixkit-high-tech-bleep-confirmation-2520.mp3";
-        let audio = new Audio(checked ? sound6 : sound7);
-        if (!audio.ended) {
-            audio.pause();
+        const audio = new Audio(checked ? sound6 : sound7);
+
+        try {
             audio.currentTime = 0;
+            await audio.play();
+        } catch (error) {
+            console.log("Audio failed:", error);
         }
-        audio.play();
 
     }
 
@@ -49,7 +51,7 @@ const Animation = () => {
     return (
         <div onClick={handleChecked} className='flex relative py-10 max-w-3xl'>
             <input type="checkbox" checked={checked} readOnly />
-            <svg xmlns="http://www.w3.org/2000/svg" className='cursor-pointer' width="100%" height="fit" viewBox="0 0 1036 460" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+            <svg xmlns="http://www.w3.org/2000/svg" className='cursor-pointer' width="100%" height="fit" viewBox="0 0 1036 460" shapeRendering="geometricPrecision" textRendering="geometricPrecision">
                 <g id="fireCircles">
                     <g id="innerCircle" style={{ "isolation": "isolate" }} transform="translate(.000001 0.000001)">
                         <path d="M104.5,245.5c50.522,20.662,110.307-1.715,133.5-49l-3.5-2C210.584,239.326,155.844,260.356,106,242l-1.5,3.5Z" fill="rgb(212 175 55)" />
@@ -80,17 +82,17 @@ const Animation = () => {
                         <path id="secondLight" d="M372.5,275.5l-2-2.5l9-9.5l5-2h34.5l1,3.5-9.5,9.5-2,1h-36Z" fill="#1d91b6" />
                         <path id="thirdLight" d="M428,275.5l-2-2.5l9-9.5l5-2h34.5l1,3.5-9.5,9.5-2,1h-36Z" fill="#b4b58d" />
                     </g>
-                    <path id="containerBox" d="M250,283.5c19.64.515,28.781-2.462,41.5-14l11.5-12c9.98-7.571,16.62-9.831,30.5-10h127.5c11.484-.409,17.715,1.899,28.5,10l13,12c9.098,9.05,15.207,11.924,27.5,14h327.5v-2h66c11.148-3.896,16.743-6.824,25-14L1021,195c5.15-7.217,7.68-11.513,11-20l.5-67h2v-41h-1.5v-25.25-25.25c.04-9.12834-2.76-12.34415-13-14.5h-53-793.5l-7.529-.63164C227.189,8.8461,272.536,56.6375,285,116.5l-2.75.5c12.64,101.955-49.038,162.651-139.75,166c0,0,0,.500001,0,.500001v-2.000001v1.999998L250,283.5Z" transform="translate(0 0.000002)" stroke="rgb(212 175 55)" fill="#75aeb1" fill-opacity="0.29" />
+                    <path id="containerBox" d="M250,283.5c19.64.515,28.781-2.462,41.5-14l11.5-12c9.98-7.571,16.62-9.831,30.5-10h127.5c11.484-.409,17.715,1.899,28.5,10l13,12c9.098,9.05,15.207,11.924,27.5,14h327.5v-2h66c11.148-3.896,16.743-6.824,25-14L1021,195c5.15-7.217,7.68-11.513,11-20l.5-67h2v-41h-1.5v-25.25-25.25c.04-9.12834-2.76-12.34415-13-14.5h-53-793.5l-7.529-.63164C227.189,8.8461,272.536,56.6375,285,116.5l-2.75.5c12.64,101.955-49.038,162.651-139.75,166c0,0,0,.500001,0,.500001v-2.000001v1.999998L250,283.5Z" transform="translate(0 0.000002)" stroke="rgb(212 175 55)" fill="#75aeb1" fillOpacity="0.29" />
                     <path id="containerLeftBottom" d="M967,0L967,2L1020,2C1030.24,4.15585,1033.04,7.37166,1033,16.5L1033,41.75L1033,67L1034.5,67L1036,67L1036,16.5C1035.51,4.06512,1031.88,0.578335,1020,0L967,0Z" transform="matrix(-1 0 0 -1 1038 453)" fill="rgb(241,239,193)" stroke="none" ></path>
                     <path id="containerRightBottom" d="M1034.5,108h-2l-.5,67c-3.32,8.487-5.85,12.783-11,20l-72.5,72.5c-8.257,7.176-13.852,10.104-25,14h-66v2v2.5l66-.5c13.323-4.081,19.832-7.941,29.5-18l72-72.5c5.51-7.215,7.93-11.591,11-20v-67h-1.5Z" fill="rgb(212 175 55)" />
                     <path id="containerRightTop" d="M967,0v2h53c10.24,2.15585,13.04,5.37166,13,14.5v25.25v25.25h1.5h1.5v-50.5c-.49-12.43488-4.12-15.921665-16-16.5h-53Z" transform="translate(0 2)" fill="rgb(212 175 55)" />
                 </g>
-                <text dx="0" dy="0" font-size="40" letter-spacing="1" className={`${checked ? "translate-y-24 translate-x-80 fill-transparent" : "translate-y-36 translate-x-80 fill-white"} duration-500 transition-all`} id="titleContent" >
+                <text dx="0" dy="0" fontSize="40" letterSpacing="1" className={`${checked ? "translate-y-24 translate-x-80 fill-transparent" : "translate-y-36 translate-x-80 fill-white"} duration-500 transition-all`} id="titleContent" >
                     <>
-                    About...
+                        About...
                     </>
-                    
-                    </text>
+
+                </text>
                 <foreignObject id="detailsContainer" x="10" y="10" width="680" height="350" transform="translate(300 30)">
                     <div id="detailsContent">
                         I&apos;m a frontend developer with a drive to create responsive and user-friendly web

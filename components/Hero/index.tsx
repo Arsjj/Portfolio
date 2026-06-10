@@ -23,7 +23,7 @@ const Hero = () => {
             </p>
 
           </div> */}
-          <Iron />
+          {/* <Iron /> */}
         </div>
       </div>
       <div className="max-xsm:scale-[0.7] sm:animate-opacity relative max-sm:left-4  max-sm:scale-[0.8] transition-all duration-500 max-sm:relative max-sm:top-0  w-full flex justify-center">

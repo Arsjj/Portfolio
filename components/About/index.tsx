@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { Tilt } from "react-tilt";
+import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 import { SectionWrapper } from "../../hoc";
 import { fadeIn, textVariant } from "../../utils/motion";
@@ -12,26 +12,32 @@ import Animation from "../Hero/Animation";
 
 
 const ServiceCard = ({ index, name, icon }: { index: number, name: string, icon: any }) => (
-  <Tilt className="sm:w-[140px] max-sm:w-[100px] max-xsm-[80px] w-full duration-100"
-    options={{
-      max: 45,
-      scale: 1,
-      speed: 450,
-    }}
+  <Tilt
+    className="sm:w-[140px] max-sm:w-[100px] max-xsm-[80px] w-full duration-100"
+    tiltMaxAngleX={45}
+    tiltMaxAngleY={45}
+    scale={1}
+    transitionSpeed={450}
   >
     <motion.div
       // variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-      className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
+      className="w-full relative green-pink-gradient p-[1px] rounded-[20px] shadow-card"
     >
-      <div className="bg-tertiary rounded-[20px] py-5  min-h-[170px] max-sm:min-h-[130px] max-xsm-[min-h-100px] flex justify-evenly items-center flex-col">
+      <div className="container rounded-[20px] py-7">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+        <div></div>
+      </div>
+      <div className="bg-tertiary  rounded-[20px] py-5  min-h-[170px] max-sm:min-h-[130px] max-xsm-[min-h-100px] flex justify-evenly items-center flex-col">
         <Image
           src={icon || ""}
           width={100}
           height={100}
           alt={name}
-          className="w-14 h-14 max-sm:w-10 max-sm:h-10 max-xsm:w-9 max-xsm-h-9 object-cover"
+          className="absolute w-14 h-14 max-sm:w-10 max-sm:h-10 max-xsm:w-9 max-xsm-h-9 object-cover"
         />
-        <h3 className="text-white font-bold text-center max-sm:text-xs max-sm:font-semibold">
+        <h3 className="absolute bottom-4  text-white font-bold text-center max-sm:text-xs max-sm:font-semibold">
           {name}
         </h3>
       </div>
@@ -68,7 +74,7 @@ const About = () => {
       </div>
 
       <motion.p
-        variants={fadeIn("", "", 0.1, 1)}
+        variants={fadeIn("", "tween", 0.1, 1)}
         className={styles.sectionHeadText}
 
       // className="mt-8 text-white sm:text-xl"
@@ -88,7 +94,7 @@ const About = () => {
             <ServiceCard key={service.name} index={index} {...service} />
           ))}
         </motion.div>
-        <Animation />
+        {/* <Animation /> */}
       </div>
       <div className="flex mx-auto w-fit">
 
