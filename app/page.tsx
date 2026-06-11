@@ -6,6 +6,8 @@ import Works from "@/components/Works";
 import Footer from "@/components/Footer";
 import { StarsCanvas } from "@/components/canvas";
 import { Toaster } from "react-hot-toast";
+import HyperJumpTransition from "@/components/Hyperjump";
+import HyperScrollSection from "@/components/HyperScrollSection";
 
 export default function Home() {
   return (
@@ -15,16 +17,21 @@ export default function Home() {
         <Hero />
       </div>
       <About />
-      <Works />
+
+        {/* <Works /> */}
+      <HyperScrollSection />
+      {/* <section className="h-screen bg-slate-950 text-white">
+
+        <div className="relative z-0">
+          <Contact />
+          <StarsCanvas />
+        </div>
+      </section> */}
+      <Footer />
       <Toaster
         position="top-center"
         reverseOrder={false}
       />
-      <div className="relative z-0">
-        <Contact />
-        <StarsCanvas />
-      </div>
-      <Footer />
     </>
   );
 }
