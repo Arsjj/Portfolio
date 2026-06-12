@@ -5,9 +5,9 @@ import { Copyright } from "@/icons/Copyright";
 
 function Footer() {
   return (
-    <footer className="bg-black py-2 border-t border-t-white/20">
+    <footer className="absolute bottom-0 left-0 right-0 bg-black py-2 border-t border-t-white/20">
       <div className="relative w-full max-w-7xl mx-auto">
-        <div className="gap-3 p-3 text-white/70 text-xs fill-white/80">
+        <div className="flex justify-center gap-3 p-1 text-white/70 text-xs fill-white/80">
           <div className="flex w-fit gap-2 px-1">
             Copyright
             <Copyright />
@@ -17,7 +17,7 @@ function Footer() {
             Made with Next / Tailwind / Framer Motion
           </div> */}
         </div>
-        <div className="absolute w-fit right-0 top-0 h-full flex items-center text-[22px] gap-3 px-4">
+        {/* <div className="absolute w-fit right-0 top-0 h-full flex items-center text-[22px] gap-3 px-4">
           <Link
             href="http://github.com/Arsjj"
             target="_blank"
@@ -34,7 +34,7 @@ function Footer() {
           >
             <LinkedinOutlined />
           </Link>
-        </div>
+        </div> */}
       </div>
     </footer>
   );

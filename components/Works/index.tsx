@@ -11,7 +11,7 @@ import { styles } from "../../utils/styles";
 
 const Works = () => {
   return (
-    <>
+    <div className="relative h-0 overflow-visible">
       <motion.div id="projects" variants={textVariant()}>
         <h2 className={`${styles.sectionHeadText}`} >Projects</h2>
       </motion.div>
@@ -30,7 +30,7 @@ const Works = () => {
           </motion.div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

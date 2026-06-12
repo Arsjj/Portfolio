@@ -6,6 +6,7 @@ import Works from "./Works";
 import Contact from "./Contact";
 import { StarsCanvas } from "./canvas";
 import About from "./About";
+import Footer from "./Footer";
 
 export default function HyperScrollSection() {
     const ref = useRef<HTMLDivElement | null>(null);
@@ -35,8 +36,8 @@ export default function HyperScrollSection() {
     );
 
     const currentOpacity = useTransform(scrollYProgress, [0, 0.25, 0.35], [1, 1, 0]);
-    const nextOpacity = useTransform(scrollYProgress, [0.55, 0.7, 1], [0, 1, 1]);
-    const jumpOpacity = useTransform(scrollYProgress, [0, 0.2, 0.75, 1], [0, 1, 1, 0]);
+    const nextOpacity = useTransform(scrollYProgress, [0.65, 0.7, 1], [0, 1, 1]);
+    const jumpOpacity = useTransform(scrollYProgress, [0, 0.4, 0.4, 1], [0, 1, 1, 0]);
 
     const contactFormX = useTransform(
         scrollYProgress,
@@ -88,6 +89,8 @@ export default function HyperScrollSection() {
     const size = 5 + boost * 8;
     const glow = boost * 25;
 
+
+
     useEffect(() => {
         const canvas = canvasRef.current;
         if (!canvas) return;
@@ -101,7 +104,7 @@ export default function HyperScrollSection() {
         canvas.width = w;
         canvas.height = h;
 
-        const stars = Array.from({ length: 450 }, () => ({
+        const stars = Array.from({ length: 400 }, () => ({
             x: Math.random() * w - w / 2,
             y: Math.random() * h - h / 2,
             z: Math.random() * w,
@@ -109,24 +112,33 @@ export default function HyperScrollSection() {
 
         let frame: number;
 
+
         function animate() {
+
             ctx.fillStyle = "rgba(0, 0, 15, 0.35)";
             ctx.fillRect(0, 0, w, h);
 
             const cx = w / 2;
             const cy = h / 2;
 
+
             const p = scrollYProgress.get();
+            const boost =
+                p < 0.25 || p > 0.75
+                    ? 0
+                    : 1 - Math.abs(p - 0.5) / 0.25;
+
+            const speed = 18 + Math.pow(boost, 2) * 70;
+
+            const brightness = 0.9 + boost * 0.8;
+            const size = 5 + boost * 2;
+            const glow = boost * 25;
+
+
 
             for (const star of stars) {
                 const prevZ = star.z;
 
-                const boost =
-                    p < 0.25 || p > 0.75
-                        ? 0
-                        : 1 - Math.abs(p - 0.5) / 0.25;
-
-                const speed = 18 + Math.pow(boost, 2) * 40;
 
                 star.z -= speed;
 
@@ -161,8 +173,8 @@ export default function HyperScrollSection() {
         return () => cancelAnimationFrame(frame);
     }, []);
 
-    return (
-        <section ref={ref} className="relative h-[300vh] bg-black">
+    return (<>
+        <section ref={ref} className="relative h-[300vh] bg-gradient-to-b from-[#08090f] to-[#05060a]">
             <div className="sticky top-0 h-screen overflow-hidden">
                 <motion.canvas
                     ref={canvasRef}
@@ -180,8 +192,6 @@ export default function HyperScrollSection() {
                     className="absolute inset-0 z-10 flex items-center justify-center text-white"
                 >
 
-                    <Works />
-
                 </motion.div>
 
                 <motion.div
@@ -195,13 +205,15 @@ export default function HyperScrollSection() {
                         <Contact
                             formX={contactFormX}
                             scale={contactScale}
-                            // earthX={earthX}
+                        // earthX={earthX}
                         // innerOpacity={contactInnerOpacity}
                         />
                         <StarsCanvas />
                     </div>
                 </motion.div>
             </div>
+        <Footer />
         </section>
+    </>
     );
 }

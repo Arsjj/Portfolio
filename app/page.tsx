@@ -17,8 +17,9 @@ export default function Home() {
         <Hero />
       </div>
       <About />
-
-        {/* <Works /> */}
+      <div className="relative z-50">
+        <Works />
+      </div>
       <HyperScrollSection />
       {/* <section className="h-screen bg-slate-950 text-white">
 
@@ -27,7 +28,7 @@ export default function Home() {
           <StarsCanvas />
         </div>
       </section> */}
-      <Footer />
+      {/* <Footer /> */}
       <Toaster
         position="top-center"
         reverseOrder={false}

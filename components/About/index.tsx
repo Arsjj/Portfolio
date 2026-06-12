@@ -23,12 +23,6 @@ const ServiceCard = ({ index, name, icon }: { index: number, name: string, icon:
       // variants={fadeIn("right", "spring", index * 0.5, 0.75)}
       className="w-full relative green-pink-gradient p-[1px] rounded-[20px] shadow-card"
     >
-      <div className="container rounded-[20px] py-7">
-        <div id="stars"></div>
-        <div id="stars2"></div>
-        <div id="stars3"></div>
-        <div></div>
-      </div>
       <div className="bg-tertiary  rounded-[20px] py-5  min-h-[170px] max-sm:min-h-[130px] max-xsm-[min-h-100px] flex justify-evenly items-center flex-col">
         <Image
           src={icon || ""}
@@ -51,7 +45,7 @@ const About = () => {
 
   return (
     <div className="relative">
-      {/* <motion.div variants={textVariant()}>
+      <motion.div variants={textVariant()}>
         <h2
           className={styles.sectionHeadText}
         >
@@ -60,7 +54,7 @@ const About = () => {
       </motion.div>
 
       <motion.p
-        variants={fadeIn("", "", 0.1, 1)}
+        variants={fadeIn("", "tween", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
         I&apos;m a frontend developer with a drive to create responsive and user-friendly web 
@@ -68,7 +62,7 @@ const About = () => {
         with hands-on experience in modern frontend technologies such as React and Next JS.
         Aiming to take on new challenges, learn more and use my coding skills for developing
         new features and contribute to successful projects.
-      </motion.p> */}
+      </motion.p>
       <div className="absolute -z-50 w-full h-full flex justify-center items-center pt-20">
 
       </div>
@@ -79,7 +73,7 @@ const About = () => {
 
       // className="mt-8 text-white sm:text-xl"
       >Technologies I have worked with</motion.p>
-      <div className="flex items-center">
+      <div className="flex items-center sticky">
 
         <motion.div className="w-full max-w-5xl mx-auto mt-10 flex flex-wrap justify-center gap-10 max-sm:gap-5 max-xsm:gap-4"
           // variants={fadeIn("right", "spring")}

@@ -83,7 +83,7 @@ const Earth = () => {
 });
 
   return (
-    <mesh ref={earthRef} scale={0.7} rotation={[0, 0, -0.41]}>
+    <mesh ref={earthRef} scale={1} rotation={[0, 0, -0.41]}>
       <sphereGeometry args={[1, 64, 64]} />
       <meshStandardMaterial map={color} normalMap={normal} aoMap={aoMap} />
     </mesh>
