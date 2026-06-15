@@ -104,7 +104,7 @@ export default function HyperScrollSection() {
         canvas.width = w;
         canvas.height = h;
 
-        const stars = Array.from({ length: 400 }, () => ({
+        const stars = Array.from({ length: 450 }, () => ({
             x: Math.random() * w - w / 2,
             y: Math.random() * h - h / 2,
             z: Math.random() * w,
@@ -128,7 +128,7 @@ export default function HyperScrollSection() {
                     ? 0
                     : 1 - Math.abs(p - 0.5) / 0.25;
 
-            const speed = 18 + Math.pow(boost, 2) * 70;
+            const speed = 18 + Math.pow(boost, 2) * 100;
 
             const brightness = 0.9 + boost * 0.8;
             const size = 5 + boost * 2;

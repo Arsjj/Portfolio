@@ -2,7 +2,7 @@ import Animation from "./Animation";
 import { styles } from "../../utils/styles";
 import Iron from "./About";
 import Hyperspeed from "../Hyperspeed";
-import HyperJump from "../Hyperjump";
+import HyperJump from "../MobileDock";
 
 const Hero = () => {
   return (
@@ -16,22 +16,22 @@ const Hero = () => {
         </div>
 
         <div>
-          {/* <h1 className={`${styles.heroHeadText} text-white`}>
+          <h1 className={`${styles.heroHeadText} text-white`}>
             Hi, I am <span className='text-[#D4AF37]'>Arsen Abrahamyan</span>
-          </h1> */}
-          {/* <div>
+          </h1>
+          <div>
             <p className={`${styles.heroSubText} mt-2 text-white-100`}>
               I develop web applications and user interfaces
             </p>
 
-          </div> */}
+          </div>
           {/* <Iron /> */}
           {/* <Hyperspeed /> */}
           {/* <HyperJump /> */}
         </div>
       </div>
-      <div className="max-xsm:scale-[0.7] sm:animate-opacity relative max-sm:left-4  max-sm:scale-[0.8] transition-all duration-500 max-sm:relative max-sm:top-0  w-full flex justify-center">
-        {/* <Animation /> */}
+      <div className="max-xsm:scale-[0.7] z-10 sm:animate-opacity relative max-sm:left-4  max-sm:scale-[0.8] transition-all duration-500 max-sm:relative max-sm:top-0  w-full flex justify-center">
+        <Animation />
       </div>
     </section>
   );

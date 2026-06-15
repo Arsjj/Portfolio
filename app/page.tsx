@@ -6,8 +6,10 @@ import Works from "@/components/Works";
 import Footer from "@/components/Footer";
 import { StarsCanvas } from "@/components/canvas";
 import { Toaster } from "react-hot-toast";
-import HyperJumpTransition from "@/components/Hyperjump";
+import HyperJumpTransition from "@/components/MobileDock";
 import HyperScrollSection from "@/components/HyperScrollSection";
+import OrbitalAboutBg from "@/components/OrbitalAboutBg";
+import MobileDock from "@/components/MobileDock";
 
 export default function Home() {
   return (
@@ -29,6 +31,7 @@ export default function Home() {
         </div>
       </section> */}
       {/* <Footer /> */}
+      <MobileDock />
       <Toaster
         position="top-center"
         reverseOrder={false}
