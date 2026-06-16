@@ -17,12 +17,17 @@ export default function HyperScrollSection() {
         amount: 0.45,
     });
 
-    const contactScale = useSpring(phase === "content" ? 1 : 0.85, {
-        stiffness: 150,
+    let sp = phase === "content" ? 1 : 0.5
+    console.log(sp)
+
+    const contactScale = useSpring(0.85, {
+        stiffness: 250,
         damping: 18,
     });
 
-    console.log(phase)
+    useEffect(() => {
+        contactScale.set(phase === "content" ? 1 : 0.85);
+    }, [phase, contactScale]);
 
     useEffect(() => {
         let timer: number | undefined;
@@ -135,7 +140,7 @@ export default function HyperScrollSection() {
     return (
         <section
             ref={sectionRef}
-            className="relative min-h-screen overflow-hidden bg-gradient-to-b from-[#08090f] to-[#05060a]"
+            className="relative min-h-screen overflow-visible bg-gradient-to-b from-[#08090f] to-[#05060a]"
         >
             <div className="absolute inset-0 z-0 pointer-events-none">
                 <StarsCanvas />
@@ -162,10 +167,6 @@ export default function HyperScrollSection() {
             >
                 <Contact scale={contactScale} />
             </motion.div>
-
-            <div className="relative z-20">
-                <Footer />
-            </div>
         </section>
     );
 }

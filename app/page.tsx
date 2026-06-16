@@ -1,12 +1,9 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import Contact from "@/components/Contact";
 import Works from "@/components/Works";
 import Footer from "@/components/Footer";
-import { StarsCanvas } from "@/components/canvas";
 import { Toaster } from "react-hot-toast";
-import HyperJumpTransition from "@/components/Hyperjump";
 import HyperScrollSection from "@/components/HyperScrollSection";
 
 export default function Home() {
@@ -21,6 +18,7 @@ export default function Home() {
         <Works />
       </div>
       <HyperScrollSection />
+      <Footer />
       <Toaster
         position="top-center"
         reverseOrder={false}

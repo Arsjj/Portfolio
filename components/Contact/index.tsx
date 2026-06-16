@@ -182,12 +182,8 @@ const Contact = ({ scale }: ContactProps) => {
         </form>
       </motion.div>
       <div
-        ref={earthRef}
         className={`
         xl:flex-1 xl:h-auto md:h-[550px] h-[350px]
-        transition-transform duration-900 ease-out
-        will-change-transform
-        ${earthVisible ? "scale-100" : "scale-80"}
   `}
       >
         <EarthCanvas />
