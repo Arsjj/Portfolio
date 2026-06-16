@@ -9,6 +9,7 @@ import { fadeIn, textVariant } from "../../utils/motion";
 import { technologies } from "@/constants";
 import { styles } from "../../utils/styles";
 import Animation from "../Hero/Animation";
+import Iron from "../Hero/About";
 
 
 const ServiceCard = ({ index, name, icon }: { index: number, name: string, icon: any }) => (
@@ -57,8 +58,8 @@ const About = () => {
         variants={fadeIn("", "tween", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        I&apos;m a frontend developer with a drive to create responsive and user-friendly web 
-        applications and user interfaces. Proficient in JavaScript and Typescript, 
+        I&apos;m a frontend developer with a drive to create responsive and user-friendly web
+        applications and user interfaces. Proficient in JavaScript and Typescript,
         with hands-on experience in modern frontend technologies such as React and Next JS.
         Aiming to take on new challenges, learn more and use my coding skills for developing
         new features and contribute to successful projects.
@@ -66,16 +67,17 @@ const About = () => {
       <div className="absolute -z-50 w-full h-full flex justify-center items-center pt-20">
 
       </div>
-
+{/* 
       <motion.p
         variants={fadeIn("", "tween", 0.1, 1)}
-        className={styles.sectionHeadText}
+        className="mt-8 font-semibold text-white sm:text-xl"
 
       // className="mt-8 text-white sm:text-xl"
-      >Technologies I have worked with</motion.p>
+      >Technologies I have worked with
+      </motion.p> */}
       <div className="flex items-center sticky">
 
-        <motion.div className="w-full max-w-5xl mx-auto mt-10 flex flex-wrap justify-center gap-10 max-sm:gap-5 max-xsm:gap-4"
+        {/* <motion.div className="w-full max-w-5xl mx-auto mt-10 flex flex-wrap justify-center gap-10 max-sm:gap-5 max-xsm:gap-4"
           // variants={fadeIn("right", "spring")}
           // variants={fadeIn("", "", 0.1, 1)}
           initial={{ opacity: 0, x: -70 }}
@@ -87,12 +89,9 @@ const About = () => {
           {technologies.map((service, index) => (
             <ServiceCard key={service.name} index={index} {...service} />
           ))}
-        </motion.div>
-        {/* <Animation /> */}
+        </motion.div> */}
       </div>
-      <div className="flex mx-auto w-fit">
-
-      </div>
+      <Iron />
 
 
     </div>

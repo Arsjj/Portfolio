@@ -2,10 +2,8 @@
 
 import { useEffect, useRef } from "react";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
-import Works from "./Works";
 import Contact from "./Contact";
 import { StarsCanvas } from "./canvas";
-import About from "./About";
 import Footer from "./Footer";
 
 export default function HyperScrollSection() {
@@ -76,6 +74,20 @@ export default function HyperScrollSection() {
 
     const getBoost = () => {
         const p = scrollYProgress.get();
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
 
         // 0 at start/end, 1 in middle
         if (p < 0.25 || p > 0.75) return 0;

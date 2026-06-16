@@ -21,14 +21,6 @@ export default function Home() {
         <Works />
       </div>
       <HyperScrollSection />
-      {/* <section className="h-screen bg-slate-950 text-white">
-
-        <div className="relative z-0">
-          <Contact />
-          <StarsCanvas />
-        </div>
-      </section> */}
-      {/* <Footer /> */}
       <Toaster
         position="top-center"
         reverseOrder={false}
