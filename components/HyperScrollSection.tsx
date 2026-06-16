@@ -9,35 +9,37 @@ import Footer from "./Footer";
 export default function HyperScrollSection() {
     const sectionRef = useRef<HTMLDivElement | null>(null);
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
-    const [showContent, setShowContent] = useState(false);
 
+    const [phase, setPhase] = useState<"idle" | "jump" | "content">("idle");
 
     const isInView = useInView(sectionRef, {
         once: true,
-        amount: 0.65,
+        amount: 0.45,
     });
-    const [phase, setPhase] = useState<"idle" | "jump" | "content">("idle");
-    const startedRef = useRef(false);
 
-    const contactScale = useSpring(
-        showContent ? 1 : 0.85,
-        {
-            stiffness: 150,
-            damping: 18,
-        }
-    );
+    const contactScale = useSpring(phase === "content" ? 1 : 0.85, {
+        stiffness: 150,
+        damping: 18,
+    });
+
+    console.log(phase)
 
     useEffect(() => {
-        if (!isInView || startedRef.current) return;
+        let timer: number | undefined;
 
-        startedRef.current = true;
-        setPhase("jump");
+        if (isInView) {
+            setPhase("jump");
 
-        const timer = window.setTimeout(() => {
-            setPhase("content");
-        }, 1300);
+            timer = window.setTimeout(() => {
+                setPhase("content");
+            }, 1300);
+        } else {
+            setPhase("idle");
+        }
 
-        return () => clearTimeout(timer);
+        return () => {
+            if (timer) clearTimeout(timer);
+        };
     }, [isInView]);
 
     useEffect(() => {
@@ -75,8 +77,7 @@ export default function HyperScrollSection() {
             const cx = w / 2;
             const cy = h / 2;
 
-            ctx.fillStyle = "rgba(0, 0, 15, 0.35)";
-            ctx.fillRect(0, 0, w, h);
+            ctx.clearRect(0, 0, w, h);
 
             const elapsed = performance.now() - startTime;
             const progress = Math.min(elapsed / 1300, 1);
@@ -87,9 +88,6 @@ export default function HyperScrollSection() {
                     : Math.pow(1 - (progress - 0.65) / 0.35, 0.7);
 
             const speed = 16 + boost * 120;
-            const size = 2 + boost * 8;
-            const glow = boost * 30;
-            const brightness = 0.45 + boost * 0.85;
 
             ctx.fillStyle = `rgba(0, 0, 15, ${0.25 + boost * 0.25})`;
             ctx.fillRect(0, 0, w, h);
@@ -119,10 +117,6 @@ export default function HyperScrollSection() {
                 ctx.moveTo(px, py);
                 ctx.lineTo(x, y);
                 ctx.stroke();
-
-                // ctx.strokeStyle = `rgba(180, 225, 255, ${brightness})`;
-                // ctx.lineWidth = Math.max(1, ((w - star.z) / w) * size);
-                // ctx.shadowBlur = glow;
             }
 
             frame = requestAnimationFrame(animate);
@@ -138,57 +132,40 @@ export default function HyperScrollSection() {
         };
     }, [phase]);
 
-    useEffect(() => {
-        if (isInView) {
-            setPhase("jump");
-
-            const timer = setTimeout(() => {
-                setPhase("content");
-            }, 1500);
-
-            return () => clearTimeout(timer);
-        } else {
-            setPhase("idle");
-        }
-    }, [isInView]);
-
-
-
     return (
-        <>
-            <section
-                ref={sectionRef}
-                className="relative min-h-screen overflow-hidden bg-gradient-to-b from-[#08090f] to-[#05060a]"
+        <section
+            ref={sectionRef}
+            className="relative min-h-screen overflow-hidden bg-gradient-to-b from-[#08090f] to-[#05060a]"
+        >
+            <div className="absolute inset-0 z-0 pointer-events-none">
+                <StarsCanvas />
+            </div>
+
+            <motion.canvas
+                ref={canvasRef}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: phase === "jump" ? 1 : 0 }}
+                transition={{ duration: 0.35 }}
+                className="absolute inset-0 z-10 h-full w-full pointer-events-none"
+            />
+
+            <motion.div
+                animate={{
+                    opacity: phase === "content" ? 1 : 0,
+                }}
+                transition={{
+                    type: "spring",
+                    stiffness: 140,
+                    damping: 18,
+                }}
+                className="relative z-20"
             >
-                <motion.canvas
-                    ref={canvasRef}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: phase === "jump" ? 1 : 0 }}
-                    transition={{ duration: 0.35 }}
-                    className="absolute inset-0 z-10 h-full w-full pointer-events-none"
-                />
+                <Contact scale={contactScale} />
+            </motion.div>
 
-                <motion.div
-                    initial={{
-                        // scale: 0.85,
-                        opacity: 0,
-                    }}
-                    animate={{
-                        // scale: phase === "content" ? 1 : 0.85,
-                        opacity: phase === "content" ? 1 : 0,
-                    }}
-                    transition={{
-                        type: "spring",
-                        stiffness: 140,
-                        damping: 18,
-                    }}
-                >
-                    <Contact scale={contactScale} />
-                    <StarsCanvas />
-                </motion.div>
+            <div className="relative z-20">
                 <Footer />
-            </section>
-
-        </>
+            </div>
+        </section>
     );
 }

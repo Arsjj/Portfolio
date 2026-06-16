@@ -7,7 +7,7 @@ import { MotionValue } from "framer-motion";
 
 type ContactProps = {
   formX?: MotionValue<string>;
-  scale?: MotionValue<string>;
+  scale?: MotionValue<number>;
   progress?: MotionValue<number>;
   innerOpacity?: MotionValue<number>;
 };
@@ -181,10 +181,6 @@ const Contact = ({ scale }: ContactProps) => {
 
         </form>
       </motion.div>
-
-      {/* <motion.div
-        variants={slideIn("right", "tween", 0.2, 1)}
-        > */}
       <div
         ref={earthRef}
         className={`
@@ -194,8 +190,6 @@ const Contact = ({ scale }: ContactProps) => {
         ${earthVisible ? "scale-100" : "scale-80"}
   `}
       >
-
-
         <EarthCanvas />
       </div>
       {/* </motion.div> */}
