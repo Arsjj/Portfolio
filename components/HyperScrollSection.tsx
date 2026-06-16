@@ -1,156 +1,101 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { motion, useInView, useSpring } from "framer-motion";
 import Contact from "./Contact";
 import { StarsCanvas } from "./canvas";
 import Footer from "./Footer";
 
 export default function HyperScrollSection() {
-    const ref = useRef<HTMLDivElement | null>(null);
+    const sectionRef = useRef<HTMLDivElement | null>(null);
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
+    const [showContent, setShowContent] = useState(false);
 
-    const { scrollYProgress } = useScroll({
-        target: ref,
-        offset: ["start start", "end end"],
+
+    const isInView = useInView(sectionRef, {
+        once: true,
+        amount: 0.65,
     });
+    const [phase, setPhase] = useState<"idle" | "jump" | "content">("idle");
+    const startedRef = useRef(false);
 
-    const currentScale = useTransform(
-        scrollYProgress,
-        [0, 0.42],
-        [1, 1.35]
+    const contactScale = useSpring(
+        showContent ? 1 : 0.85,
+        {
+            stiffness: 150,
+            damping: 18,
+        }
     );
-
-    const nextScale = useTransform(
-        scrollYProgress,
-        [0.52, 1],
-        [0.96, 1]
-    );
-
-    const nextY = useTransform(
-        scrollYProgress,
-        [0.55, 0.8, 0.8],
-        ["10%", "0%", "0%"]
-    );
-
-    const currentOpacity = useTransform(scrollYProgress, [0, 0.25, 0.35], [1, 1, 0]);
-    const nextOpacity = useTransform(scrollYProgress, [0.65, 0.7, 1], [0, 1, 1]);
-    const jumpOpacity = useTransform(scrollYProgress, [0, 0.4, 0.4, 1], [0, 1, 1, 0]);
-
-    const contactFormX = useTransform(
-        scrollYProgress,
-        [0.55, 0.75],
-        ["-120%", "0%"]
-    );
-
-    const earthX = useTransform(
-        scrollYProgress,
-        [0.55, 0.75],
-        ["120%", "0%"]
-    );
-
-    const contactInnerOpacity = useTransform(
-        scrollYProgress,
-        [0.55, 0.7],
-        [0, 1]
-    );
-
-    const contactScaleRaw = useTransform(
-        scrollYProgress,
-        [0.55, 0.8],
-        [0.8, 1]
-    );
-
-    const contactScale = useSpring(contactScaleRaw, {
-        stiffness: 150,
-        damping: 18,
-    });
-
-
-    const currentDisplay = useTransform(
-        scrollYProgress,
-        (v) => (v > 0.4 ? "none" : "flex")
-    );
-
-    const getBoost = () => {
-        const p = scrollYProgress.get();
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
-        // 0 at start/end, 1 in middle
-        if (p < 0.25 || p > 0.75) return 0;
-
-        return 1 - Math.abs(p - 0.5) / 0.25;
-    };
-
-    const boost = getBoost();
-    const speed = 18 + boost * 45;
-    const brightness = 0.9 + boost * 0.8;
-    const size = 5 + boost * 8;
-    const glow = boost * 25;
-
-
 
     useEffect(() => {
+        if (!isInView || startedRef.current) return;
+
+        startedRef.current = true;
+        setPhase("jump");
+
+        const timer = window.setTimeout(() => {
+            setPhase("content");
+        }, 1300);
+
+        return () => clearTimeout(timer);
+    }, [isInView]);
+
+    useEffect(() => {
+        if (phase !== "jump") return;
+
         const canvas = canvasRef.current;
         if (!canvas) return;
 
-        const ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
+        const ctx = canvas.getContext("2d");
         if (!ctx) return;
 
-        let w = window.innerWidth;
-        let h = window.innerHeight;
+        let frame = 0;
+        let running = true;
 
-        canvas.width = w;
-        canvas.height = h;
+        const resize = () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        };
 
-        const stars = Array.from({ length: 400 }, () => ({
-            x: Math.random() * w - w / 2,
-            y: Math.random() * h - h / 2,
-            z: Math.random() * w,
+        resize();
+
+        const stars = Array.from({ length: 350 }, () => ({
+            x: Math.random() * canvas.width - canvas.width / 2,
+            y: Math.random() * canvas.height - canvas.height / 2,
+            z: Math.random() * canvas.width,
         }));
 
-        let frame: number;
+        const startTime = performance.now();
 
+        const animate = () => {
+            if (!running) return;
 
-        function animate() {
+            const w = canvas.width;
+            const h = canvas.height;
+            const cx = w / 2;
+            const cy = h / 2;
 
             ctx.fillStyle = "rgba(0, 0, 15, 0.35)";
             ctx.fillRect(0, 0, w, h);
 
-            const cx = w / 2;
-            const cy = h / 2;
+            const elapsed = performance.now() - startTime;
+            const progress = Math.min(elapsed / 1300, 1);
 
-
-            const p = scrollYProgress.get();
             const boost =
-                p < 0.25 || p > 0.75
-                    ? 0
-                    : 1 - Math.abs(p - 0.5) / 0.25;
+                progress < 0.65
+                    ? Math.pow(progress / 0.65, 2.2)
+                    : Math.pow(1 - (progress - 0.65) / 0.35, 0.7);
 
-            const speed = 18 + Math.pow(boost, 2) * 70;
+            const speed = 16 + boost * 120;
+            const size = 2 + boost * 8;
+            const glow = boost * 30;
+            const brightness = 0.45 + boost * 0.85;
 
-            const brightness = 0.9 + boost * 0.8;
-            const size = 5 + boost * 2;
-            const glow = boost * 25;
-
-
+            ctx.fillStyle = `rgba(0, 0, 15, ${0.25 + boost * 0.25})`;
+            ctx.fillRect(0, 0, w, h);
 
             for (const star of stars) {
                 const prevZ = star.z;
-
 
                 star.z -= speed;
 
@@ -167,65 +112,83 @@ export default function HyperScrollSection() {
                 const py = (star.y / prevZ) * h + cy;
 
                 ctx.beginPath();
-                ctx.strokeStyle = `rgba(180, 225, 255, ${brightness})`;
-                ctx.lineWidth = Math.max(1, ((w - star.z) / w) * size);
-
-                ctx.shadowBlur = glow;
+                ctx.strokeStyle = "rgba(180, 225, 255, 1)";
+                ctx.lineWidth = Math.max(1, ((w - star.z) / w) * 7);
+                ctx.shadowBlur = 20;
                 ctx.shadowColor = "rgba(120, 200, 255, 1)";
                 ctx.moveTo(px, py);
                 ctx.lineTo(x, y);
                 ctx.stroke();
+
+                // ctx.strokeStyle = `rgba(180, 225, 255, ${brightness})`;
+                // ctx.lineWidth = Math.max(1, ((w - star.z) / w) * size);
+                // ctx.shadowBlur = glow;
             }
 
             frame = requestAnimationFrame(animate);
-        }
+        };
 
+        window.addEventListener("resize", resize);
         animate();
 
-        return () => cancelAnimationFrame(frame);
-    }, []);
+        return () => {
+            running = false;
+            cancelAnimationFrame(frame);
+            window.removeEventListener("resize", resize);
+        };
+    }, [phase]);
 
-    return (<>
-        <section ref={ref} className="relative h-[300vh] bg-gradient-to-b from-[#08090f] to-[#05060a]">
-            <div className="sticky top-0 h-screen overflow-hidden">
+    useEffect(() => {
+        if (isInView) {
+            setPhase("jump");
+
+            const timer = setTimeout(() => {
+                setPhase("content");
+            }, 1500);
+
+            return () => clearTimeout(timer);
+        } else {
+            setPhase("idle");
+        }
+    }, [isInView]);
+
+
+
+    return (
+        <>
+            <section
+                ref={sectionRef}
+                className="relative min-h-screen overflow-hidden bg-gradient-to-b from-[#08090f] to-[#05060a]"
+            >
                 <motion.canvas
                     ref={canvasRef}
-                    style={{ opacity: jumpOpacity }}
-                    className="absolute inset-0 h-full w-full"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: phase === "jump" ? 1 : 0 }}
+                    transition={{ duration: 0.35 }}
+                    className="absolute inset-0 z-10 h-full w-full pointer-events-none"
                 />
 
                 <motion.div
-                    style={{
-                        opacity: currentOpacity,
-                        scale: currentScale,
-                        display: currentDisplay,
-                        pointerEvents: "none",
+                    initial={{
+                        // scale: 0.85,
+                        opacity: 0,
                     }}
-                    className="absolute inset-0 z-10 flex items-center justify-center text-white"
-                >
-
-                </motion.div>
-
-                <motion.div
-                    style={{
-                        opacity: nextOpacity,
-                        // scale: contactScale,
+                    animate={{
+                        // scale: phase === "content" ? 1 : 0.85,
+                        opacity: phase === "content" ? 1 : 0,
                     }}
-                    className="absolute z-20 w-full"
+                    transition={{
+                        type: "spring",
+                        stiffness: 140,
+                        damping: 18,
+                    }}
                 >
-                    <div className="relative z-0">
-                        <Contact
-                            formX={contactFormX}
-                            scale={contactScale}
-                        // earthX={earthX}
-                        // innerOpacity={contactInnerOpacity}
-                        />
-                        <StarsCanvas />
-                    </div>
+                    <Contact scale={contactScale} />
+                    <StarsCanvas />
                 </motion.div>
-            </div>
-        <Footer />
-        </section>
-    </>
+                <Footer />
+            </section>
+
+        </>
     );
 }

@@ -21,7 +21,7 @@ const ServiceCard = ({ index, name, icon }: { index: number, name: string, icon:
     transitionSpeed={450}
   >
     <motion.div
-      // variants={fadeIn("right", "spring", index * 0.5, 0.75)}
+      variants={fadeIn("right", "spring", index * 0.5, 0.75)}
       className="w-full relative green-pink-gradient p-[1px] rounded-[20px] shadow-card"
     >
       <div className="bg-tertiary  rounded-[20px] py-5  min-h-[170px] max-sm:min-h-[130px] max-xsm-[min-h-100px] flex justify-evenly items-center flex-col">
@@ -67,8 +67,8 @@ const About = () => {
       <div className="absolute -z-50 w-full h-full flex justify-center items-center pt-20">
 
       </div>
-{/* 
-      <motion.p
+
+      {/* <motion.p
         variants={fadeIn("", "tween", 0.1, 1)}
         className="mt-8 font-semibold text-white sm:text-xl"
 
@@ -92,9 +92,66 @@ const About = () => {
         </motion.div> */}
       </div>
       <Iron />
+      {/* <div className="flex flex-wrap gap-3 max-w-4xl py-4">
+        {technologies.map((tech, index) => (
+          <motion.div
+                    variants={fadeIn("", "tween", 0.1, 1)}
+
+            key={index}
+          >
+            <div
+              key={tech.name}
+              className="
+                                          group
+                                          flex
+                                          items-center
+                                          gap-2
+                                          rounded-full
+                                          border
+                                          border-cyan-500/20
+                                          bg-[#0b1020]/80
+                                          px-4
+                                          py-3
+                                          transition-all
+                                          duration-300
+                                          hover:border-cyan-400/60
+                                          hover:shadow-[0_0_20px_rgba(0,170,255,0.35)]
+                                          hover:-translate-y-1
+                                      "
+            >
+              <Image
+                src={tech.icon}
+                alt={tech.name}
+                width={18}
+                height={18}
+                className="
+                                              object-contain
+                                              transition-transform
+                                              duration-300
+                                              group-hover:scale-110
+                                              "
+              />
+
+              <span
+                className="
+                                              text-md
+                                              font-medium
+                                              text-white/90
+                                              whitespace-nowrap
+                                              "
+              >
+                {tech.name}
+              </span>
+
+            </div>
+          </motion.div>
+
+        ))}
+        ...
+      </div> */}
 
 
-    </div>
+    </div >
   );
 };
 

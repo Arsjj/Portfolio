@@ -1,8 +1,6 @@
 "use client"
 
-import React from "react";
 import Card from "./Card";
-
 import { motion } from "framer-motion";
 import { data } from "./Data";
 import { SectionWrapper } from "../../hoc";
@@ -11,7 +9,7 @@ import { styles } from "../../utils/styles";
 
 const Works = () => {
   return (
-    <div className="relative h-0 overflow-visible">
+    <div className="relative h-fit overflow-visible">
       <motion.div id="projects" variants={textVariant()}>
         <h2 className={`${styles.sectionHeadText}`} >Projects</h2>
       </motion.div>

@@ -17,7 +17,7 @@ export default function Home() {
         <Hero />
       </div>
       <About />
-      <div className="relative z-50">
+      <div className="relative z-10">
         <Works />
       </div>
       <HyperScrollSection />

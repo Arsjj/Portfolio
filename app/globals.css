@@ -300,6 +300,11 @@ input[type="checkbox"],
     blink-caret 0.5s step-end;
 }
 
+#containerBox:hover {
+  fill: #75aeb1;
+  fill-opacity: 0.29;
+}
+
 #containerBox,
 #containerRightBottom,
 #loadingLights {

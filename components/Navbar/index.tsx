@@ -31,10 +31,25 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const scrollToBottom = () => {
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: "smooth",
+    });
+  };
+
+  const handleClick = (title: string ) => {
+    setActive(title)
+    title === "Contact" && scrollToBottom()
+    
+
+  }
+
+
   return (
     <nav
       className={`${styles.paddingX
-        } duration-1000 w-full flex items-center py-5 fixed top-0 z-20 ${scrolled ? "bg-primary" : "bg-transparent"
+        } duration-1000 w-full flex items-center py-5 fixed top-0 z-20 ${scrolled ? "bg-primary" : "bg-transparent relative z-[999]"
         }`}
     >
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
@@ -61,7 +76,7 @@ const Navbar = () => {
               key={nav.id}
               className={`${active === nav.title ? "text-white" : "text-secondary"
                 } hover:text-white text-[18px] font-medium cursor-pointer`}
-              onClick={() => setActive(nav.title)}
+              onClick={() => handleClick(nav.title)}
             >
               <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
