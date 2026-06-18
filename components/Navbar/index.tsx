@@ -6,8 +6,8 @@ import Image from "next/image";
 import User from "@/icons/User/Index";
 
 import { motion } from "framer-motion";
-import { navLinks } from "../../constants";
-import { menu, close } from "../../assets";
+import { navLinks } from "@/constants";
+import { menu, close } from "@/assets";
 import { styles } from "../../utils/styles";
 
 
@@ -31,14 +31,10 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleClick = (title: string ) => {
-    setActive(title)
-  }
-
   return (
     <nav
       className={`${styles.paddingX
-        } duration-1000 w-full flex items-center py-5 fixed top-0 z-30 ${scrolled ? "bg-primary" : "bg-transparent relative z-[999]"
+        } duration-1000 w-full flex items-center py-5 fixed top-0 z-50 ${scrolled ? "bg-primary" : "bg-transparent"
         }`}
     >
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
@@ -64,14 +60,16 @@ const Navbar = () => {
             <li
               key={nav.id}
               className={`${active === nav.title ? "text-white" : "text-secondary"
-                } hover:text-white text-[18px] font-medium cursor-pointer`}
-              onClick={() => handleClick(nav.title)}
+                } hover:text-white text-[18px] font-medium`}
+              onClick={() => setActive(nav.title)}
             >
-              <a href={`#${nav.id}`}>{nav.title}</a>
+              <a href={`#${nav.id}`} className='block h-full'>
+                {nav.title}
+              </a>
             </li>
           ))}
         </ul>
-
+        
         <div className='sm:hidden flex flex-1 justify-end items-center'
         >
           <Image
@@ -80,6 +78,7 @@ const Navbar = () => {
             className='animate-opacity duration-250 w-[28px] h-[28px] object-contain relative z-20 cursor-pointer'
             onClick={() => setToggle(!toggle)}
           />
+
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

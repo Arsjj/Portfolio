@@ -17,7 +17,7 @@ export default function Home() {
       <div className="relative z-10">
         <Works />
       </div>
-      {/* <HyperJumpSection /> */}
+      <HyperJumpSection />
       <Footer />
       <Toaster
         position="top-center"
