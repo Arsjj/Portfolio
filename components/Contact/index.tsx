@@ -1,9 +1,16 @@
 "use client"
 
-import React, { ChangeEventHandler, FormEventHandler, useEffect, useRef, useState } from "react";
+import { ChangeEventHandler, FormEventHandler, useEffect, useRef, useState } from "react";
+import { toast } from "react-hot-toast";
 import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
 import { MotionValue } from "framer-motion";
+import emailjs from "@emailjs/browser";
+import Link from "next/link";
+import { styles } from "../../utils/styles";
+import { EarthCanvas } from "../canvas";
+import { SectionWrapper } from "../../hoc";
+import { GithubOutlined } from "@/icons/GithubOutlined";
+import { LinkedinOutlined } from "@/icons/LinkedinOutlined";
 
 type ContactProps = {
   formX?: MotionValue<string>;
@@ -11,12 +18,6 @@ type ContactProps = {
   progress?: MotionValue<number>;
   innerOpacity?: MotionValue<number>;
 };
-
-import { styles } from "../../utils/styles";
-import { EarthCanvas } from "../canvas";
-import { SectionWrapper } from "../../hoc";
-import { slideIn } from "../../utils/motion";
-import { toast } from "react-hot-toast";
 
 const Contact = ({ scale }: ContactProps) => {
   const formRef = useRef<HTMLFormElement>(null);
@@ -123,22 +124,41 @@ const Contact = ({ scale }: ContactProps) => {
   return (
     <div
       id="contact"
-      className={` flex xl:flex-row flex-col-reverse gap-10 pb-10 overflow-hidden`}
+      className={` flex lg:flex-row flex-col-reverse lg:gap-10 py-10`}
     >
       <motion.div
         style={{
           scale: scale
         }}
-        // variants={slideIn("left", "tween", 0.2, 1)}
         className="flex-[0.75] bg-black/30 backdrop-blur-sm p-8 max-sm:px-4 rounded-2xl min-w-[512px] max-sm:min-w-full"
       >
-        <p className={styles.sectionSubText}>Get in touch</p>
+        <div className="flex w-full justify-between">
+          <p className={styles.sectionSubText}>Get in touch</p>
+          <div className=" w-fit right-0 top-0 h-full flex items-center text-[22px] gap-3 px-4">
+            <Link
+              href="http://github.com/Arsjj"
+              target="_blank"
+              className="fill-white/80 hover:fill-white/70"
+              aria-label="githab link"
+            >
+              <GithubOutlined />
+            </Link>
+            <Link
+              href="http://www.linkedin.com/in/arsen-abrahamyan-23269a248/"
+              target="_blank"
+              className="fill-white/80 hover:fill-white/70"
+              aria-label="linkedin link"
+            >
+              <LinkedinOutlined />
+            </Link>
+          </div>
+        </div>
         <h3 className={styles.sectionHeadText}>Contact Me</h3>
 
         <form
           ref={formRef}
           onSubmit={handleSubmit}
-          className="mt-12 flex flex-col gap-8"
+          className="mt-12 flex flex-col gap-6"
         >
           <label className="flex flex-col">
             <span className="text-white font-medium mb-4">Your Name</span>
@@ -163,7 +183,7 @@ const Contact = ({ scale }: ContactProps) => {
           <label className="flex flex-col">
             <span className="text-white font-medium mb-4">Your Message</span>
             <textarea
-              rows={7}
+              rows={5}
               name="message"
               value={form.message}
               onChange={handleChange}
@@ -183,12 +203,11 @@ const Contact = ({ scale }: ContactProps) => {
       </motion.div>
       <div
         className={`
-        xl:flex-1 xl:h-auto md:h-[550px] h-[350px]
+        xl:flex-1 xl:h-auto h-[550px] w-full
   `}
       >
         <EarthCanvas />
       </div>
-      {/* </motion.div> */}
     </div >
   );
 };

@@ -301,7 +301,7 @@ input[type="checkbox"],
 }
 
 #containerBox:hover {
-  fill: #75aeb1;
+  fill: #2B4F78;
   fill-opacity: 0.29;
 }
 
@@ -407,8 +407,42 @@ input[type="checkbox"]:checked + svg #fireCircles + #container #thirdLight {
   transform-origin: right;
 }
 
-#thirdLight {
+/* #thirdLight {
   transition: 0.2s fill;
   transition-delay: 0s;
   transform-origin: right;
+} */
+
+
+#hudBlueLayer {
+  fill: none;
+  stroke: #00aaff;
+  stroke-width: 1.2;
+  opacity: 0.75;
+  filter: drop-shadow(0 0 5px rgba(0, 180, 255, 0.9));
 }
+
+#hudBlueLayer circle:nth-of-type(1) {
+  stroke-dasharray: 90 38;
+}
+
+#hudBlueLayer circle:nth-of-type(2) {
+  stroke-dasharray: 28 75;
+}
+/* 
+#hudBlueLayer circle:nth-of-type(3) {
+  stroke-dasharray: 70 130;
+  opacity: 0.5;
+} */
+
+#hudBlueLayer rect {
+  fill: #00aaff;
+  stroke: none;
+}
+
+
+#fireCircles path[fill="#737273"],
+#fireCircles path[fill="#737372"] {
+  fill: rgba(95, 100, 105, 0.75);
+}
+

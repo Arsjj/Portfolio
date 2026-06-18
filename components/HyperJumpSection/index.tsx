@@ -2,24 +2,27 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView, useSpring } from "framer-motion";
-import Contact from "./Contact";
-import { StarsCanvas } from "./canvas";
-import Footer from "./Footer";
+import { StarsCanvas } from "../canvas";
+import Contact from "../Contact";
 
-export default function HyperScrollSection() {
+export default function HyperJumpSection() {
     const sectionRef = useRef<HTMLDivElement | null>(null);
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
     const [phase, setPhase] = useState<"idle" | "jump" | "content">("idle");
 
+    const amount =
+        typeof window !== "undefined"
+            ? window.innerWidth >= 1024
+                ? 0.8
+                : 0.5
+            : 0.5;
+
     const isInView = useInView(sectionRef, {
         once: true,
-        amount: 0.45,
+        amount,
     });
-
     let sp = phase === "content" ? 1 : 0.5
-    console.log(sp)
-
     const contactScale = useSpring(0.85, {
         stiffness: 250,
         damping: 18,
@@ -37,7 +40,7 @@ export default function HyperScrollSection() {
 
             timer = window.setTimeout(() => {
                 setPhase("content");
-            }, 1300);
+            }, 1500);
         } else {
             setPhase("idle");
         }
@@ -66,7 +69,7 @@ export default function HyperScrollSection() {
 
         resize();
 
-        const stars = Array.from({ length: 350 }, () => ({
+        const stars = Array.from({ length: 450 }, () => ({
             x: Math.random() * canvas.width - canvas.width / 2,
             y: Math.random() * canvas.height - canvas.height / 2,
             z: Math.random() * canvas.width,
@@ -84,20 +87,23 @@ export default function HyperScrollSection() {
 
             ctx.clearRect(0, 0, w, h);
 
+
             const elapsed = performance.now() - startTime;
-            const progress = Math.min(elapsed / 1300, 1);
+            const progress = Math.min(elapsed / 1500, 1);
 
             const boost =
                 progress < 0.65
                     ? Math.pow(progress / 0.65, 2.2)
                     : Math.pow(1 - (progress - 0.65) / 0.35, 0.7);
 
-            const speed = 16 + boost * 120;
-
             ctx.fillStyle = `rgba(0, 0, 15, ${0.25 + boost * 0.25})`;
             ctx.fillRect(0, 0, w, h);
 
-            for (const star of stars) {
+            const activeStars = Math.floor(180 + boost * 520);
+            const speed = 12 + boost * 250;
+
+            for (let i = 0; i < activeStars; i++) {
+                const star = stars[i % stars.length];
                 const prevZ = star.z;
 
                 star.z -= speed;
@@ -117,10 +123,18 @@ export default function HyperScrollSection() {
                 ctx.beginPath();
                 ctx.strokeStyle = "rgba(180, 225, 255, 1)";
                 ctx.lineWidth = Math.max(1, ((w - star.z) / w) * 7);
-                ctx.shadowBlur = 20;
-                ctx.shadowColor = "rgba(120, 200, 255, 1)";
+
+                const dx = x - cx;
+                const dy = y - cy;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                const centerGlow = Math.max(0, 1 - distance / 420);
+
+                ctx.shadowBlur = 4 + centerGlow * 35;
+                ctx.shadowColor = `rgba(120, 200, 255, ${0.35 + centerGlow * 0.65})`;
+
                 ctx.moveTo(px, py);
                 ctx.lineTo(x, y);
+                ctx.stroke();
                 ctx.stroke();
             }
 
@@ -140,12 +154,11 @@ export default function HyperScrollSection() {
     return (
         <section
             ref={sectionRef}
-            className="relative min-h-screen overflow-visible bg-gradient-to-b from-[#08090f] to-[#05060a]"
+            className="relative overflow-visible bg-gradient-to-b from-[#08090f] to-[#05060a]"
         >
             <div className="absolute inset-0 z-0 pointer-events-none">
                 <StarsCanvas />
             </div>
-
             <motion.canvas
                 ref={canvasRef}
                 initial={{ opacity: 0 }}
@@ -153,15 +166,9 @@ export default function HyperScrollSection() {
                 transition={{ duration: 0.35 }}
                 className="absolute inset-0 z-10 h-full w-full pointer-events-none"
             />
-
             <motion.div
                 animate={{
                     opacity: phase === "content" ? 1 : 0,
-                }}
-                transition={{
-                    type: "spring",
-                    stiffness: 140,
-                    damping: 18,
                 }}
                 className="relative z-20"
             >

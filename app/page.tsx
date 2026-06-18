@@ -3,8 +3,8 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Works from "@/components/Works";
 import Footer from "@/components/Footer";
+import HyperJumpSection from "@/components/HyperJumpSection";
 import { Toaster } from "react-hot-toast";
-import HyperScrollSection from "@/components/HyperScrollSection";
 
 export default function Home() {
   return (
@@ -17,7 +17,7 @@ export default function Home() {
       <div className="relative z-10">
         <Works />
       </div>
-      <HyperScrollSection />
+      {/* <HyperJumpSection /> */}
       <Footer />
       <Toaster
         position="top-center"
