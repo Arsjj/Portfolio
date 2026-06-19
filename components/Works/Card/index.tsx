@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -7,7 +6,7 @@ type Props = {
   description: string;
   src: any;
   link: string;
-  tags: any
+  tags: Record<string, string>[]
 };
 
 export default function Card({

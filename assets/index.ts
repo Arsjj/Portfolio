@@ -16,13 +16,12 @@ import nodejs from "./techs/nodejs.png";
 import storybook from "./techs/storybook.webp";
 import mongodb from "./techs/mongodb.png";
 import express from "./techs/express.png";
+import zustand from "./techs/zustand.jpeg"
 
-import sliders from "./projects/sliders.webp";
 import oasisdark from "./projects/oasis-dark.webp";
 import movies from "./projects/movies-3.webp";
-import meals from "./projects/meals.webp";
-import quiz from "./projects/quiz.webp";
 import aiCouch from "./projects/ai-couch.webp";
+import oasisLight from "./projects/oasis-light.webp"
 
 export {
   menu,
@@ -41,11 +40,10 @@ export {
   nodejs,
   express,
   mongodb,
+  storybook,
+  zustand,
   movies,
   oasisdark,
-  meals,
-  quiz,
-  sliders,
-  storybook,
+  oasisLight,
   aiCouch,
 };

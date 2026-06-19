@@ -1,6 +1,5 @@
 import {
   css,
-  git,
   html,
   javascript,
   next,
@@ -8,17 +7,16 @@ import {
   redux,
   sass,
   tailwind,
+  zustand,
   typescript,
   storybook,
   nodejs,
   express,
   mongodb,
   movies,
-  meals,
-  quiz,
   oasisdark,
-  sliders,
   aiCouch,
+  oasisLight
 } from "@/assets";
 
 export const navLinks = [
@@ -50,36 +48,20 @@ const technologies = [
     icon: css,
   },
   {
-    name: "SCSS",
-    icon: sass,
-  },
-  {
-    name: "Tailwind CSS",
-    icon: tailwind,
-  },
-  {
-    name: "Storybook",
-    icon: storybook,
-  },
-  {
     name: "JavaScript",
     icon: javascript,
+  },
+  {
+    name: "React",
+    icon: react,
   },
   {
     name: "TypeScript",
     icon: typescript,
   },
   {
-    name: "React JS",
-    icon: react,
-  },
-  {
     name: "Next JS",
     icon: next,
-  },
-  {
-    name: "Redux Toolkit",
-    icon: redux,
   },
   {
     name: "Node JS",
@@ -93,20 +75,32 @@ const technologies = [
     name: "MongoDB",
     icon: mongodb,
   },
+  { name: "Zustand", icon: zustand },
+  {
+    name: "Tailwind CSS",
+    icon: tailwind,
+  },
+  {
+    name: "SCSS",
+    icon: sass,
+  },
+  {
+    name: "Storybook",
+    icon: storybook,
+  },
 
   {
-    name: "Git",
-    icon: git,
+    name: "Redux Toolkit",
+    icon: redux,
   },
 ];
 
-const data = [
+const projectsData = [
   {
     id: 2,
     name: "AI Interview Coach",
     img: aiCouch,
-    description:
-      "AI-powered interview preparation platform",
+    description: "AI-powered interview preparation platform",
     link: "https://ai-interview-coach-sigma-tan.vercel.app/",
     tags: [
       {
@@ -179,4 +173,4 @@ const data = [
   },
 ];
 
-export { technologies, data };
+export { technologies, projectsData };
