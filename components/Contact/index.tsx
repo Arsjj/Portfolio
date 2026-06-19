@@ -203,7 +203,7 @@ const Contact = ({ scale }: ContactProps) => {
       </motion.div>
       <div
         className={`
-        xl:flex-1 xl:h-auto h-[550px] w-full
+        xl:flex-1 xl:h-auto h-[550px] max-sm:h-[480px] w-full
   `}
       >
         <EarthCanvas />
