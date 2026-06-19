@@ -8,6 +8,7 @@ import Contact from "../Contact";
 export default function HyperJumpSection() {
     const sectionRef = useRef<HTMLDivElement | null>(null);
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
+    const formRef = useRef<HTMLDivElement | null>(null);
     const startedRef = useRef(false);
 
     const [phase, setPhase] = useState<"idle" | "jump" | "content">("idle");
@@ -23,7 +24,7 @@ export default function HyperJumpSection() {
             : 0.6;
 
     const isInView = useInView(sectionRef, {
-        amount: 0.4
+        amount: amount
     });
 
     const contactScale = useSpring(0.85, {
@@ -40,7 +41,12 @@ export default function HyperJumpSection() {
 
         startedRef.current = true;
 
-        sectionRef.current?.scrollIntoView({
+        const target =
+            window.innerWidth < 1024
+                ? formRef.current
+                : sectionRef.current;
+
+        target?.scrollIntoView({
             behavior: "smooth",
             block: "start",
         });
@@ -184,7 +190,7 @@ export default function HyperJumpSection() {
                 }}
                 className="relative z-20"
             >
-                <Contact scale={contactScale} />
+                <Contact scale={contactScale} formRef={formRef} />
             </motion.div>
         </section>
     );

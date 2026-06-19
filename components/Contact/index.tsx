@@ -1,6 +1,6 @@
 "use client"
 
-import { ChangeEventHandler, FormEventHandler, useEffect, useRef, useState } from "react";
+import { ChangeEventHandler, FormEventHandler, LegacyRef, RefObject, useEffect, useRef, useState } from "react";
 import { toast } from "react-hot-toast";
 import { motion } from "framer-motion";
 import { MotionValue } from "framer-motion";
@@ -17,10 +17,10 @@ type ContactProps = {
   scale?: MotionValue<number>;
   progress?: MotionValue<number>;
   innerOpacity?: MotionValue<number>;
+  formRef:  LegacyRef<HTMLDivElement> | undefined
 };
 
-const Contact = ({ scale }: ContactProps) => {
-  const formRef = useRef<HTMLFormElement>(null);
+const Contact = ({ scale, formRef }: ContactProps) => {
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
     name: "",
@@ -125,6 +125,7 @@ const Contact = ({ scale }: ContactProps) => {
     <div
       id="contact"
       className={` flex lg:flex-row flex-col-reverse lg:gap-10 py-10 max-sm:pt-0`}
+      ref={formRef}
     >
       <motion.div
         style={{
@@ -159,7 +160,6 @@ const Contact = ({ scale }: ContactProps) => {
         <h3 className={styles.sectionHeadText}>Contact Me</h3>
 
         <form
-          ref={formRef}
           onSubmit={handleSubmit}
           className="mt-12 flex flex-col gap-6"
         >
