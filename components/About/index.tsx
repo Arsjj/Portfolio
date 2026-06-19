@@ -14,7 +14,7 @@ const ServiceCard = ({ index, name, icon }: { index: number, name: string, icon:
     tiltMaxAngleX={45}
     tiltMaxAngleY={45}
     transitionSpeed={450}
-    key={index} Z
+    key={index}
   >
     <motion.div
       initial={{ opacity: 0, x: -70 }}

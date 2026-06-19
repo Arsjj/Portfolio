@@ -1,5 +1,3 @@
-import menu from "./menu.svg";
-import close from "./close.svg";
 import stackoverflow from "./stackoverflow.webp";
 
 import html from "./techs/html.webp";
@@ -24,8 +22,6 @@ import aiCouch from "./projects/ai-couch.webp";
 import oasisLight from "./projects/oasis-light.webp"
 
 export {
-  menu,
-  close,
   html,
   css,
   tailwind,

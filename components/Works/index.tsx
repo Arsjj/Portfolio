@@ -9,8 +9,9 @@ import { projectsData } from "@/constants";
 
 const Works = () => {
   return (
-    <div className="relative h-fit overflow-visible">
-      <motion.div id="projects" variants={textVariant()}>
+    <div
+      className="relative h-fit overflow-visible">
+      <motion.div variants={textVariant()}>
         <h2 className={`${styles.sectionHeadText}`} >Projects</h2>
       </motion.div>
       <div className="mt-10 flex flex-wrap gap-10 justify-center max-sm:w-full">
@@ -31,4 +32,4 @@ const Works = () => {
   );
 };
 
-export default SectionWrapper(Works, "");
+export default SectionWrapper(Works, "projects");

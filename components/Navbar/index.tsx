@@ -1,19 +1,14 @@
 "use client"
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import UserNinja from "@/icons/User/Index";
 
-import { motion } from "framer-motion";
 import { navLinks } from "@/constants";
-import { menu, close } from "@/assets";
 import { styles } from "../../utils/styles";
 import {
   User,
   Briefcase,
-  Code2,
-  Mail,
   Rocket,
   Home
 } from "lucide-react";
@@ -35,7 +30,7 @@ const items = [
     icon: Briefcase,
   },
   {
-    id: "contact-mobile",
+    id: "contact",
     label: "Contact",
     icon: Rocket,
   },
@@ -100,7 +95,7 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-          <MobileNavbar />
+        <MobileNavbar />
       </div>
     </nav>
   );
@@ -109,11 +104,46 @@ const Navbar = () => {
 export default Navbar;
 
 const MobileNavbar = () => {
-  const [active, setActive] = useState("home")
+  const [active, setActive] = useState("")
+  const pendingRef = useRef<string | null>(null);
 
   const handleNavClick = (title: string, id: string) => {
-    setActive(title);
+    pendingRef.current = id;
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.innerHeight * 0.35;
+
+      let current = items[0].id;
+
+      items.forEach((item) => {
+        const el = document.getElementById(item.id);
+        if (!el) return;
+
+        if (el.getBoundingClientRect().top <= offset) {
+          current = item.id;
+        }
+      });
+
+      setActive(current);
+
+      if (pendingRef.current === current) {
+        pendingRef.current = null;
+      }
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, []);
+
   return (
     <div className="sm:hidden fixed bottom-0 left-0 right-0 z-50 px-3 pb-3">
       <div
@@ -139,13 +169,20 @@ const MobileNavbar = () => {
               className={`
             relative flex flex-col items-center justify-center
             h-[58px] gap-1 text-[10px]
-            transition-all duration-300
+            transition-all duration-1000
             ${isActive ? "text-[#00AAFF]" : "text-white/55"}
           `}
             >
-              {isActive && (
-                <span className="absolute top-0 h-[2px] w-8 rounded-full bg-[#00AAFF] shadow-[0_0_10px_#00AAFF]" />
-              )}
+              <span
+                className={`
+    absolute top-0 h-[2px] w-8 rounded-full
+    transition-all duration-400 ease-out
+    ${isActive
+                    ? "bg-[#00AAFF] shadow-[0_0_15px_rgba(34,211,238,0.8)] scale-100 opacity-100"
+                    : "bg-cyan-400 scale-50 opacity-0"
+                  }
+  `}
+              />
 
               <Icon size={18} strokeWidth={1.8} />
               <span>{item.label}</span>
