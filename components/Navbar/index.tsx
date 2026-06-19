@@ -35,7 +35,7 @@ const items = [
     icon: Briefcase,
   },
   {
-    id: "contact",
+    id: "contact-mobile",
     label: "Contact",
     icon: Rocket,
   },

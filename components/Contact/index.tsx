@@ -132,7 +132,10 @@ const Contact = ({ scale }: ContactProps) => {
         }}
         className="flex-[0.75] bg-black/30 backdrop-blur-sm p-8 max-sm:px-4 rounded-2xl min-w-[512px] max-sm:min-w-full"
       >
-        <div className="flex w-full justify-between">
+        <div
+          id="contact-mobile"
+          className="flex w-full justify-between"
+        >
           <p className={styles.sectionSubText}>Get in touch</p>
           <div className=" w-fit right-0 top-0 h-full flex items-center text-[22px] gap-3 px-4">
             <Link
@@ -203,7 +206,7 @@ const Contact = ({ scale }: ContactProps) => {
       </motion.div>
       <div
         className={`
-        xl:flex-1 xl:h-auto h-[550px] max-sm:h-[480px] w-full
+        xl:flex-1 xl:h-auto h-[550px] max-sm:h-[450px] w-full
   `}
       >
         <EarthCanvas />
