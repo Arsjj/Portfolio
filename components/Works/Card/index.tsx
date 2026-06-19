@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -7,8 +6,7 @@ type Props = {
   description: string;
   src: any;
   link: string;
-  technologies: string[];
-  tags: any
+  tags: Record<string, string>[]
 };
 
 export default function Card({
@@ -16,7 +14,6 @@ export default function Card({
   description,
   src,
   link,
-  technologies,
   tags
 }: Props) {
   const openTab = (link: string) => {

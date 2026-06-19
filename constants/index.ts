@@ -1,6 +1,5 @@
 import {
   css,
-  git,
   html,
   javascript,
   next,
@@ -15,11 +14,9 @@ import {
   express,
   mongodb,
   movies,
-  meals,
-  quiz,
   oasisdark,
-  sliders,
   aiCouch,
+  oasisLight
 } from "@/assets";
 
 export const navLinks = [
@@ -98,7 +95,7 @@ const technologies = [
   },
 ];
 
-const data = [
+const projectsData = [
   {
     id: 2,
     name: "AI Interview Coach",
@@ -176,4 +173,4 @@ const data = [
   },
 ];
 
-export { technologies, data };
+export { technologies, projectsData };
