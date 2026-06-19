@@ -20,7 +20,7 @@ export default function HyperJumpSection() {
             : 0.5;
 
     const isInView = useInView(sectionRef, {
-        amount: 0.5
+        amount: 0.4
     });
 
     let sp = phase === "content" ? 1 : 0.5
