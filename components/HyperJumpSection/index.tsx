@@ -14,11 +14,12 @@ export default function HyperJumpSection() {
 
     const amount =
         typeof window !== "undefined"
-            ? window.innerHeight <= 400
-                ? 0.2
-                : window.innerHeight <= 800
-                    ? 0.4
-                    : 0.6
+            ? window.innerHeight <= 300
+                ? 0.1 : window.innerHeight <= 400
+                    ? 0.2
+                    : window.innerHeight <= 800
+                        ? 0.4
+                        : 0.6
             : 0.6;
 
     const isInView = useInView(sectionRef, {
