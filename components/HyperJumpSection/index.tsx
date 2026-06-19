@@ -26,7 +26,6 @@ export default function HyperJumpSection() {
         amount: 0.4
     });
 
-    let sp = phase === "content" ? 1 : 0.5
     const contactScale = useSpring(0.85, {
         stiffness: 250,
         damping: 18,
@@ -45,9 +44,8 @@ export default function HyperJumpSection() {
             behavior: "smooth",
             block: "start",
         });
+
         let timer: number | undefined;
-
-
 
         if (isInView) {
             setPhase("jump");

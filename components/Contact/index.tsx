@@ -124,7 +124,7 @@ const Contact = ({ scale }: ContactProps) => {
   return (
     <div
       id="contact"
-      className={` flex lg:flex-row flex-col-reverse lg:gap-10 py-10`}
+      className={` flex lg:flex-row flex-col-reverse lg:gap-10 py-10 max-sm:pt-0`}
     >
       <motion.div
         style={{
