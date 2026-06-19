@@ -8,6 +8,7 @@ import Contact from "../Contact";
 export default function HyperJumpSection() {
     const sectionRef = useRef<HTMLDivElement | null>(null);
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
+    const startedRef = useRef(false);
 
     const [phase, setPhase] = useState<"idle" | "jump" | "content">("idle");
 
@@ -19,9 +20,9 @@ export default function HyperJumpSection() {
             : 0.5;
 
     const isInView = useInView(sectionRef, {
-        once: true,
-        amount,
+        amount: 0.5
     });
+
     let sp = phase === "content" ? 1 : 0.5
     const contactScale = useSpring(0.85, {
         stiffness: 250,
@@ -33,7 +34,17 @@ export default function HyperJumpSection() {
     }, [phase, contactScale]);
 
     useEffect(() => {
+        if (!isInView || startedRef.current) return;
+
+        startedRef.current = true;
+
+        sectionRef.current?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+        });
         let timer: number | undefined;
+
+
 
         if (isInView) {
             setPhase("jump");
