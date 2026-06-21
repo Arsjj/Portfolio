@@ -4,40 +4,53 @@ import Image from "next/image";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 import { SectionWrapper } from "../../hoc";
-import { fadeIn, textVariant } from "../../utils/motion";
+import { useReveal } from "@/hooks/useReveal";
 import { technologies } from "@/constants";
 import { styles } from "../../utils/styles";
 
-const ServiceCard = ({ index, name, icon }: { index: number, name: string, icon: any }) => (
-  <Tilt
-    className="sm:w-[130px] max-sm:w-[100px] max-xsm-[80px] w-full duration-100"
-    tiltMaxAngleX={45}
-    tiltMaxAngleY={45}
-    transitionSpeed={450}
-    key={index}
-  >
-    <motion.div
-      initial={{ opacity: 0, x: -70 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.7 }}
-      viewport={{ once: true }}
-      className="w-full relative green-pink-gradient p-[1px] rounded-[20px] shadow-card"
+const ServiceCard = ({ index, name, icon }: { index: number, name: string, icon: any }) => {
+  const { ref, visible } = useReveal({
+    threshold: 0.2,
+    once: true,
+  });
+  return (
+
+    <Tilt
+      className="sm:w-[130px] max-sm:w-[100px] max-xsm-[80px] w-full duration-100"
+      tiltMaxAngleX={45}
+      tiltMaxAngleY={45}
+      transitionSpeed={450}
+      key={index}
     >
-      <div className="flex flex-col justify-center items-center gap-4 bg-tertiary rounded-[20px] py-5  min-h-[160px] max-sm:min-h-[130px] max-xsm-[min-h-100px] ">
-        <Image
-          src={icon || ""}
-          width={100}
-          height={100}
-          alt={name}
-          className="relative w-10 h-10 max-sm:w-10 max-sm:h-10 max-xsm:w-9 max-xsm-h-9 object-cover"
-        />
-        <h3 className="text-white font-bold text-center max-sm:text-xs max-sm:font-semibold">
-          {name}
-        </h3>
+      <div ref={ref}
+        style={{
+          opacity: visible ? 1 : 0,
+          transform: visible
+            ? "translateX(0)"
+            : "translateX(-70px)",
+          transition: "all 0.7s ease",
+        }}
+      >
+        <div
+          className="w-full relative green-pink-gradient p-[1px] rounded-[20px] shadow-card"
+        >
+          <div className="flex flex-col justify-center items-center gap-4 bg-tertiary rounded-[20px] py-5  min-h-[160px] max-sm:min-h-[130px] max-xsm-[min-h-100px] ">
+            <Image
+              src={icon || ""}
+              width={100}
+              height={100}
+              alt={name}
+              className="relative w-10 h-10 max-sm:w-10 max-sm:h-10 max-xsm:w-9 max-xsm-h-9 object-cover"
+            />
+            <h3 className="text-white font-bold text-center max-sm:text-xs max-sm:font-semibold">
+              {name}
+            </h3>
+          </div>
+        </div>
       </div>
-    </motion.div>
-  </Tilt>
-);
+    </Tilt>
+  )
+};
 
 const MobileServiceCard = ({ index, name, icon }: { index: number, name: string, icon: any }) => (
   <div
@@ -70,19 +83,30 @@ const MobileServiceCard = ({ index, name, icon }: { index: number, name: string,
 
 
 const About = () => {
+  const titleReveal = useReveal({
+    direction: "up",
+    delay: 0.1,
+    duration: 0.75,
+    spring: true,
+    y: -50
+  });
+  const textReveal = useReveal({ delay: 0.1 });
+  const techReveal = useReveal({ delay: 0.1 });
+
 
   return (
     <div className="relative">
-      <motion.div variants={textVariant()}>
+      <div ref={titleReveal.ref} style={titleReveal.style}>
         <h2
           className={styles.sectionHeadText}
         >
           About
         </h2>
-      </motion.div>
+      </div>
 
-      <motion.p
-        variants={fadeIn("", "tween", 0.1, 1)}
+      <div
+        ref={textReveal.ref}
+        style={textReveal.style}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
         I&apos;m a frontend developer with a drive to create responsive and user-friendly web
@@ -92,14 +116,15 @@ const About = () => {
         <br />
         Aiming to take on new challenges, learn more and use my coding skills for developing
         new features and contribute to successful projects.
-      </motion.p>
+      </div>
       <div className="absolute -z-50 w-full h-full flex justify-center items-center pt-20">
       </div>
-      <motion.p
-        variants={fadeIn("", "tween", 0.1, 1)}
+      <div
+        ref={techReveal.ref}
+        style={techReveal.style}
         className="mt-8 font-semibold text-white sm:text-xl"
       >Technologies I have worked with
-      </motion.p>
+      </div>
       <div className="flex items-center sticky">
         <div className="max-sm:hidden w-full max-w-[780px] flex flex-wrap justify-center gap-7 mx-auto mt-10  max-sm:gap-5 max-xsm:gap-4">
           {technologies.map((service, index) => (

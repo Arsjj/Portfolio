@@ -204,7 +204,7 @@ body {
   transform: rotate(-80deg) skew(30deg) translateX(calc(45px * var(--i)))
     translateY(calc(-35px * var(--i)));
   /* animation: change-view 7s ease-in-out infinite alternate; */
-  filter: drop-shadow(0 0 12px #00aaff);
+  /* filter: drop-shadow(0 0 12px #00aaff); */
 }
 
 #big-centro,

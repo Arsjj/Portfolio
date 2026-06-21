@@ -19,7 +19,7 @@ export default function HyperJumpSection() {
                 ? 0.1 : window.innerHeight <= 400
                     ? 0.2
                     : window.innerHeight <= 800
-                        ? 0.3
+                        ? 0.5
                         : 0.6
             : 0.6;
 
