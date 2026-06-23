@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 type Props = {
-  id: number;
+  index: number
   name: string;
   description: string;
   src: any;
@@ -12,31 +12,27 @@ type Props = {
 };
 
 export default function Card({
-  id,
+  index,
   name,
   description,
   src,
   link,
   tags
 }: Props) {
-  const cardReveal = useReveal({
-    direction: "up",
-    delay: id * 0.3,
-    duration: 0.75,
-    spring: true,
-    y: 100
-  });
-
   const openTab = (link: string) => {
     window.open(`${link}`, "_blank");
   };
 
-  console.log(id)
+  const cardReveal = useReveal({
+    direction: "down",
+    delay: index * 0.3,
+    duration: 0.75,
+    spring: true,
+    y:  80
+  });
 
   return (
-    <div key={id} ref={cardReveal.ref} style={cardReveal.style} className="max-sm:w-full">
-
-
+    <div ref={cardReveal.ref} style={cardReveal.style} className="max-sm:w-full">
       <div className="parent group max-sm:w-full h-full min-h-[340px] flex justify-center rounded-lg" onClick={() => openTab(link)}>
         <div className="relative p-4 bg-black card rounded-2xl h-full w-[350px] max-sm:w-full max-xl:w-[360px] max-lg:w-80 max-md:w-96 cursor-pointer ">
           <div className="relative flex flex-col h-full content-box rounded-2xl">
@@ -68,16 +64,15 @@ export default function Card({
                   </div>
                 </div>
               </div>
-              <div
+              <Link
+                target="_blank"
+                href={link}
                 className="flex mt-2 w-full justify-end items-end"
               >
-                <Link
-                  target="_blank"
-                  href={link}
-                  className="p-2 z-0 text-xs rounded-lg relative items-center justify-center box-border bg-transparent text-white border border-transparent border-b-white duration-100 hover:text-white/80">
+                <button className="p-2 z-0 text-xs rounded-lg relative items-center justify-center box-border bg-transparent text-white border border-transparent border-b-white duration-100 hover:text-white/80">
                   Discover more
-                </Link>
-              </div>
+                </button>
+              </Link>
             </div>
           </div>
         </div>

@@ -19,7 +19,7 @@ export default function HyperJumpSection() {
                 ? 0.1 : window.innerHeight <= 400
                     ? 0.2
                     : window.innerHeight <= 800
-                        ? 0.4
+                        ? 0.45
                         : 0.6
             : 0.6;
 
@@ -46,15 +46,16 @@ export default function HyperJumpSection() {
                 ? formRef.current
                 : sectionRef.current;
 
-        target?.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-        });
+        ;
 
         let timer: number | undefined;
 
         if (isInView) {
             setPhase("jump");
+            target?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+            })
 
             timer = window.setTimeout(() => {
                 setPhase("content");
@@ -87,7 +88,7 @@ export default function HyperJumpSection() {
 
         resize();
 
-        const stars = Array.from({ length: 450 }, () => ({
+        const stars = Array.from({ length: 350 }, () => ({
             x: Math.random() * canvas.width - canvas.width / 2,
             y: Math.random() * canvas.height - canvas.height / 2,
             z: Math.random() * canvas.width,
@@ -174,9 +175,6 @@ export default function HyperJumpSection() {
             ref={sectionRef}
             className="relative overflow-visible bg-gradient-to-b from-[#08090f] to-[#05060a]"
         >
-            <div className="absolute inset-0 z-0 pointer-events-none">
-                <StarsCanvas />
-            </div>
             <motion.canvas
                 ref={canvasRef}
                 initial={{ opacity: 0 }}
@@ -190,6 +188,9 @@ export default function HyperJumpSection() {
                 }}
                 className="relative z-20"
             >
+                <div className="absolute inset-0 z-0 pointer-events-none">
+                    <StarsCanvas />
+                </div>
                 <Contact scale={contactScale} formRef={formRef} />
             </motion.div>
         </section>
