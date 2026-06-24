@@ -17,7 +17,7 @@ type ContactProps = {
   scale?: MotionValue<number>;
   progress?: MotionValue<number>;
   innerOpacity?: MotionValue<number>;
-  formRef:  LegacyRef<HTMLDivElement> | undefined
+  formRef: LegacyRef<HTMLDivElement> | undefined
 };
 
 const Contact = ({ scale, formRef }: ContactProps) => {
@@ -124,7 +124,7 @@ const Contact = ({ scale, formRef }: ContactProps) => {
   return (
     <div
       id="contact"
-      className={` flex lg:flex-row flex-col-reverse lg:gap-10 py-10 max-sm:pt-0`}
+      className={` flex lg:flex-row flex-col-reverse lg:gap-10 xl:py-10 max-sm:pt-0`}
       ref={formRef}
     >
       <motion.div
@@ -205,14 +205,13 @@ const Contact = ({ scale, formRef }: ContactProps) => {
         </form>
       </motion.div>
       <div
-        className={`
-        xl:flex-1 xl:h-auto h-[550px] max-sm:h-[450px] w-full overflow-hidden
-  `}
-      >
+        className={`relative xl:flex-1 xl:h-auto h-[550px] max-sm:h-[450px] w-full overflow-hidden`}>
+        <div className="absolute top-0 w-full h-20 z-20 lg:hidden"></div>
         <EarthCanvas />
+        <div className="absolute bottom-0 w-full h-20 z-20 lg:hidden"></div>
       </div>
     </div >
   );
 };
 
-export default SectionWrapper(Contact, "contact");
+export default SectionWrapper(Contact, "contact", false);

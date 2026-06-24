@@ -39,10 +39,6 @@ const EarthCanvas = () => {
   return (
     <Canvas
       camera={{ position: [0, 0, 5], fov: 45 }}
-      style={{
-
-        touchAction: "pan-y",
-      }}
     >
       <Suspense fallback={null}>
         <OrbitControls

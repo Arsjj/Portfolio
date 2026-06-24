@@ -7,7 +7,8 @@ import { ComponentType, FC } from "react";
 
 const StarWrapper = <P extends object>(
   Component: ComponentType<P>,
-  idName: string
+  idName: string,
+  withTopSpace = true
 ): FC<P> => {
   // Return the HOC component
   const HOC: FC<P> = (props) => {
@@ -18,11 +19,12 @@ const StarWrapper = <P extends object>(
         whileInView='show'
         viewport={{ once: true, amount: 0.25 }}
         className={`${styles.padding} max-w-7xl mx-auto relative z-0`}
-      >
-        <span className='hash-span' id={idName}>
-          &nbsp;
-        </span>
-
+      >{
+          withTopSpace &&
+          <span className='hash-span' id={idName}>
+            &nbsp;
+          </span>
+        }
         <Component {...props} /> {/* Pass props to the wrapped component */}
       </motion.section>
     );
