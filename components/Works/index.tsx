@@ -16,19 +16,6 @@ const Works = () => {
     y: -50
   })
   const isMAxXl = typeof window !== undefined && window.innerWidth < 1280
-  const [maxXl, setMaxXl] = useState(isMAxXl);
-
-  useEffect(() => {
-    if (typeof window !== undefined) {
-
-      const check = () => setMaxXl(window.innerWidth < 768);
-
-      check();
-      window.addEventListener("resize", check);
-
-      return () => window.removeEventListener("resize", check);
-    }
-  }, []);
 
   return (
     <div
@@ -47,7 +34,7 @@ const Works = () => {
             link={item.link}
             src={item.img}
             tags={item.tags}
-            isMAxXl={maxXl}
+            isMAxXl={isMAxXl}
           />
         ))}
       </div>
