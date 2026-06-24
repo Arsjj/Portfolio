@@ -23,6 +23,7 @@ export const useReveal = ({
   once = true,
   threshold = 0.2,
   spring = false,
+  blur = 0
 }: UseRevealOptions = {}) => {
   const ref = useRef<HTMLDivElement | null>(null);
   const [visible, setVisible] = useState(false);
