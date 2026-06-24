@@ -92,11 +92,6 @@ const About = () => {
   });
   const textReveal = useReveal({ delay: 0.1 });
   const techReveal = useReveal({ delay: 0.2 });
-  const p1 = useReveal({ y: 28, delay: 0.1, blur: 6 });
-  const p2 = useReveal({ y: 28, delay: 0.125, blur: 6 });
-  const p3 = useReveal({ y: 28, delay: 0.15, blur: 6 });
-  const p4 = useReveal({ y: 28, delay: 0.175, blur: 6 });
-
 
   return (
     <div className="relative">
@@ -113,24 +108,23 @@ const About = () => {
         style={textReveal.style}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        <p ref={p1.ref} style={p1.style} className="mt-6 text-[17px] leading-8 text-secondary">
+        <p  className="mt-6 text-[17px] leading-8 text-secondary">
           As a Frontend Engineer, I see software development as a balance between creativity and engineering.
         </p>
-
-        <p ref={p2.ref} style={p2.style} className=" text-[17px] leading-8 text-secondary">
+        <p  className=" text-[17px] leading-8 text-secondary">
           I enjoy transforming ideas into intuitive, responsive, and engaging user experiences while ensuring the underlying architecture remains scalable and maintainable.
           My primary focus is building modern web applications
           with technologies such as React, Next.js, and TypeScript, creating
           interfaces that are both visually polished and highly performant.
         </p>
 
-        <p ref={p3.ref} style={p3.style} className="text-[17px] leading-8 text-secondary">
+        <p className="text-[17px] leading-8 text-secondary">
           Alongside frontend development, I have experience working with backend
           technologies and APIs, allowing me to understand the complete product
           lifecycle and collaborate effectively across the stack.
         </p>
 
-        <p ref={p4.ref} style={p4.style} className="text-[17px] leading-8 text-secondary">
+        <p className="text-[17px] leading-8 text-secondary">
           My work is driven by curiosity, attention to detail, and a commitment to continuous improvement.
         </p>
       </div>

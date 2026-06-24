@@ -11,7 +11,6 @@ type UseRevealOptions = {
   once?: boolean;
   threshold?: number;
   spring?: boolean;
-  blur?: number;
 };
 
 export const useReveal = ({
@@ -23,7 +22,6 @@ export const useReveal = ({
   once = true,
   threshold = 0.2,
   spring = false,
-  blur = 0
 }: UseRevealOptions = {}) => {
   const ref = useRef<HTMLDivElement | null>(null);
   const [visible, setVisible] = useState(false);
@@ -80,15 +78,16 @@ export const useReveal = ({
     : "ease-out";
 
   const style: CSSProperties = {
-  opacity: visible ? 1 : 0,
-  transform: visible ? "translate3d(0, 0, 0)" : getHiddenTransform(),
-  filter: visible ? "blur(0px)" : `blur(${blur}px)`,
-  transitionProperty: "opacity, transform, filter",
-  transitionDuration: `${duration}s`,
-  transitionDelay: `${delay}s`,
-  transitionTimingFunction: `ease-out, ${easing}, ease-out`,
-  willChange: "transform, opacity, filter",
-};
+    opacity: visible ? 1 : 0,
+    transform: visible
+      ? "translate3d(0, 0, 0)"
+      : getHiddenTransform(),
+    transitionProperty: "opacity, transform",
+    transitionDuration: `${duration}s`,
+    transitionDelay: `${delay}s`,
+    transitionTimingFunction: `ease-out, ${easing}`,
+    willChange: "transform, opacity",
+  };
 
   return {
     ref,
