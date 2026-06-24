@@ -19,12 +19,15 @@ const Works = () => {
   const [maxXl, setMaxXl] = useState(isMAxXl);
 
   useEffect(() => {
-    const check = () => setMaxXl(window.innerWidth < 768);
+    if (typeof window !== undefined) {
 
-    check();
-    window.addEventListener("resize", check);
+      const check = () => setMaxXl(window.innerWidth < 768);
 
-    return () => window.removeEventListener("resize", check);
+      check();
+      window.addEventListener("resize", check);
+
+      return () => window.removeEventListener("resize", check);
+    }
   }, []);
 
   return (
