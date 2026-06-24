@@ -15,7 +15,9 @@ const Works = () => {
     spring: true,
     y: -50
   })
-  const isMAxXl = typeof window !== undefined && window.innerWidth < 1280
+  const isMaxXl =
+    typeof window !== "undefined" &&
+    window.innerWidth < 1280;
 
   return (
     <div
@@ -34,7 +36,7 @@ const Works = () => {
             link={item.link}
             src={item.img}
             tags={item.tags}
-            isMAxXl={isMAxXl}
+            isMAxXl={isMaxXl}
           />
         ))}
       </div>

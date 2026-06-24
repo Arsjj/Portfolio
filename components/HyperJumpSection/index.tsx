@@ -61,7 +61,7 @@ export default function HyperJumpSection() {
 
         // ;
 
-        const isMobile = typeof window !== undefined && window.innerWidth < 1024;
+        const isMobile =  window.innerWidth < 1024;
 
         let timer: number | undefined;
 
