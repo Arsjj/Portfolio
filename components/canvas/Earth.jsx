@@ -40,7 +40,7 @@ const EarthCanvas = () => {
     <Canvas
       camera={{ position: [0, 0, 5], fov: 45 }}
       style={{
-        pointerEvents: "none",
+
         touchAction: "pan-y",
       }}
     >
