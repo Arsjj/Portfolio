@@ -181,6 +181,7 @@ export default function HyperJumpSection() {
         };
     }, [phase]);
 
+    console.log(phase)
     return (
         <section
             ref={sectionRef}
