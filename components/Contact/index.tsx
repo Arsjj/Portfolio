@@ -207,14 +207,10 @@ const Contact = ({ scale, formRef, phase }: ContactProps) => {
       </motion.div>
       <div
         className={`relative xl:flex-1 xl:h-auto h-[550px] max-sm:h-[450px] w-full overflow-hidden`}>
-        <div
-          className={`absolute top-0 w-full h-full ${phase !== "content" ? "z-20" : ""
-            } lg:hidden `}
-        >
-
-        </div>
+        <div className={`absolute top-0 w-full h-full ${phase !== "content" ? "hidden" : ""} lg:hidden `} />
+        <div className="absolute top-0 w-full h-full z-20 lg:hidden"></div>
         <EarthCanvas />
-
+        <div className="absolute bottom-0 w-full h-20 z-20 lg:hidden"></div>
       </div>
     </div >
   );
