@@ -160,7 +160,7 @@ export default function HyperJumpSection() {
                 const centerGlow = Math.max(0, 1 - distance / 420);
 
                 ctx.shadowBlur = 4 + centerGlow * 35;
-                ctx.shadowColor = `rgba(120, 200, 255, ${0.35 + centerGlow * 0.65})`;
+                ctx.shadowColor = "rgba(120, 200, 255, 1)";
 
                 ctx.moveTo(px, py);
                 ctx.lineTo(x, y);
