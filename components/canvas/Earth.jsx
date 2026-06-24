@@ -14,18 +14,18 @@ const Earth = () => {
     "/earth/occlusion.webp",
   ]);
 
- useFrame(() => {
-  if (!earthRef.current) return;
+  useFrame(() => {
+    if (!earthRef.current) return;
 
-  earthRef.current.rotation.y -= 0.0012;
+    earthRef.current.rotation.y -= 0.0012;
 
-  const targetScale = 1.15;
-  const currentScale = earthRef.current.scale.x;
+    const targetScale = 1.15;
+    const currentScale = earthRef.current.scale.x;
 
-  earthRef.current.scale.setScalar(
-    currentScale + (targetScale - currentScale) * 0.08
-  );
-});
+    earthRef.current.scale.setScalar(
+      currentScale + (targetScale - currentScale) * 0.08,
+    );
+  });
 
   return (
     <mesh ref={earthRef} scale={1} rotation={[0, 0, -0.41]}>
@@ -37,7 +37,13 @@ const Earth = () => {
 
 const EarthCanvas = () => {
   return (
-    <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
+    <Canvas
+      camera={{ position: [0, 0, 5], fov: 45 }}
+      style={{
+        pointerEvents: "none",
+        touchAction: "pan-y",
+      }}
+    >
       <Suspense fallback={null}>
         <OrbitControls
           enableZoom={false}
