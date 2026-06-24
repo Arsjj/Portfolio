@@ -20,7 +20,7 @@ export default function HyperJumpSection() {
                     ? 0.2
                     : window.innerHeight <= 800
                         ? 0.45
-                        : 0.6
+                        : 0.55
             : 0.6;
 
     const isInView = useInView(sectionRef, {
@@ -36,6 +36,19 @@ export default function HyperJumpSection() {
         contactScale.set(phase === "content" ? 1 : 0.85);
     }, [phase, contactScale]);
 
+    const scrollToElementCenter = (element: HTMLElement) => {
+        const elementTop = element.getBoundingClientRect().top + window.scrollY;
+        const elementHeight = element.offsetHeight;
+        const viewportHeight = window.innerHeight;
+
+        const targetY = elementTop - viewportHeight / 2 + elementHeight / 2;
+
+        window.scrollTo({
+            top: targetY,
+            behavior: "smooth",
+        });
+    };
+
     useEffect(() => {
         if (!isInView || startedRef.current) return;
 
@@ -48,14 +61,24 @@ export default function HyperJumpSection() {
 
         ;
 
+        const isMobile = window.innerWidth < 1024;
+
         let timer: number | undefined;
 
         if (isInView) {
             setPhase("jump");
-            target?.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-            })
+            // target?.scrollIntoView({
+            //     behavior: "smooth",
+            //     block: "start",
+            // })
+            if (isMobile && sectionRef.current) {
+                scrollToElementCenter(sectionRef.current);
+            } else {
+                sectionRef.current?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                });
+            }
 
             timer = window.setTimeout(() => {
                 setPhase("content");
@@ -88,7 +111,7 @@ export default function HyperJumpSection() {
 
         resize();
 
-        const stars = Array.from({ length: 350 }, () => ({
+        const stars = Array.from({ length: 450 }, () => ({
             x: Math.random() * canvas.width - canvas.width / 2,
             y: Math.random() * canvas.height - canvas.height / 2,
             z: Math.random() * canvas.width,

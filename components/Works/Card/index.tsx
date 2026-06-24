@@ -1,6 +1,8 @@
 import { useReveal } from "@/hooks/useReveal";
+import { useScroll, useTransform, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useRef } from "react";
 
 type Props = {
   index: number
@@ -9,6 +11,7 @@ type Props = {
   src: any;
   link: string;
   tags: Record<string, string>[]
+  isMAxXl: boolean
 };
 
 export default function Card({
@@ -17,23 +20,37 @@ export default function Card({
   description,
   src,
   link,
-  tags
+  tags, isMAxXl
 }: Props) {
-  const openTab = (link: string) => {
-    window.open(`${link}`, "_blank");
-  };
-
+  const cardsRef = useRef<HTMLDivElement | null>(null);
+  const { scrollYProgress } = useScroll({
+    target: cardsRef,
+    offset: ["start center", "end start"],
+  });
+  const fadeStart = isMAxXl ? 0.5 : 0.4;
+  const fadeEnd = isMAxXl ? 1 : 0.8;
+  const cardsOpacity = useTransform(scrollYProgress, [fadeStart, fadeEnd], [1, 0]);
+  
   const cardReveal = useReveal({
     direction: "down",
     delay: index * 0.3,
     duration: 0.75,
     spring: true,
-    y:  80
+    y: 80
   });
+
+  const openTab = (link: string) => {
+    window.open(`${link}`, "_blank");
+  };
 
   return (
     <div ref={cardReveal.ref} style={cardReveal.style} className="max-sm:w-full">
-      <div className="parent group max-sm:w-full h-full min-h-[340px] flex justify-center rounded-lg" onClick={() => openTab(link)}>
+      <motion.div
+        ref={cardsRef}
+        style={{
+          opacity: cardsOpacity,
+        }}
+        className="parent group max-sm:w-full h-full min-h-[340px] flex justify-center rounded-lg" onClick={() => openTab(link)}>
         <div className="relative p-4 bg-black card rounded-2xl h-full w-[350px] max-sm:w-full max-xl:w-[360px] max-lg:w-80 max-md:w-96 cursor-pointer ">
           <div className="relative flex flex-col h-full content-box rounded-2xl">
             <span className="absolute left-2 top-3 card-title text-white bg-black/50 rounded-r-lg p-2 px-3 font-medium">
@@ -76,7 +93,7 @@ export default function Card({
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

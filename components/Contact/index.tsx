@@ -206,7 +206,7 @@ const Contact = ({ scale, formRef }: ContactProps) => {
       </motion.div>
       <div
         className={`
-        xl:flex-1 xl:h-auto h-[550px] max-sm:h-[450px] w-full
+        xl:flex-1 xl:h-auto h-[550px] max-sm:h-[450px] w-full overflow-hidden
   `}
       >
         <EarthCanvas />
