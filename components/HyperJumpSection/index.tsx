@@ -19,7 +19,7 @@ export default function HyperJumpSection() {
                 ? 0.1 : window.innerHeight <= 400
                     ? 0.2
                     : window.innerHeight <= 800
-                        ? 0.45
+                        ? 0.4
                         : 0.55
             : 0.6;
 
@@ -53,24 +53,12 @@ export default function HyperJumpSection() {
         if (!isInView || startedRef.current) return;
 
         startedRef.current = true;
-
-        // const target =
-        //     window.innerWidth < 1024
-        //         ? formRef.current
-        //         : sectionRef.current;
-
-        // ;
-
         const isMobile =  window.innerWidth < 1024;
 
         let timer: number | undefined;
 
         if (isInView) {
             setPhase("jump");
-            // target?.scrollIntoView({
-            //     behavior: "smooth",
-            //     block: "start",
-            // })
             if (isMobile && sectionRef.current) {
                 scrollToElementCenter(sectionRef.current);
             } else {

@@ -11,7 +11,6 @@ type Props = {
   src: any;
   link: string;
   tags: Record<string, string>[]
-  isMAxXl: boolean
 };
 
 export default function Card({
@@ -20,15 +19,20 @@ export default function Card({
   description,
   src,
   link,
-  tags, isMAxXl
+  tags
 }: Props) {
   const cardsRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: cardsRef,
     offset: ["start center", "end start"],
   });
-  const fadeStart = isMAxXl ? 0.5 : 0.4;
-  const fadeEnd = isMAxXl ? 1 : 0.8;
+
+   const isMaxXl =
+    typeof window !== "undefined" &&
+    window.innerWidth < 1280;
+  
+  const fadeStart = isMaxXl ? 0.5 : 0.4;
+  const fadeEnd = isMaxXl ? 1 : 0.8;
   const cardsOpacity = useTransform(scrollYProgress, [fadeStart, fadeEnd], [1, 0]);
   
   const cardReveal = useReveal({

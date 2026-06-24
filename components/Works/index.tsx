@@ -15,16 +15,13 @@ const Works = () => {
     spring: true,
     y: -50
   })
-  const isMaxXl =
-    typeof window !== "undefined" &&
-    window.innerWidth < 1280;
 
   return (
     <div
-      className="relative h-fit overflow-visible">
-      <div ref={titleReveal.ref} style={titleReveal.style}>
+      className="relative h-fit overflow-visible"
+      ref={titleReveal.ref} style={titleReveal.style}
+    >
         <h2 className={`${styles.sectionHeadText}`} >Projects</h2>
-      </div>
       <div
         className="mt-10 flex max-xl:flex-wrap gap-10 justify-center max-sm:w-full">
         {projectsData.map((item, index) => (
@@ -36,7 +33,6 @@ const Works = () => {
             link={item.link}
             src={item.img}
             tags={item.tags}
-            isMAxXl={isMaxXl}
           />
         ))}
       </div>
