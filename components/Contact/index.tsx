@@ -17,10 +17,11 @@ type ContactProps = {
   scale?: MotionValue<number>;
   progress?: MotionValue<number>;
   innerOpacity?: MotionValue<number>;
-  formRef: LegacyRef<HTMLDivElement> | undefined
+  formRef: LegacyRef<HTMLDivElement> | undefined,
+  phase: string
 };
 
-const Contact = ({ scale, formRef }: ContactProps) => {
+const Contact = ({ scale, formRef, phase }: ContactProps) => {
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
     name: "",
@@ -206,9 +207,14 @@ const Contact = ({ scale, formRef }: ContactProps) => {
       </motion.div>
       <div
         className={`relative xl:flex-1 xl:h-auto h-[550px] max-sm:h-[450px] w-full overflow-hidden`}>
-        <div className="absolute top-0 w-full h-20 z-20 lg:hidden"></div>
+        <div
+          className={`absolute top-0 w-full h-full ${phase !== "content" ? "z-20" : ""
+            } lg:hidden `}
+        >
+
+        </div>
         <EarthCanvas />
-        <div className="absolute bottom-0 w-full h-20 z-20 lg:hidden"></div>
+
       </div>
     </div >
   );

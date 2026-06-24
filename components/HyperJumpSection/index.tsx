@@ -202,7 +202,7 @@ export default function HyperJumpSection() {
                 <div className="absolute inset-0 z-0 pointer-events-none">
                     <StarsCanvas />
                 </div>
-                <Contact scale={contactScale} formRef={formRef} />
+                <Contact scale={contactScale} formRef={formRef} phase={phase}/>
             </motion.div>
         </section>
     );
