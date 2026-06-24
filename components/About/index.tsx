@@ -106,29 +106,35 @@ const About = () => {
       <div
         ref={textReveal.ref}
         style={textReveal.style}
-        className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
+        className="relative mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        <p  className="mt-6 text-[17px] leading-8 text-secondary">
-          As a Frontend Engineer, I see software development as a balance between creativity and engineering.
-        </p>
-        <p  className=" text-[17px] leading-8 text-secondary">
-          I enjoy transforming ideas into intuitive, responsive, and engaging user experiences while ensuring the underlying architecture remains scalable and maintainable.
-          My primary focus is building modern web applications
-          with technologies such as React, Next.js, and TypeScript, creating
-          interfaces that are both visually polished and highly performant.
-        </p>
+        <div className="about-reveal">
 
-        <p className="text-[17px] leading-8 text-secondary">
-          Alongside frontend development, I have experience working with backend
-          technologies and APIs, allowing me to understand the complete product
-          lifecycle and collaborate effectively across the stack.
-        </p>
+          <p className="mt-6 text-[17px] leading-8 text-secondary">
+            As a Frontend Engineer, I see software development as a balance between creativity and engineering.
+          </p>
+          <p className=" text-[17px] leading-8 text-secondary">
+            I enjoy transforming ideas into intuitive, responsive, and engaging user experiences while ensuring the underlying architecture remains scalable and maintainable.
+            My primary focus is building modern web applications
+            with technologies such as React, Next.js, and TypeScript, creating
+            interfaces that are both visually polished and highly performant.
+          </p>
 
-        <p className="text-[17px] leading-8 text-secondary">
-          My work is driven by curiosity, attention to detail, and a commitment to continuous improvement.
-        </p>
-      </div>
-      <div className="absolute -z-50 w-full h-full flex justify-center items-center pt-20">
+          <p className="text-[17px] leading-8 text-secondary">
+            Alongside frontend development, I have experience working with backend
+            technologies and APIs, allowing me to understand the complete product
+            lifecycle and collaborate effectively across the stack.
+          </p>
+
+          <p className="text-[17px] leading-8 text-secondary">
+            My work is driven by curiosity, attention to detail, and a commitment to continuous improvement.
+          </p>
+
+        <div
+          className={`absolute inset-x-10 -inset-y-6 pointer-events-none bg-gradient-to-r from-transparent via-[#00aaff]/20 to-transparent blur-2xl ${textReveal.visible ? "animate-scan" : ""
+          }`}
+          />
+          </div>
       </div>
       <div
         ref={techReveal.ref}

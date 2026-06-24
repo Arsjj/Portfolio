@@ -19,7 +19,7 @@ const Earth = () => {
 
     earthRef.current.rotation.y -= 0.0012;
 
-    const targetScale = 1.15;
+    const targetScale = 1.25;
     const currentScale = earthRef.current.scale.x;
 
     earthRef.current.scale.setScalar(

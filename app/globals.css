@@ -248,3 +248,38 @@ body {
     transform: rotate(360deg);
   }
 }
+
+
+.about-reveal {
+  position: relative;
+  /* overflow: hidden; */
+}
+
+.scan-line {
+  position: absolute;
+  inset: 0;
+  transform: translateX(-220%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 170, 255, 0.15),
+    rgba(255,255,255,0.08),
+    rgba(0, 170, 255, 0.15),
+    transparent
+  );
+
+  animation: scan 1.2s ease-out forwards;
+}
+@keyframes scan {
+  from {
+    left: -60%;
+  }
+
+  to {
+    left: 120%;
+  }
+}
+
+.animate-scan {
+  animation: scan 1.4s ease-out forwards;
+}

@@ -171,7 +171,7 @@ const Contact = ({ scale, formRef, phase }: ContactProps) => {
               name="name"
               value={form.name}
               onChange={handleChange}
-              className="bg-tertiary py-4 px-6 border border-white/15 shadow-[0_0_12px_rgba(255,255,255,0.05)] focus:border-white/70  text-white duration-300 rounded-lg outline-none font-medium"
+              className="bg-tertiary py-4 px-6 border border-white/15 focus:border-white/70  text-white duration-300 rounded-lg outline-none font-medium"
             />
           </label>
           <label className="flex flex-col">
@@ -181,7 +181,7 @@ const Contact = ({ scale, formRef, phase }: ContactProps) => {
               name="email"
               value={form.email}
               onChange={handleChange}
-              className="bg-tertiary py-4 px-6 border border-white/15 shadow-[0_0_12px_rgba(255,255,255,0.05)] focus:border-white/70 duration-300 text-white rounded-lg outline-none font-medium"
+              className="bg-tertiary py-4 px-6 border border-white/15 focus:border-white/70 duration-300 text-white rounded-lg outline-none font-medium"
             />
           </label>
           <label className="flex flex-col">
@@ -191,7 +191,7 @@ const Contact = ({ scale, formRef, phase }: ContactProps) => {
               name="message"
               value={form.message}
               onChange={handleChange}
-              className="bg-tertiary py-4 px-6 border border-white/15 shadow-[0_0_12px_rgba(255,255,255,0.05)] focus:border-white/70 duration-300 text-white rounded-lg outline-none font-medium"
+              className="bg-tertiary py-4 px-6 border border-white/15 focus:border-white/70 duration-300 text-white rounded-lg outline-none font-medium"
             />
           </label>
 
