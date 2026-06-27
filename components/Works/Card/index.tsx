@@ -27,14 +27,14 @@ export default function Card({
     offset: ["start center", "end start"],
   });
 
-   const isMaxXl =
+  const isMaxXl =
     typeof window !== "undefined" &&
     window.innerWidth < 1280;
-  
+
   const fadeStart = isMaxXl ? 0.5 : 0.4;
   const fadeEnd = isMaxXl ? 1 : 0.8;
   const cardsOpacity = useTransform(scrollYProgress, [fadeStart, fadeEnd], [1, 0]);
-  
+
   const cardReveal = useReveal({
     direction: "down",
     delay: index * 0.3,
@@ -88,11 +88,11 @@ export default function Card({
               <Link
                 target="_blank"
                 href={link}
-                className="flex mt-2 w-full justify-end items-end"
+                className="ms-auto mt-2 w-fit"
               >
-                <button className="p-2 z-0 text-xs rounded-lg relative items-center justify-center box-border bg-transparent text-white border border-transparent border-b-white duration-100 hover:text-white/80">
+                <span className="p-2 z-0 text-xs rounded-lg box-border bg-transparent text-white border border-transparent border-b-white duration-100 hover:text-white/80">
                   Discover more
-                </button>
+                </span>
               </Link>
             </div>
           </div>

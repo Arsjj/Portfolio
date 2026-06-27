@@ -125,7 +125,7 @@ const Contact = ({ scale, formRef, phase }: ContactProps) => {
   return (
     <div
       id="contact"
-      className={` flex lg:flex-row flex-col-reverse lg:gap-10 xl:py-10 max-sm:pt-0`}
+      className={` flex lg:flex-row flex-col-reverse lg:gap-10 xl:py-10 max-sm:pt-0 max-sm:mb-10`}
       ref={formRef}
     >
       <motion.div
@@ -139,7 +139,7 @@ const Contact = ({ scale, formRef, phase }: ContactProps) => {
           className="flex w-full justify-between"
         >
           <p className={styles.sectionSubText}>Get in touch</p>
-          <div className=" w-fit right-0 top-0 h-full flex items-center text-[22px] gap-3 px-4">
+          <div className=" w-fit right-0 top-0 h-full flex items-center text-[22px] gap-3">
             <Link
               href="http://github.com/Arsjj"
               target="_blank"

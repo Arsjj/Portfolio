@@ -1,27 +1,18 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { motion, useInView, useSpring } from "framer-motion";
 import { StarsCanvas } from "../canvas";
 import Contact from "../Contact";
 
 export default function HyperJumpSection() {
+    const [phase, setPhase] = useState<"idle" | "jump" | "content">("idle");
+    const [amount, setAmount] = useState(0.8);
     const sectionRef = useRef<HTMLDivElement | null>(null);
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
     const formRef = useRef<HTMLDivElement | null>(null);
+    const contactRef = useRef<HTMLDivElement | null>(null);
     const startedRef = useRef(false);
-
-    const [phase, setPhase] = useState<"idle" | "jump" | "content">("idle");
-
-    const amount =
-        typeof window !== "undefined"
-            ? window.innerHeight <= 300
-                ? 0.1 : window.innerHeight <= 400
-                    ? 0.2
-                    : window.innerHeight <= 800
-                        ? 0.4
-                        : 0.55
-            : 0.6;
 
     const isInView = useInView(sectionRef, {
         amount: amount
@@ -41,7 +32,7 @@ export default function HyperJumpSection() {
         const elementHeight = element.offsetHeight;
         const viewportHeight = window.innerHeight;
 
-        const targetY = elementTop - viewportHeight / 2 + elementHeight / 2;
+        const targetY = elementTop - viewportHeight / 2 + (elementHeight / 2 - 70);
 
         window.scrollTo({
             top: targetY,
@@ -49,11 +40,23 @@ export default function HyperJumpSection() {
         });
     };
 
+    useLayoutEffect(() => {
+        if (!sectionRef.current) return;
+        const updateAmount = () => {
+            const sectionHeight = sectionRef.current!.offsetHeight;
+            const windowHeight = window.innerHeight;
+            const ratio = windowHeight / sectionHeight;
+            setAmount(Math.min(Math.floor(ratio * 10) / 10, 0.9));
+        };
+
+        updateAmount();
+    }, []);
+
     useEffect(() => {
         if (!isInView || startedRef.current) return;
 
         startedRef.current = true;
-        const isMobile =  window.innerWidth < 1024;
+        const isMobile = window.innerWidth < 1024;
 
         let timer: number | undefined;
 
@@ -181,12 +184,14 @@ export default function HyperJumpSection() {
         };
     }, [phase]);
 
-    console.log(phase)
     return (
         <section
             ref={sectionRef}
             className="relative overflow-visible bg-gradient-to-b from-[#08090f] to-[#05060a]"
         >
+            <div className="absolute inset-0 z-0 pointer-events-none">
+                <StarsCanvas />
+            </div>
             <motion.canvas
                 ref={canvasRef}
                 initial={{ opacity: 0 }}
@@ -195,15 +200,14 @@ export default function HyperJumpSection() {
                 className="absolute inset-0 z-10 h-full w-full pointer-events-none"
             />
             <motion.div
+                ref={contactRef}
                 animate={{
                     opacity: phase === "content" ? 1 : 0,
                 }}
                 className="relative z-20"
             >
-                <div className="absolute inset-0 z-0 pointer-events-none">
-                    <StarsCanvas />
-                </div>
-                <Contact scale={contactScale} formRef={formRef} phase={phase}/>
+
+                <Contact scale={contactScale} formRef={formRef} phase={phase} />
             </motion.div>
         </section>
     );

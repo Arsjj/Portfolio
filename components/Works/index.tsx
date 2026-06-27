@@ -1,7 +1,6 @@
 "use client"
 
 import Card from "./Card";
-import { useEffect, useState } from "react";
 import { useReveal } from "@/hooks/useReveal";
 import { SectionWrapper } from "../../hoc";
 import { styles } from "../../utils/styles";
