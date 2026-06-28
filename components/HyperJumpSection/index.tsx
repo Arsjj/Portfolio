@@ -189,9 +189,7 @@ export default function HyperJumpSection() {
             ref={sectionRef}
             className="relative overflow-visible bg-gradient-to-b from-[#08090f] to-[#05060a]"
         >
-            <div className="absolute inset-0 z-0 pointer-events-none">
-                <StarsCanvas />
-            </div>
+
             <motion.canvas
                 ref={canvasRef}
                 initial={{ opacity: 0 }}
@@ -206,7 +204,9 @@ export default function HyperJumpSection() {
                 }}
                 className="relative z-20"
             >
-
+                <div className="absolute inset-0 z-0 pointer-events-none">
+                    <StarsCanvas />
+                </div>
                 <Contact scale={contactScale} formRef={formRef} phase={phase} />
             </motion.div>
         </section>
