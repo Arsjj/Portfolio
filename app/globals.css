@@ -295,14 +295,14 @@ body {
     #ffffff 100%
   );
 
-  background-size: 250% 100%;
+  background-size: 300% 100%;
   background-position: 100% 0;
 
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 
-  animation: runningGradient 3s linear infinite;
+  animation: runningGradient 7s linear infinite;
 }
 
 @keyframes runningGradient {

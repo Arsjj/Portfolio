@@ -18,6 +18,7 @@ import {
   aiCouch,
   oasisLight,
   tanstack,
+  aiSdk,
 } from "@/assets";
 
 export const navLinks = [
@@ -73,8 +74,8 @@ const technologies = [
     icon: express,
   },
   {
-    name: "MongoDB",
-    icon: mongodb,
+    name: "AI SDK",
+    icon: aiSdk,
   },
   {
     name: "Redux",
@@ -89,14 +90,10 @@ const technologies = [
     name: "Tailwind",
     icon: tailwind,
   },
-  // {
-  //   name: "SCSS",
-  //   icon: sass,
-  // },
   {
     name: "Storybook",
     icon: storybook,
-  }
+  },
 ];
 
 const projectsData = [

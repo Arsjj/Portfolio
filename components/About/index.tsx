@@ -109,7 +109,7 @@ const MoreCard = () => {
 
             <div className="w-16 h-px mt-2 mb-6 max-sm:mb-4 bg-gradient-to-r from-yellow-400 via-pink-400 to-cyan-400" />
 
-            <p className="text-white/60 text-[10px] max-sm:text-[8px] tracking-wider uppercase">
+            <p className="running-text text-white/60 text-[10px] max-sm:text-[8px] tracking-wider uppercase">
               Always learning
             </p>
           </div>

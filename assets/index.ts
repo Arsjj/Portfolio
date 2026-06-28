@@ -16,6 +16,7 @@ import mongodb from "./techs/mongodb.png";
 import express from "./techs/express.png";
 import zustand from "./techs/zustand.webp"
 import tanstack from "./techs/tanstack.avif"
+import aiSdk from "./techs//ai_sdk.png"
 
 import oasisdark from "./projects/oasis-dark.webp";
 import movies from "./projects/movies-3.webp";
@@ -43,5 +44,6 @@ export {
   oasisdark,
   oasisLight,
   aiCouch,
-  tanstack
+  tanstack,
+  aiSdk
 };
