@@ -14,7 +14,8 @@ import nodejs from "./techs/nodejs.png";
 import storybook from "./techs/storybook.webp";
 import mongodb from "./techs/mongodb.png";
 import express from "./techs/express.png";
-import zustand from "./techs/zustand.jpeg"
+import zustand from "./techs/zustand.webp"
+import tanstack from "./techs/tanstack.avif"
 
 import oasisdark from "./projects/oasis-dark.webp";
 import movies from "./projects/movies-3.webp";
@@ -42,4 +43,5 @@ export {
   oasisdark,
   oasisLight,
   aiCouch,
+  tanstack
 };

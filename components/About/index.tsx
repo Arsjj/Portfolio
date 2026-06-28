@@ -8,54 +8,58 @@ import { useReveal } from "@/hooks/useReveal";
 import { technologies } from "@/constants";
 import { styles } from "../../utils/styles";
 
-const ServiceCard = ({ index, name, icon }: { index: number, name: string, icon: any }) => {
+type ServiceCardProps = {
+  index?: number;
+  name: string;
+  icon?: any;
+  more?: boolean;
+};
+
+const ServiceCard = ({ name, icon }: ServiceCardProps) => {
   const { ref, visible } = useReveal({
     threshold: 0.2,
     once: true,
   });
-  return (
 
+  return (
     <Tilt
-      className="sm:w-[130px] max-sm:w-[100px] max-xsm-[80px] w-full duration-100"
+      className="sm:w-[130px] duration-100"
       tiltMaxAngleX={45}
       tiltMaxAngleY={45}
       transitionSpeed={450}
-      key={index}
     >
-      <div ref={ref}
+      <div
+        ref={ref}
         style={{
           opacity: visible ? 1 : 0,
-          transform: visible
-            ? "translateX(0)"
-            : "translateX(-70px)",
+          transform: visible ? "translateX(0)" : "translateX(-70px)",
           transition: "all 0.7s ease",
         }}
       >
-        <div
-          className="w-full relative green-pink-gradient p-[1px] rounded-[20px] shadow-card"
-        >
-          <div className="flex flex-col justify-center items-center gap-4 bg-tertiary rounded-[20px] py-5  min-h-[160px] max-sm:min-h-[130px] max-xsm-[min-h-100px] ">
+        <div className="w-full relative green-pink-gradient shadow-card p-[1px] rounded-[20px]">
+          <div className="group relative overflow-hidden flex flex-col justify-end items-center gap-4 bg-tertiary rounded-[20px] py-10 min-h-[160px]">
+
             <Image
               src={icon || ""}
               width={100}
               height={100}
               alt={name}
-              className="relative w-10 h-10 max-sm:w-10 max-sm:h-10 max-xsm:w-9 max-xsm-h-9 object-cover"
+              className="relative overflow-visible w-10 h-10 object-cover"
             />
-            <h3 className="text-white font-bold text-center max-sm:text-xs max-sm:font-semibold">
+            <h3 className="text-white font-bold text-center">
               {name}
             </h3>
           </div>
         </div>
       </div>
     </Tilt>
-  )
+  );
 };
 
 const MobileServiceCard = ({ index, name, icon }: { index: number, name: string, icon: any }) => (
   <div
     key={index}
-    className="sm:w-[130px] max-sm:w-[100px] max-xsm-[80px] w-full duration-100"
+    className="w-[100px] max-xsm-[80px] duration-100"
   >
     <motion.div
       initial={{ opacity: 0, x: -70 }}
@@ -64,21 +68,57 @@ const MobileServiceCard = ({ index, name, icon }: { index: number, name: string,
       viewport={{ once: true }}
       className="w-full relative green-pink-gradient p-[1px] rounded-[20px] shadow-card"
     >
-      <div className="flex flex-col justify-center items-center gap-4 bg-tertiary rounded-[20px] py-5  min-h-[160px] max-sm:min-h-[130px] max-xsm-[min-h-100px] ">
+      <div className="flex flex-col justify-end items-center gap-4 bg-tertiary rounded-[20px] py-8 min-h-[130px] max-xsm-[min-h-100px] ">
+
         <Image
           src={icon || ""}
           width={100}
           height={100}
           alt={name}
-          className="relative w-10 h-10 max-sm:w-10 max-sm:h-10 max-xsm:w-9 max-xsm-h-9 object-cover"
+          className="relative w-10 h-10 max-xsm:w-9 max-xsm-h-9 object-cover"
         />
-        <h3 className="text-white font-bold text-center max-sm:text-xs max-sm:font-semibold">
+        <h3 className="text-white text-center text-xs font-semibold">
           {name}
         </h3>
+
       </div>
     </motion.div>
   </div>
 );
+
+const MoreCard = () => {
+  const textReveal = useReveal({ delay: 0.7, once: true });
+
+  return (
+    <div
+      className="sm:w-[130px] max-sm:w-[100px] w-full duration-100"
+    >
+      <div className="w-full relative p-[1px] rounded-[20px]">
+        <div className="group relative overflow-hidden flex flex-col justify-end items-center gap-4 rounded-[20px] py-10 min-h-[160px] max-sm:min-h-[130px] max-xsm-[min-h-100px]">
+
+          <div
+            ref={textReveal.ref}
+            style={textReveal.style}
+            className="flex flex-col items-center justify-center h-full">
+            <h3 className="text-white font-bold text-center text-sm max-sm:text-xs">
+              and{" "}
+              <span className="running">
+                more
+              </span>
+            </h3>
+
+            <div className="w-16 h-px mt-2 mb-6 max-sm:mb-4 bg-gradient-to-r from-yellow-400 via-pink-400 to-cyan-400" />
+
+            <p className="text-white/60 text-[10px] max-sm:text-[8px] tracking-wider uppercase">
+              Always learning
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  )
+}
 
 
 
@@ -106,15 +146,13 @@ const About = () => {
       <div
         ref={textReveal.ref}
         style={textReveal.style}
-        className="relative mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
+        className="relative mt-4 text-secondary text-[17px] max-w-[49rem] leading-[30px]"
       >
-        <div className="about-reveal">
-
+        <div className="about-reveal flex flex-col">
           <p className="mt-6 text-[17px] leading-8 text-secondary">
             As a Frontend Engineer, I see software development as a balance between creativity and engineering.
           </p>
           <p className=" text-[17px] leading-8 text-secondary">
-            I enjoy transforming ideas into intuitive, responsive, and engaging user experiences while ensuring the underlying architecture remains scalable and maintainable.
             My primary focus is building modern web applications
             with technologies such as React, Next.js, and TypeScript, creating
             interfaces that are both visually polished and highly performant.
@@ -130,11 +168,11 @@ const About = () => {
             My work is driven by curiosity, attention to detail, and a commitment to continuous improvement.
           </p>
 
-        <div
-          className={`absolute inset-x-10 -inset-y-6 pointer-events-none bg-gradient-to-r from-transparent via-[#00aaff]/20 to-transparent blur-2xl ${textReveal.visible ? "animate-scan" : ""
-          }`}
+          <div
+            className={`absolute inset-x-10 -inset-y-6 pointer-events-none bg-gradient-to-r from-transparent via-[#00aaff]/20 to-transparent blur-2xl ${textReveal.visible ? "animate-scan" : ""
+              }`}
           />
-          </div>
+        </div>
       </div>
       <div
         ref={techReveal.ref}
@@ -147,12 +185,14 @@ const About = () => {
           {technologies.map((service, index) => (
             <ServiceCard key={service.name} index={index} {...service} />
           ))}
+          <MoreCard />
         </div>
       </div>
       <div className="sm:hidden w-full max-w-[780px] flex flex-wrap justify-center gap-7 mx-auto mt-10  max-sm:gap-5 max-xsm:gap-4">
         {technologies.map((service, index) => (
           <MobileServiceCard key={service.name} index={index} {...service} />
         ))}
+        <MoreCard />
       </div>
     </div >
   );

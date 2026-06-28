@@ -16,7 +16,8 @@ import {
   movies,
   oasisdark,
   aiCouch,
-  oasisLight
+  oasisLight,
+  tanstack,
 } from "@/assets";
 
 export const navLinks = [
@@ -75,24 +76,27 @@ const technologies = [
     name: "MongoDB",
     icon: mongodb,
   },
+  {
+    name: "Redux",
+    icon: redux,
+  },
+  {
+    name: "Tanstack",
+    icon: tanstack,
+  },
   { name: "Zustand", icon: zustand },
   {
-    name: "Tailwind CSS",
+    name: "Tailwind",
     icon: tailwind,
   },
-  {
-    name: "SCSS",
-    icon: sass,
-  },
+  // {
+  //   name: "SCSS",
+  //   icon: sass,
+  // },
   {
     name: "Storybook",
     icon: storybook,
-  },
-
-  {
-    name: "Redux Toolkit",
-    icon: redux,
-  },
+  }
 ];
 
 const projectsData = [

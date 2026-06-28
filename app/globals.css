@@ -252,7 +252,6 @@ body {
 
 .about-reveal {
   position: relative;
-  /* overflow: hidden; */
 }
 
 .scan-line {
@@ -283,3 +282,32 @@ body {
 .animate-scan {
   animation: scan 1.4s ease-out forwards;
 }
+
+.running-text {
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #ffffff 35%,
+    #facc15 45%,
+    #f472b6 55%,
+    #22d3ee 65%,
+    #ffffff 75%,
+    #ffffff 100%
+  );
+
+  background-size: 250% 100%;
+  background-position: 100% 0;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  animation: runningGradient 3s linear infinite;
+}
+
+@keyframes runningGradient {
+  to {
+    background-position: -150% 0;
+  }
+}
+
