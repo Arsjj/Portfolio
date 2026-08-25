@@ -40,6 +40,18 @@ export const navLinks = [
   },
 ];
 
+export const portfolioOwner = {
+  name: "Arsen Abrahamyan",
+  role: "Frontend Engineer",
+  tagline: "I develop web applications and user interfaces",
+  about: [
+    "As a Frontend Engineer, I see software development as a balance between creativity and engineering.",
+    "My primary focus is building modern web applications with technologies such as React, Next.js, and TypeScript, creating interfaces that are both visually polished and highly performant.",
+    "Alongside frontend development, I have experience working with backend technologies and APIs, allowing me to understand the complete product lifecycle and collaborate effectively across the stack.",
+    "My work is driven by curiosity, attention to detail, and a commitment to continuous improvement.",
+  ],
+} as const;
+
 const technologies = [
   {
     name: "HTML",

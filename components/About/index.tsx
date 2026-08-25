@@ -5,7 +5,7 @@ import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 import { SectionWrapper } from "../../hoc";
 import { useReveal } from "@/hooks/useReveal";
-import { technologies } from "@/constants";
+import { portfolioOwner, technologies } from "@/constants";
 import { styles } from "../../utils/styles";
 
 type ServiceCardProps = {
@@ -149,24 +149,11 @@ const About = () => {
         className="relative mt-4 text-secondary text-[17px] max-w-[49rem] leading-[30px]"
       >
         <div className="about-reveal flex flex-col">
-          <p className="mt-6 text-[17px] leading-8 text-secondary">
-            As a Frontend Engineer, I see software development as a balance between creativity and engineering.
-          </p>
-          <p className=" text-[17px] leading-8 text-secondary">
-            My primary focus is building modern web applications
-            with technologies such as React, Next.js, and TypeScript, creating
-            interfaces that are both visually polished and highly performant.
-          </p>
-
-          <p className="text-[17px] leading-8 text-secondary">
-            Alongside frontend development, I have experience working with backend
-            technologies and APIs, allowing me to understand the complete product
-            lifecycle and collaborate effectively across the stack.
-          </p>
-
-          <p className="text-[17px] leading-8 text-secondary">
-            My work is driven by curiosity, attention to detail, and a commitment to continuous improvement.
-          </p>
+          {portfolioOwner.about.map((paragraph, index) => (
+            <p key={paragraph} className={`${index === 0 ? "mt-6 " : ""}text-[17px] leading-8 text-secondary`}>
+              {paragraph}
+            </p>
+          ))}
 
           <div
             className={`absolute inset-x-10 -inset-y-6 pointer-events-none bg-gradient-to-r from-transparent via-[#00aaff]/20 to-transparent blur-2xl ${textReveal.visible ? "animate-scan" : ""

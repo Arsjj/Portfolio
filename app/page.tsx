@@ -4,6 +4,7 @@ import About from "@/components/About";
 import Works from "@/components/Works";
 import Footer from "@/components/Footer";
 import HyperJumpSection from "@/components/HyperJumpSection";
+import PortfolioAssistant from "@/components/PortfolioAssistant";
 import { Toaster } from "react-hot-toast";
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
       </div>
       <HyperJumpSection />
       <Footer />
+      <PortfolioAssistant />
       <Toaster
         position="top-center"
         reverseOrder={false}
