@@ -1,0 +1,70 @@
+.frame {
+  perspective: 1100px;
+  perspective-origin: 50% 50%;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+/* Viewport-sized flight paths converge on the original, unchanged SVG pose. */
+.layer {
+  --x: min(-90vw, -900px);
+  --y: 18vh;
+  --z: -650px;
+  --rx: 25deg;
+  --ry: -65deg;
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  transform-style: preserve-3d;
+  animation: assemble 2400ms calc(var(--i) * 70ms) both;
+}
+
+.layer:nth-child(2) { --x: max(95vw, 950px); --y: -28vh; --z: -1000px; --rx: -55deg; --ry: 85deg; }
+.layer:nth-child(3) { --x: -40vw; --y: max(85vh, 650px); --z: -500px; --rx: 85deg; --ry: -40deg; }
+.layer:nth-child(4) { --x: 45vw; --y: min(-90vh, -700px); --z: -1200px; --rx: -75deg; --ry: 55deg; }
+.layer:nth-child(5) { --x: min(-75vw, -750px); --y: -45vh; --z: 250px; --rx: 45deg; --ry: -80deg; }
+.layer:nth-child(6) { --x: max(80vw, 800px); --y: 60vh; --z: -800px; --rx: -65deg; --ry: 75deg; }
+
+.ring { animation: lock-light 2400ms calc(var(--i) * 70ms) both; }
+
+@keyframes assemble {
+  0%, 8% {
+    opacity: .12;
+    transform: translate3d(var(--x), var(--y), var(--z))
+      rotateX(var(--rx)) rotateY(var(--ry)) scale(.65);
+    animation-timing-function: cubic-bezier(.55,.05,.4,.8);
+  }
+  46% {
+    opacity: .75;
+    transform: translate3d(calc(var(--x) * .2), calc(var(--y) * .2), calc(var(--z) * .35))
+      rotateX(calc(var(--rx) * .25)) rotateY(calc(var(--ry) * .25)) scale(1.12);
+    animation-timing-function: cubic-bezier(.2,.75,.25,1);
+  }
+  68% {
+    opacity: 1;
+    transform: translate3d(calc(var(--x) * .035), calc(var(--y) * .035), 45px)
+      rotateX(calc(var(--rx) * .08)) rotateY(calc(var(--ry) * .08)) scale(1.08);
+    animation-timing-function: cubic-bezier(.6,0,.2,1);
+  }
+  84% {
+    opacity: 1;
+    transform: translate3d(calc(var(--x) * -.003), calc(var(--y) * -.003), -4px)
+      rotateX(-1deg) rotateY(1deg) scale(.985);
+  }
+  93% { opacity: 1; transform: translate3d(0, 0, 1px) rotateX(.3deg) rotateY(-.3deg) scale(1.004); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) scale(1); }
+}
+
+@keyframes lock-light {
+  0%, 76% { filter: none; }
+  85% { filter: drop-shadow(0 0 7px rgb(0 170 255 / 85%)); }
+  100% { filter: none; }
+}
+
+/* Pause existing SVG group rotations; the finite assembly never replays. */
+.frame[data-paused="true"] g { animation-play-state: paused !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  .frame .layer, .frame .ring { animation: none; }
+  .frame g { animation: none !important; }
+}

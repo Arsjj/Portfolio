@@ -3,7 +3,7 @@ import { styles } from "../../utils/styles";
 
 const Hero = () => {
   return (
-    <section id="home" className={` relative w-full h-[850px] max-sm:h-[780px] mx-auto`}>
+    <section id="home" className={` relative w-full overflow-x-clip h-[850px] max-sm:h-[780px] mx-auto`}>
       <div
         className={`relative max-sm:relative max-sm:top-0 max-sm:pt-40  md:mb-20 max-md:mb-6 z-10 inset-0 top-40 max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
       >
@@ -24,7 +24,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="relative flex justify-center w-full sm:animate-opacity transition-all duration-500 max-sm:left-4 max-sm:scale-[0.8] max-xsm:scale-[0.7] max-sm:relative max-sm:top-0">
+      <div className="relative flex justify-center w-full max-sm:left-4 max-sm:scale-[0.8] max-xsm:scale-[0.7] max-sm:relative max-sm:top-0">
         <Animation />
       </div>
     </section>

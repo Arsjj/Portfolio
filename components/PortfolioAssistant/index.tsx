@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { isHeroAssemblyComplete, serverHeroAssemblyComplete, subscribeToHeroAssembly } from "@/lib/hero-assembly";
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport, isToolUIPart, type UIMessage } from "ai";
 import { Bot, ExternalLink, MessageCircle, Rocket, Send, Sparkles, X } from "lucide-react";
@@ -49,6 +50,11 @@ function ToolResult({ part }: { part: UIMessage["parts"][number] }) {
 }
 
 export default function PortfolioAssistant() {
+  const ready = useSyncExternalStore(
+    subscribeToHeroAssembly,
+    isHeroAssemblyComplete,
+    serverHeroAssemblyComplete,
+  );
   const [open, setOpen] = useState(false);
   const [landed, setLanded] = useState(false);
   const [input, setInput] = useState("");
@@ -67,6 +73,8 @@ export default function PortfolioAssistant() {
     void sendMessage({ text: message });
     setInput("");
   };
+
+  if (!ready) return null;
 
   return (
     <div className="fixed bottom-[84px] right-4 z-50 sm:bottom-6 sm:right-6">
