@@ -4,6 +4,7 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { motion, useInView, useSpring } from "framer-motion";
 import { StarsCanvas } from "../canvas";
 import Contact from "../Contact";
+import styles from "./transition.module.css";
 
 export default function HyperJumpSection() {
     const [phase, setPhase] = useState<"idle" | "jump" | "content">("idle");
@@ -129,7 +130,7 @@ export default function HyperJumpSection() {
                     ? Math.pow(progress / 0.65, 2.2)
                     : Math.pow(1 - (progress - 0.65) / 0.35, 0.7);
 
-            ctx.fillStyle = `rgba(0, 0, 15, ${0.25 + boost * 0.25})`;
+            ctx.fillStyle = `rgba(0, 0, 15, ${0.25 + boost * 0.05})`;
             ctx.fillRect(0, 0, w, h);
 
             const activeStars = Math.floor(180 + boost * 520);
@@ -194,8 +195,8 @@ export default function HyperJumpSection() {
                 ref={canvasRef}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: phase === "jump" ? 1 : 0 }}
-                transition={{ duration: 0.35 }}
-                className="absolute inset-0 z-10 h-full w-full pointer-events-none"
+                transition={{ duration: 0.55, ease: "easeInOut" }}
+                className={`absolute inset-0 z-10 h-full w-full pointer-events-none ${styles.atmosphere}`}
             />
             <motion.div
                 ref={contactRef}
@@ -204,7 +205,7 @@ export default function HyperJumpSection() {
                 }}
                 className="relative z-20"
             >
-                <div className="absolute inset-0 z-0 pointer-events-none">
+                <div className={`absolute inset-0 z-0 pointer-events-none ${styles.atmosphere}`}>
                     <StarsCanvas />
                 </div>
                 <Contact scale={contactScale} formRef={formRef} phase={phase} />

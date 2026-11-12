@@ -1,0 +1,13 @@
+/* Blend the effects into the Projects background without masking the form. */
+.atmosphere {
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    #000 clamp(100px, 16vw, 200px)
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    #000 clamp(100px, 16vw, 200px)
+  );
+}

@@ -3,9 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport, isToolUIPart, type UIMessage } from "ai";
-import { Bot, ExternalLink, MessageCircle, Send, Sparkles, X } from "lucide-react";
+import { Bot, ExternalLink, MessageCircle, Rocket, Send, Sparkles, X } from "lucide-react";
 import { projectsData } from "@/constants";
 import type { PortfolioProject } from "@/lib/portfolio";
+import styles from "./badge.module.css";
 
 const suggestions = [
   "What technologies do you use?",
@@ -49,6 +50,7 @@ function ToolResult({ part }: { part: UIMessage["parts"][number] }) {
 
 export default function PortfolioAssistant() {
   const [open, setOpen] = useState(false);
+  const [landed, setLanded] = useState(false);
   const [input, setInput] = useState("");
   const scrollRef = useRef<HTMLDivElement>(null);
   const { messages, sendMessage, status, error, clearError, stop } = useChat({ transport });
@@ -101,7 +103,25 @@ export default function PortfolioAssistant() {
             </div>
           </form>
         </section>
-      ) : <button type="button" onClick={() => setOpen(true)} aria-label="Open portfolio assistant" className="group flex items-center gap-2 rounded-full border border-[#D4AF37]/40 bg-[#08090f]/95 px-4 py-3 text-sm font-medium text-white shadow-[0_10px_40px_rgba(0,0,0,.5)] backdrop-blur transition hover:-translate-y-1 hover:border-[#D4AF37]"><MessageCircle className="h-5 w-5 text-[#D4AF37]" /><span className="max-xsm:hidden">Ask AI</span></button>}
+      ) : (
+        <div
+          className={styles.lander}
+          data-landed={landed}
+          onAnimationEnd={(event) => {
+            if (event.target === event.currentTarget) setLanded(true);
+          }}
+        >
+          <span aria-hidden="true" className={styles.exhaust} />
+          <span aria-hidden="true" className={styles.touchdown} />
+          <button type="button" onClick={() => { setLanded(true); setOpen(true); }} aria-label="Open portfolio assistant" className="group relative flex items-center gap-2 rounded-full border border-[#D4AF37]/40 bg-[#08090f]/95 px-4 py-3 text-sm font-medium text-white shadow-[0_10px_40px_rgba(0,0,0,.5)] backdrop-blur transition hover:-translate-y-1 hover:border-[#D4AF37] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D4AF37]">
+            <span aria-hidden="true" className="relative h-5 w-5 text-[#D4AF37]">
+              <Rocket className={`absolute inset-0 h-5 w-5 ${styles.rocket}`} />
+              <MessageCircle className={`absolute inset-0 h-5 w-5 ${styles.chat}`} />
+            </span>
+            <span className="max-xsm:hidden">Ask AI</span>
+          </button>
+        </div>
+      )}
     </div>
   );
 }
