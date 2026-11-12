@@ -311,3 +311,19 @@ body {
   }
 }
 
+.hero-text-headline {
+  animation: hero-text-appear 2000ms cubic-bezier(.16, 1, .3, 1) both;
+}
+
+.hero-text-subtitle {
+  animation: hero-text-appear 2000ms cubic-bezier(.16, 1, .3, 1) 150ms both;
+}
+
+@keyframes hero-text-appear {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-text-headline, .hero-text-subtitle { animation: none; }
+}
