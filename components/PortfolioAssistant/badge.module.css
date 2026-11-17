@@ -36,7 +36,7 @@
 
 @keyframes landing {
   0% { opacity: 0; transform: translate(-30px, -160px) rotate(-12deg); animation-timing-function: cubic-bezier(.4,0,.65,1); }
-  25% { opacity: 1; }
+  15% { opacity: 1; }
   55% { transform: translate(-6px, -30px) rotate(4deg); animation-timing-function: cubic-bezier(.15,.7,.4,1); }
   72% { transform: translate(0, 2px) scale(1.04, .94); }
   83% { transform: translate(0, -5px) rotate(-1deg) scale(.99, 1.02); }

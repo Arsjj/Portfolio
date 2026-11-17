@@ -66,7 +66,7 @@ const Navbar = () => {
       <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
         <Link
           href="/"
-          className='flex items-center gap-2'
+          className='header-appear flex items-center gap-2'
           onClick={() => {
             setActive("");
             window.scrollTo(0, 0);
@@ -85,7 +85,7 @@ const Navbar = () => {
           {navLinks.map((nav) => (
             <li
               key={nav.id}
-              className={`${active === nav.title ? "text-white" : "text-secondary"
+              className={`header-appear ${active === nav.title ? "text-white" : "text-secondary"
                 } hover:text-white text-[18px] font-medium`}
               onClick={() => setActive(nav.title)}
             >
@@ -145,7 +145,7 @@ const MobileNavbar = () => {
   }, []);
 
   return (
-    <div className="sm:hidden fixed bottom-0 left-0 right-0 z-50 px-3 pb-3">
+    <div className="header-appear sm:hidden fixed bottom-0 left-0 right-0 z-50 px-3 pb-3">
       <div
         className="
       w-full
