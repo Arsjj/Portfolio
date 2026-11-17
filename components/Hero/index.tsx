@@ -8,8 +8,8 @@ const Hero = () => {
         className={`relative max-sm:relative max-sm:top-0 max-sm:pt-40  md:mb-20 max-md:mb-6 z-10 inset-0 top-40 max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
       >
         <div className='flex flex-col justify-center items-center mt-5 max-xsm:hidden'>
-          <div className='w-5 h-5 rounded-full bg-[#D4AF37]' />
-          <div className='w-1 sm:h-80 h-40 violet-gradient' />
+          <div className='hero-marker-dot w-5 h-5 rounded-full bg-[#D4AF37]' />
+          <div className='hero-marker-line w-1 sm:h-80 h-40 violet-gradient' />
         </div>
 
         <div>
